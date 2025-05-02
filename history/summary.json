@@ -5,18 +5,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/milan.xiotz.com.ico",
     "slug": "01-india-milan-labs",
     "status": "down",
-    "uptime": "0.69%",
-    "uptimeDay": "0.69%",
-    "uptimeWeek": "0.69%",
-    "uptimeMonth": "0.69%",
-    "uptimeYear": "0.69%",
+    "uptime": "0.73%",
+    "uptimeDay": "0.73%",
+    "uptimeWeek": "0.73%",
+    "uptimeMonth": "0.73%",
+    "uptimeYear": "0.73%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-05-02": 3
+      "2025-05-02": 4
     }
   },
   {
@@ -79,18 +79,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/sisn.xiotz.com.ico",
     "slug": "06-india-sisn",
     "status": "down",
-    "uptime": "28.29%",
-    "uptimeDay": "28.29%",
-    "uptimeWeek": "28.29%",
-    "uptimeMonth": "28.29%",
-    "uptimeYear": "28.29%",
+    "uptime": "26.79%",
+    "uptimeDay": "26.79%",
+    "uptimeWeek": "26.79%",
+    "uptimeMonth": "26.79%",
+    "uptimeYear": "26.79%",
     "time": 19429,
     "timeDay": 19429,
     "timeWeek": 19429,
     "timeMonth": 19429,
     "timeYear": 19429,
     "dailyMinutesDown": {
-      "2025-05-02": 2
+      "2025-05-02": 3
     }
   },
   {
@@ -153,11 +153,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/syrmasgs.xiotz.com.ico",
     "slug": "10-india-syrma-sgs",
     "status": "down",
-    "uptime": "64.32%",
-    "uptimeDay": "64.32%",
-    "uptimeWeek": "64.32%",
-    "uptimeMonth": "64.32%",
-    "uptimeYear": "64.32%",
+    "uptime": "58.65%",
+    "uptimeDay": "58.65%",
+    "uptimeWeek": "58.65%",
+    "uptimeMonth": "58.65%",
+    "uptimeYear": "58.65%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
@@ -173,11 +173,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/medseven.xiotz.com.ico",
     "slug": "11-uae-medseven",
     "status": "down",
-    "uptime": "17.70%",
-    "uptimeDay": "17.70%",
-    "uptimeWeek": "17.70%",
-    "uptimeMonth": "17.70%",
-    "uptimeYear": "17.70%",
+    "uptime": "14.53%",
+    "uptimeDay": "14.53%",
+    "uptimeWeek": "14.53%",
+    "uptimeMonth": "14.53%",
+    "uptimeYear": "14.53%",
     "time": 2784,
     "timeDay": 2784,
     "timeWeek": 2784,
@@ -438,7 +438,7 @@
     "timeMonth": 74,
     "timeYear": 74,
     "dailyMinutesDown": {
-      "2025-05-02": 0
+      "2025-05-02": 1
     }
   },
   {
@@ -458,7 +458,7 @@
     "timeMonth": 59,
     "timeYear": 59,
     "dailyMinutesDown": {
-      "2025-05-02": 0
+      "2025-05-02": 1
     }
   },
   {
