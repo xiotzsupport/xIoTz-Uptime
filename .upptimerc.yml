@@ -4,8 +4,7 @@ repo: xIoTz-Uptime # The name of this repository
 
 sites:
 
-#- type: http 
-  
+
   - name: "01_India_MilanLabs"
     url: https://milan.xiotz.com/  
     
@@ -70,50 +69,29 @@ sites:
   - name: "26_Australia_Thomax"
     url: https://thomaxxoc.xiotz.com/
 
-  #id: "WEB027"
   - name: "27_Australia_ICT"
     url: https://ict.xiotz.com/
 
-  #id: "WEB031"
   - name: "31_India_Dovetail"
     url: https://dovetail.xiotz.com/
 
-  #id: "WEB032"
   - name: "32_India_Himedia"
-    url: https://xoc-himedia.xiotz.com/
+    url: https://himedia.xiotz.com/
     
   - name: "33_India_JLMorison"
-    url: https://xoc-jlmorisonxoc.xiotz.com/
+    url: https://jlmorisonxoc.xiotz.com/
     
   - name: "34_xIoTz_India_Unishield"
     url: https://unishield.xiotz.com/
 
-  #id: "WEB035"
   - name: "35_India_UnishieldCx"
     url: https://unishieldcx.xiotz.com/
 
-  #id: "WEB036"
   - name: "36_India_Indevia"
     url: https://indeviaucap.xiotz.com/
 
-  #id: "WEB041"
   - name: "41_Tanzania_FlashNet"
     url: https://flashnet.xiotz.com/
-
-  
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
-    check: "tcp-ping"
-  
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
