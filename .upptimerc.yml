@@ -91,9 +91,9 @@ status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   cname: aaa.xiotz.com
-  baseUrl: /xIoTz-Uptime
+  #baseUrl: /xIoTz-Uptime
   logoUrl: https://raw.githubusercontent.com/xiotzsupport/xIoTz-Uptime/refs/heads/master/upptime-icon.svg
-  name: Upptime
+  name: xIoTz UCAP Monitor
   introTitle: "xIoTz Uptime Monitoring."
   introMessage: xIoTz Websites Uptime monitoring
   navbar:
