@@ -29,9 +29,6 @@ sites:
   - name: "09_India_OneXtel_DC"
     url: https://onextelserver.xiotz.com/
     
-  - name: "10_India_SyrmaSGS"
-    url: https://syrmasgs.xiotz.com/
-    
   - name: "11_UAE_Medseven"
     url: https://medseven.xiotz.com/
     
