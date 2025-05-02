@@ -120,7 +120,7 @@ status-website:
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   baseUrl: /xIoTz-Uptime
   logoUrl: https://raw.githubusercontent.com/xiotzsupport/xIoTz-Uptime/refs/heads/master/upptime-icon.svg
-  - name: Upptime
+  name: Upptime
   introTitle: "xIoTz Uptime Monitoring."
   introMessage: xIoTz Websites Uptime monitoring
   navbar:
