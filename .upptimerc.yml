@@ -17,9 +17,6 @@ sites:
   - name: "05_India_TDAC"
     url: https://tdac.xiotz.com/
     
-  - name: "06_India_SISN"
-    url: https://sisn.xiotz.com/
-    
   - name: "07_India_OneXtel_OP"
     url: https://onextel.xiotz.com/
     
