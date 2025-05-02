@@ -97,7 +97,7 @@ status-website:
   introTitle: "xIoTz Uptime Monitoring."
   introMessage: xIoTz Websites Uptime monitoring
   navbar:
-    - title: Status
+    - title: xIoTz UCAP Status - Monitor
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
