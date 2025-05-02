@@ -7,98 +7,98 @@ sites:
 #- type: http 
   #id: "WEB01"
   - name: "01_India_MilanLabs"
-
-    url: ["https://milan.xiotz.com/"]  #id: "WEB02"
+    url: https://milan.xiotz.com/  #id: "WEB02"
+    
   - name: "02_India_CyberAudit"
-    url: ["https://cyberaudit.xiotz.com/"]
+    url: https://cyberaudit.xiotz.com/
 
   - name: "04_India_Jesons"
-    url: ["https://xoc-jesonsxoc.xiotz.com/"]  #id: "WEB05"
+    url: https://xoc-jesonsxoc.xiotz.com/  #id: "WEB05"
     
   - name: "05_India_TDAC"
-    url: ["https://tdac.xiotz.com/"]  #id: "WEB06"
+    url: https://tdac.xiotz.com/  #id: "WEB06"
     
   - name: "06_India_SISN"
-    url: ["https://sisn.xiotz.com/"]  #id: "WEB07"
+    url: https://sisn.xiotz.com/  #id: "WEB07"
     
   - name: "07_India_OneXtel_OP"
-    url: ["https://onextel.xiotz.com/"]  #id: "WEB08"
+    url: https://onextel.xiotz.com/  #id: "WEB08"
     
   - name: "08_India_OneXtel_NSE"
-    url: ["https://onextelnse.xiotz.com/"]  #id: "WEB09"
+    url: https://onextelnse.xiotz.com/  #id: "WEB09"
     
   - name: "09_India_OneXtel_DC"
-    url: ["https://onextelserver.xiotz.com/"]  #id: "WEB010"
+    url: https://onextelserver.xiotz.com/  #id: "WEB010"
     
   - name: "10_India_SyrmaSGS"
-    url: ["https://syrmasgs.xiotz.com/"]  #id: "WEB011"
+    url: https://syrmasgs.xiotz.com/  #id: "WEB011"
     
   - name: "11_UAE_Medseven"
-    url: ["https://medseven.xiotz.com/"]  #id: "WEB012"
+    url: https://medseven.xiotz.com/  #id: "WEB012"
     
   - name: "12_UAE_Cicon"
-    url: ["https://xoc-cicon.xiotz.com/"]  #id: "WEB013"
+    url: https://xoc-cicon.xiotz.com/  #id: "WEB013"
     
   - name: "13_UAE_ALOmeria"
-    url: ["https://xoc-alomeria.xiotz.com/"]  #id: "WEB014"
+    url: https://xoc-alomeria.xiotz.com/  #id: "WEB014"
     
   - name: "14_UAE_AlphaSeven"
-    url: ["https://alphaseven.xiotz.com/"]  #id: "WEB015"
+    url: https://alphaseven.xiotz.com/  #id: "WEB015"
     
   - name: "15_UAE_Gemini"
-    url: ["https://xoc-geminiuae.xiotz.com/"]  #id: "WEB016"
+    url: https://xoc-geminiuae.xiotz.com/  #id: "WEB016"
     
   - name: "16_UAE_Bell"
-    url: ["https://xoc-bell.xiotz.com/"]  #id: "WEB021"
+    url: https://xoc-bell.xiotz.com/  #id: "WEB021"
     
   - name: "21_Australia_CornellDieselSystems"
-    url: ["https://cornell.xiotz.com/"]  #id: "WEB022"
+    url: https://cornell.xiotz.com/  #id: "WEB022"
     
   - name: "22_Australia_MTQ-Cornell"
-    url: ["https://mtq.xiotz.com/"]  #id: "WEB023"
+    url: https://mtq.xiotz.com/  #id: "WEB023"
     
   - name: "23_Australia_CDMLogistics"
-    url: ["https://cdmlogistics.xiotz.com/"]
+    url: https://cdmlogistics.xiotz.com/
 
    #id: "WEB024"
   - name: "24_Australia_PrimaryComms"
-    url: ["https://primarycomms.xiotz.com/"]  #id: "WEB025"
+    url: https://primarycomms.xiotz.com/  #id: "WEB025"
     
   - name: "25_Australia_NIA"
-    url: ["https://nia.xiotz.com/"]  #id: "WEB026"
+    url: https://nia.xiotz.com/  #id: "WEB026"
     
   - name: "26_Australia_Thomax"
-    url: ["https://thomaxxoc.xiotz.com/"]
+    url: https://thomaxxoc.xiotz.com/
 
   #id: "WEB027"
   - name: "27_Australia_ICT"
-    url: ["https://ict.xiotz.com/"]
+    url: https://ict.xiotz.com/
 
   #id: "WEB031"
   - name: "31_India_Dovetail"
-    url: ["https://dovetail.xiotz.com/"]
+    url: https://dovetail.xiotz.com/
 
   #id: "WEB032"
   - name: "32_India_Himedia"
-    url: ["https://xoc-himedia.xiotz.com/"]  #id: "WEB033"
+    url: https://xoc-himedia.xiotz.com/  #id: "WEB033"
     
   - name: "33_India_JLMorison"
-    url: ["https://xoc-jlmorisonxoc.xiotz.com/"]  #id: "WEB034"
+    url: https://xoc-jlmorisonxoc.xiotz.com/  #id: "WEB034"
     
   - name: "34_xIoTz_India_Unishield"
-    url: ["https://unishield.xiotz.com/"]
+    url: https://unishield.xiotz.com/
 
   #id: "WEB035"
   - name: "35_India_UnishieldCx"
-    url: ["https://unishieldcx.xiotz.com/"]
+    url: https://unishieldcx.xiotz.com/
 
   #id: "WEB036"
   - name: "36_India_Indevia"
-    url: ["https://indeviaucap.xiotz.com/"]
+    url: https://indeviaucap.xiotz.com/
 
   #id: "WEB041"
   - name: "41_Tanzania_FlashNet"
-    url: ["https://flashnet.xiotz.com/"]
+    url: https://flashnet.xiotz.com/
 
   
   - name: Google
