@@ -16,16 +16,22 @@ sites:
     
   - name: "05_India_TDAC"
     url: https://tdac.xiotz.com/
+
+  - name: "06_India_OneXtel_SBI"
+    url: https://spsu.onexsecure.com/
     
   - name: "07_India_OneXtel_OP"
-    url: https://onextel.xiotz.com/
+    url: https://op.onexsecure.com/
     
   - name: "08_India_OneXtel_NSE"
-    url: https://onextelnse.xiotz.com/
+    url: https://nse.onexsecure.com/
     
   - name: "09_India_OneXtel_DC"
-    url: https://onextelserver.xiotz.com/
-    
+    url: https://dc.onexsecure.com/
+
+  - name: "10_xIoTz_India_OneXtel_WP"
+    url: https://wop.onexsecure.com/
+
   - name: "11_UAE_Medseven"
     url: https://onextelserver.xiotz.com/
     
