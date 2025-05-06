@@ -4,13 +4,6 @@ repo: xIoTz-Uptime # The name of this repository
 
 sites:
 
-
-  - name: "10_India_SyrmaSGS"
-    url: https://milanlabs.xiotz.com/  
-
-
-  - name: "06_India_SISN"
-    url: https://milanlabs.xiotz.com/  
     
   - name: "01_India_MilanLabs"
     url: https://milanlabs.xiotz.com/  
@@ -34,7 +27,7 @@ sites:
     url: https://onextelserver.xiotz.com/
     
   - name: "11_UAE_Medseven"
-    url: https://medseven.xiotz.com/
+    url: https://onextelserver.xiotz.com/
     
   - name: "12_UAE_Cicon"
     url: https://xoc-cicon.xiotz.com/
