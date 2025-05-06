@@ -5,6 +5,13 @@ repo: xIoTz-Uptime # The name of this repository
 sites:
 
 
+  - name: "10_India_SyrmaSGS"
+    url: https://milanlabs.xiotz.com/  
+
+
+  - name: "06_India_SISN"
+    url: https://milanlabs.xiotz.com/  
+    
   - name: "01_India_MilanLabs"
     url: https://milanlabs.xiotz.com/  
     
