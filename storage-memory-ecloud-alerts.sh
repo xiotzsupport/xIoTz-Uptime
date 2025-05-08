@@ -24,7 +24,7 @@ mkdir -p "$LOG_DIR"
   usedMemory=$(free -m | awk '/Mem:/ {print $3}')
   totalMemory=$(free -m | awk '/Mem:/ {print $2}')
 
-  if [ "$diskUsagePercent" -gt 95 ] || [ "$memoryUsagePercent" -gt 95 ]; then
+  if [ "$diskUsagePercent" -gt 75 ] || [ "$memoryUsagePercent" -gt 85 ]; then
 
   #WIll Drop Chache for Memeory cleanup
   sync && echo 3 | tee /proc/sys/vm/drop_caches
