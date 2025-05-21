@@ -6,7 +6,7 @@
     "slug": "00-uptime-dashboards",
     "status": "down",
     "uptime": "98.42%",
-    "uptimeDay": "92.34%",
+    "uptimeDay": "92.32%",
     "uptimeWeek": "96.61%",
     "uptimeMonth": "98.42%",
     "uptimeYear": "98.42%",
@@ -272,7 +272,7 @@
     "slug": "12-uae-cicon",
     "status": "up",
     "uptime": "47.61%",
-    "uptimeDay": "0.55%",
+    "uptimeDay": "0.57%",
     "uptimeWeek": "0.08%",
     "uptimeMonth": "47.61%",
     "uptimeYear": "47.61%",
@@ -518,11 +518,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/ict.xiotz.com.ico",
     "slug": "27-australia-ict",
     "status": "up",
-    "uptime": "89.46%",
+    "uptime": "89.47%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "98.14%",
-    "uptimeMonth": "89.46%",
-    "uptimeYear": "89.46%",
+    "uptimeMonth": "89.47%",
+    "uptimeYear": "89.47%",
     "time": 4644,
     "timeDay": 1591,
     "timeWeek": 3090,
@@ -612,11 +612,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/unishield.xiotz.com.ico",
     "slug": "34-x-io-tz-india-unishield",
     "status": "up",
-    "uptime": "95.95%",
+    "uptime": "95.96%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "98.31%",
-    "uptimeMonth": "95.95%",
-    "uptimeYear": "95.95%",
+    "uptimeMonth": "95.96%",
+    "uptimeYear": "95.96%",
     "time": 4465,
     "timeDay": 1590,
     "timeWeek": 3482,
@@ -731,18 +731,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/ecloud-lynas.xiotz.com.ico",
     "slug": "ecloud-lynas-xiotz-com",
     "status": "down",
-    "uptime": "0.00%",
-    "uptimeDay": "0.00%",
-    "uptimeWeek": "0.00%",
-    "uptimeMonth": "0.00%",
-    "uptimeYear": "0.00%",
+    "uptime": "0.01%",
+    "uptimeDay": "0.01%",
+    "uptimeWeek": "0.01%",
+    "uptimeMonth": "0.01%",
+    "uptimeYear": "0.01%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-05-21": 85
+      "2025-05-21": 86
     }
   },
   {
@@ -762,7 +762,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-05-21": 85
+      "2025-05-21": 86
     }
   },
   {
@@ -825,18 +825,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/ecloud-india-ho-serverroone.xiotz.com.ico",
     "slug": "ecloud-india-ho-serverroone-xiotz-com",
     "status": "down",
-    "uptime": "0.01%",
-    "uptimeDay": "0.01%",
-    "uptimeWeek": "0.01%",
-    "uptimeMonth": "0.01%",
-    "uptimeYear": "0.01%",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-05-21": 85
+      "2025-05-21": 86
     }
   },
   {
@@ -1020,7 +1020,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-05-21": 82
+      "2025-05-21": 83
     }
   },
   {
@@ -1101,11 +1101,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/ecloud-uae-cicon.xiotz.com.ico",
     "slug": "ecloud-uae-cicon-xiotz-com",
     "status": "down",
-    "uptime": "1.83%",
-    "uptimeDay": "1.83%",
-    "uptimeWeek": "1.83%",
-    "uptimeMonth": "1.83%",
-    "uptimeYear": "1.83%",
+    "uptime": "1.82%",
+    "uptimeDay": "1.82%",
+    "uptimeWeek": "1.82%",
+    "uptimeMonth": "1.82%",
+    "uptimeYear": "1.82%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
@@ -1139,11 +1139,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/ecloud-uae-medseven.xiotz.com.ico",
     "slug": "ecloud-uae-medseven-xiotz-com",
     "status": "down",
-    "uptime": "1.87%",
-    "uptimeDay": "1.87%",
-    "uptimeWeek": "1.87%",
-    "uptimeMonth": "1.87%",
-    "uptimeYear": "1.87%",
+    "uptime": "1.86%",
+    "uptimeDay": "1.86%",
+    "uptimeWeek": "1.86%",
+    "uptimeMonth": "1.86%",
+    "uptimeYear": "1.86%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
