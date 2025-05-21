@@ -107,6 +107,85 @@ sites:
   - name: "41_Tanzania_FlashNet"
     url: https://flashnet.xiotz.com/
 
+
+
+# xIoTz ECLOUDS
+
+
+  - name: "ecloud-lynas.xiotz.com"
+    url: https://ecloud-lynas.xiotz.com/
+	
+  - name: "ecloud-ict.xiotz.com"
+    url: https://ecloud-ict.xiotz.com/
+	
+	
+  - name: "ecloud-india-dovetail.xiotz.com"
+    url: https://ecloud-india-dovetail.xiotz.com/
+	
+	
+  - name: "ecloud-india-himedia.xiotz.com"
+    url: https://ecloud-india-himedia.xiotz.com/
+	
+	
+  - name: "ecloud-india-ho-minione.xiotz.com"
+    url: https://ecloud-india-ho-minione.xiotz.com/
+	
+  - name: "ecloud-india-ho-serverroone.xiotz.com"
+    url: https://ecloud-india-ho-serverroone.xiotz.com/
+	
+  - name: "ecloud-india-ho-serverroprod.xiotz.com"
+    url: https://ecloud-india-ho-serverroprod.xiotz.com/
+	
+  - name: "ecloud-india-ho-serverrothree.xiotz.com"
+    url: https://ecloud-india-ho-serverrothree.xiotz.com/
+	
+  - name: "ecloud-india-ho-serverrotwo.xiotz.com"
+    url: https://ecloud-india-ho-serverrotwo.xiotz.com/
+	
+  - name: "ecloud-india-milan.xiotz.com"
+    url: https://ecloud-india-milan.xiotz.com/
+
+  - name: "ecloud-india-rd-alphard.xiotz.com"
+    url: https://ecloud-india-rd-alphard.xiotz.com/
+	
+  - name: "ecloud-india-rd-betard.xiotz.com"
+    url: https://ecloud-india-rd-betard.xiotz.com/
+	
+	
+  - name: "ecloud-india-rd-deltard.xiotz.com"
+    url: https://ecloud-india-rd-deltard.xiotz.com/
+	
+  - name: "ecloud-india-rd-gamard.xiotz.com"
+    url: https://ecloud-india-rd-gamard.xiotz.com/
+	
+  - name: "ecloud-india-rd-sigmard.xiotz.com"
+    url: https://ecloud-india-rd-sigmard.xiotz.com/
+	
+  - name: "ecloud-india-rd-thetard.xiotz.com"
+    url: https://ecloud-india-rd-thetard.xiotz.com/
+	
+
+  - name: "ecloud-rd-india-zetard.xiotz.com"
+    url: https://ecloud-rd-india-zetard.xiotz.com/
+	
+  - name: "ecloud-uae-alomeira.xiotz.com"
+    url: https://ecloud-uae-alomeira.xiotz.com/
+	
+  - name: "ecloud-uae-alpha7.xiotz.com"
+    url: https://ecloud-uae-alpha7.xiotz.com/
+	
+  - name: "ecloud-uae-bell.xiotz.com"
+    url: https://ecloud-uae-bell.xiotz.com/
+	
+  - name: "ecloud-uae-cicon.xiotz.com"
+    url: https://ecloud-uae-cicon.xiotz.com/
+	
+  - name: "ecloud-uae-geminiuae.xiotz.com"
+    url: https://ecloud-uae-geminiuae.xiotz.com/
+	
+  - name: "ecloud-uae-medseven.xiotz.com"
+    url: https://ecloud-uae-medseven.xiotz.com/
+    
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
