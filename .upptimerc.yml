@@ -76,9 +76,10 @@ sites:
     
   - name: "25_Australia_NIA"
     url: https://nia.xiotz.com/
-    
-  - name: "26_Australia_Thomax"
-    url: https://thomaxxoc.xiotz.com/
+
+# Thomax australia is not in uses - informed pradeep
+#  - name: "26_Australia_Thomax"
+#    url: https://thomaxxoc.xiotz.com/
 
   - name: "27_Australia_ICT"
     url: https://ict.xiotz.com/
@@ -101,8 +102,9 @@ sites:
   - name: "36_India_Indevia"
     url: https://indeviaucap.xiotz.com/
 
-  - name: "37_xIoTz_India_IRB"
-    url: https://irb.xiotz.com/
+# IRB is down 
+#  - name: "37_xIoTz_India_IRB"
+#    url: https://irb.xiotz.com/
 
   - name: "41_Tanzania_FlashNet"
     url: https://flashnet.xiotz.com/
@@ -111,9 +113,9 @@ sites:
 
 # xIoTz ECLOUDS
 
-
-  - name: "ecloud-lynas.xiotz.com"
-    url: https://ecloud-lynas.xiotz.com/
+# Looks like removeed 
+#  - name: "ecloud-lynas.xiotz.com"
+#    url: https://ecloud-lynas.xiotz.com/
 	
   - name: "ecloud-ict.xiotz.com"
     url: https://ecloud-ict.xiotz.com/
@@ -176,15 +178,17 @@ sites:
 	
   - name: "ecloud-uae-bell.xiotz.com"
     url: https://ecloud-uae-bell.xiotz.com/
-	
-  - name: "ecloud-uae-cicon.xiotz.com"
-    url: https://ecloud-uae-cicon.xiotz.com/
+
+# Ecloud CICON
+#  - name: "ecloud-uae-cicon.xiotz.com"
+#    url: https://ecloud-uae-cicon.xiotz.com/
 	
   - name: "ecloud-uae-geminiuae.xiotz.com"
     url: https://ecloud-uae-geminiuae.xiotz.com/
-	
-  - name: "ecloud-uae-medseven.xiotz.com"
-    url: https://ecloud-uae-medseven.xiotz.com/
+
+# NEed to Revisit @Rohit
+#  - name: "ecloud-uae-medseven.xiotz.com"
+#    url: https://ecloud-uae-medseven.xiotz.com/
     
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
