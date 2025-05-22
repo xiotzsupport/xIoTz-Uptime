@@ -143,7 +143,9 @@ sites:
 	
   - name: "ecloud-india-ho-serverrotwo.xiotz.com"
     url: https://ecloud-india-ho-serverrotwo.xiotz.com/
-	
+
+ # UCAP milan connectivity is working fine, Need to scan for Ecloud port and check if we can login 
+ # !!! Ecloud infomration needs to be manually copied and stored in GIT
   - name: "ecloud-india-milan.xiotz.com"
     url: https://ecloud-india-milan.xiotz.com/
 
