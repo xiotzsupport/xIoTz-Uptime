@@ -77,7 +77,7 @@ sites:
   - name: "25_UCAP_Australia_NIA"
     url: https://nia.xiotz.com/
 
-# Thomax australia is not in uses - informed pradeep
+# Thomax australia is not in use - informed pradeep
 #  - name: "26_UCAP_Australia_Thomax"
 #    url: https://thomaxxoc.xiotz.com/
 
