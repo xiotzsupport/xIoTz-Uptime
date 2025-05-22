@@ -43,8 +43,8 @@ sites:
   - name: "10_UCAP_India_OneXtel_WP"
     url: https://wop.onexsecure.com/
 
-#  - name: "11_UCAP_UAE_Medseven"
-#    url: https://medseven.xiotz.com/
+  - name: "11_UCAP_UAE_Medseven"
+    url: https://medseven.xiotz.com/
     
   - name: "12_UCAP_UAE_Cicon"
     url: https://cicon.xiotz.com/
@@ -189,8 +189,8 @@ sites:
     url: https://ecloud-uae-geminiuae.xiotz.com/
 
 # NEed to Revisit @Rohit
-#  - name: "ecloud-uae-medseven.xiotz.com"
-#    url: https://ecloud-uae-medseven.xiotz.com/
+  - name: "ecloud-uae-medseven.xiotz.com"
+    url: https://ecloud-uae-medseven.xiotz.com/
     
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
