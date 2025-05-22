@@ -16,97 +16,97 @@ sites:
   - name: "00_Uptime_xIoTzCX"
     url: https://status-cx.xiotz.com/
     
-  - name: "01_India_MilanLabs"
+  - name: "01_UCAP_India_MilanLabs"
     url: https://milanlabs.xiotz.com/  
     
-  - name: "02_India_CyberAudit"
+  - name: "02_UCAP_India_CyberAudit"
     url: https://cyberaudit.xiotz.com/
 
-  - name: "04_India_Jesons"
+  - name: "04_UCAP_India_Jesons"
     url: https://xoc-jesonsxoc.xiotz.com/
     
-  - name: "05_India_TDAC"
+  - name: "05_UCAP_India_TDAC"
     url: https://tdac.xiotz.com/
 
-  - name: "06_India_OneXtel_SBI"
+  - name: "06_UCAP_India_OneXtel_SBI"
     url: https://spsu.onexsecure.com/
     
-  - name: "07_India_OneXtel_OP"
+  - name: "07_UCAP_India_OneXtel_OP"
     url: https://op.onexsecure.com/
     
-  - name: "08_India_OneXtel_NSE"
+  - name: "08_UCAP_India_OneXtel_NSE"
     url: https://nse.onexsecure.com/
     
-  - name: "09_India_OneXtel_DC"
+  - name: "09_UCAP_India_OneXtel_DC"
     url: https://dc.onexsecure.com/
 
-  - name: "10_xIoTz_India_OneXtel_WP"
+  - name: "10_UCAP_India_OneXtel_WP"
     url: https://wop.onexsecure.com/
 
-#  - name: "11_UAE_Medseven"
+#  - name: "11_UCAP_UAE_Medseven"
 #    url: https://medseven.xiotz.com/
     
-  - name: "12_UAE_Cicon"
+  - name: "12_UCAP_UAE_Cicon"
     url: https://cicon.xiotz.com/
     
-  - name: "13_UAE_ALOmeria"
+  - name: "13_UCAP_UAE_ALOmeria"
     url: https://xoc-alomeria.xiotz.com/
     
-  - name: "14_UAE_AlphaSeven"
+  - name: "14_UCAP_UAE_AlphaSeven"
     url: https://alphaseven.xiotz.com/
     
-  - name: "15_UAE_Gemini"
+  - name: "15_UCAP_UAE_Gemini"
     url: https://xoc-geminiuae.xiotz.com/
     
-  - name: "16_UAE_Bell"
+  - name: "16_UCAP_UAE_Bell"
     url: https://xoc-bell.xiotz.com/
     
-  - name: "21_Australia_CornellDieselSystems"
+  - name: "21_UCAP_Australia_CornellDieselSystems"
     url: https://cornell.xiotz.com/
     
-  - name: "22_Australia_MTQ-Cornell"
+  - name: "22_UCAP_Australia_MTQ-Cornell"
     url: https://mtq.xiotz.com/
     
-  - name: "23_Australia_CDMLogistics"
+  - name: "23_UCAP_Australia_CDMLogistics"
     url: https://cdmlogistics.xiotz.com/
 
    #id: "WEB024"
-  - name: "24_Australia_PrimaryComms"
+  - name: "24_UCAP_Australia_PrimaryComms"
     url: https://primarycomms.xiotz.com/
     
-  - name: "25_Australia_NIA"
+  - name: "25_UCAP_Australia_NIA"
     url: https://nia.xiotz.com/
 
 # Thomax australia is not in uses - informed pradeep
-#  - name: "26_Australia_Thomax"
+#  - name: "26_UCAP_Australia_Thomax"
 #    url: https://thomaxxoc.xiotz.com/
 
-  - name: "27_Australia_ICT"
+  - name: "27_UCAP_Australia_ICT"
     url: https://ict.xiotz.com/
 
-  - name: "31_India_Dovetail"
+  - name: "31_UCAP_India_U360_Dovetail"
     url: https://dovetail.xiotz.com/
 
-  - name: "32_India_Himedia"
+  - name: "32_UCAP_India_U360_Himedia"
     url: https://himedia.xiotz.com/
     
-  - name: "33_India_JLMorison"
+  - name: "33_UCAP_India_U360_JLMorison"
     url: https://jlmorison.xiotz.com/
     
-  - name: "34_xIoTz_India_Unishield"
+  - name: "34_xIoTz_UCAP_India_U360_Unishield"
     url: https://unishield.xiotz.com/
 
-  - name: "35_India_UnishieldCx"
+  - name: "35_UCAP_India_U360_UnishieldCx"
     url: https://unishieldcx.xiotz.com/
 
-  - name: "36_India_Indevia"
+  - name: "36_UCAP_India_U360_Indevia"
     url: https://indeviaucap.xiotz.com/
 
 # IRB is down 
-#  - name: "37_xIoTz_India_IRB"
+#  - name: "37_UCAP_India_U360_IRB"
 #    url: https://irb.xiotz.com/
 
-  - name: "41_Tanzania_FlashNet"
+  - name: "41_UCAP_Tanzania_FlashNet"
     url: https://flashnet.xiotz.com/
 
 
