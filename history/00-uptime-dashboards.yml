@@ -1,7 +1,7 @@
 url: https://dashboards.xiotz.com/
-status: down
-code: 500
-responseTime: 990
-lastUpdated: 2025-05-31T08:26:01.113Z
+status: up
+code: 200
+responseTime: 844
+lastUpdated: 2025-05-31T08:43:28.022Z
 startTime: 2025-05-06T01:08:59.253Z
 generator: Upptime <https://github.com/upptime/upptime>
