@@ -4,8 +4,8 @@ repo: xIoTz-Uptime # The name of this repository
 
 sites:
 
-  - name: "00_Uptime_Dashboards"
-    url: https://dashboards.xiotz.com/
+#  - name: "00_Uptime_Dashboards"
+#    url: https://dashboards.xiotz.com/
 
   - name: "00_Uptime_FreshPing"
     url: https://statuspage.freshping.io/69684-xIoTzUCAP 
