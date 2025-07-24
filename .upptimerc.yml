@@ -4,6 +4,20 @@ repo: xIoTz-Uptime # The name of this repository
 
 sites:
 
+  - name: 10_Dovetail
+    url: https://www.dovetailindia.com/
+  
+  - name: 11_Dovetail
+    url: https://clientonboarding.dovetailindia.com
+
+  - name: 12_Dovetail
+    url: https://dcms.dovetailindia.com
+
+  - name: 13_Dovetail
+    url: https://demo-clientonboarding.dovetailindia.com
+
+
+
 #  - name: "00_Uptime_Dashboards"
 #    url: https://dashboards.xiotz.com/
 
