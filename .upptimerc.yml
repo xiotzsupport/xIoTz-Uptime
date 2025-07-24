@@ -7,7 +7,7 @@ sites:
 #  - name: "00_Uptime_Dashboards"
 #    url: https://dashboards.xiotz.com/
 
-  - name: "00_Uptime_FreshPing"
+  - name: "000_Uptime_FreshPing"
     url: https://statuspage.freshping.io/69684-xIoTzUCAP 
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -17,7 +17,7 @@ sites:
       - 302
 
 
-  - name: "00_Uptime_xIoTzUCAP"
+  - name: "000_Uptime_xIoTzUCAP"
     url: https://status-ucap.xiotz.com/ 
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -26,7 +26,7 @@ sites:
       - 301
       - 302
       
-  - name: "00_Uptime_xIoTzCX"
+  - name: "000_Uptime_xIoTzCX"
     url: https://status-cx.xiotz.com/
     maxResponseTime: 5000
     expectedStatusCodes:
