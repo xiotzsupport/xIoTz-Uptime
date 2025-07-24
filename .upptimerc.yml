@@ -5,7 +5,8 @@ repo: xIoTz-Uptime # The name of this repository
 sites:
 
   - name: 10_Dovetail
-    url: https://op.onexsecure.com/
+    url: https://onextel-endpoint.xiotz.com/
+    __dangerous__disable_verify_peer: true
   #  url: https://www.dovetailindia.com/
   
   - name: 11_Dovetail
@@ -79,8 +80,9 @@ sites:
       - 302
       
   - name: "05_UCAP_India_TDAC"
-    url: https://tdac.xiotz.com/
+    url: https://tdac-endpoint.xiotz.com/
     maxResponseTime: 5000
+    __dangerous__disable_verify_peer: true
     expectedStatusCodes:
       - 200
       - 201
