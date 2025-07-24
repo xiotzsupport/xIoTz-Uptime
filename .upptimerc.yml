@@ -5,11 +5,12 @@ repo: xIoTz-Uptime # The name of this repository
 sites:
 
   - name: 10_Dovetail
-    url: https://status-cx.xiotz.com/
+    url: https://op.onexsecure.com/
   #  url: https://www.dovetailindia.com/
   
   - name: 11_Dovetail
-    url: https://clientonboarding.dovetailindia.com
+    url: https://op.onexsecure.com/app/login?
+   # url: https://clientonboarding.dovetailindia.com
 
   - name: 12_Dovetail
     url: https://dcms.dovetailindia.com
