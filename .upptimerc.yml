@@ -10,97 +10,206 @@ sites:
   - name: "00_Uptime_FreshPing"
     url: https://statuspage.freshping.io/69684-xIoTzUCAP 
     maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 
 
   - name: "00_Uptime_xIoTzUCAP"
     url: https://status-ucap.xiotz.com/ 
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "00_Uptime_xIoTzCX"
     url: https://status-cx.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "01_UCAP_India_MilanLabs"
     url: https://milanlabs.xiotz.com/  
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "02_UCAP_India_CyberAudit"
     url: https://cyberaudit.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "04_UCAP_India_Jesons"
     url: https://xoc-jesonsxoc.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "05_UCAP_India_TDAC"
     url: https://tdac.xiotz.com/
     maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 
+      
   - name: "06_UCAP_India_OneXtel_SBI"
     url: https://spsu.onexsecure.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "07_UCAP_India_OneXtel_OP"
     url: https://op.onexsecure.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "08_UCAP_India_OneXtel_NSE"
     url: https://nse.onexsecure.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "09_UCAP_India_OneXtel_DC"
     url: https://dc.onexsecure.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "10_UCAP_India_OneXtel_WP"
     url: https://wop.onexsecure.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "11_UCAP_UAE_Medseven"
     url: https://medseven.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "12_UCAP_UAE_Cicon"
     url: https://cicon.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "13_UCAP_UAE_ALOmeria"
     url: https://xoc-alomeria.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "14_UCAP_UAE_AlphaSeven"
     url: https://alphaseven.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "15_UCAP_UAE_Gemini"
     url: https://xoc-geminiuae.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "16_UCAP_UAE_Bell"
     url: https://xoc-bell.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "21_UCAP_Australia_CornellDieselSystems"
     url: https://cornell.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "22_UCAP_Australia_MTQ-Cornell"
     url: https://mtq.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "23_UCAP_Australia_CDMLogistics"
     url: https://cdmlogistics.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
    #id: "WEB024"
   - name: "24_UCAP_Australia_PrimaryComms"
     url: https://primarycomms.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "25_UCAP_Australia_NIA"
     url: https://nia.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 # Thomax australia is not in use - informed pradeep
 #  - name: "26_UCAP_Australia_Thomax"
 #    url: https://thomaxxoc.xiotz.com/
@@ -108,31 +217,59 @@ sites:
   - name: "27_UCAP_Australia_ICT"
     url: https://ict.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "31_UCAP_India_U360_Dovetail"
     url: https://dovetail.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "32_UCAP_India_U360_Himedia"
     url: https://himedia.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "33_UCAP_India_U360_JLMorison"
     url: https://jlmorison.xiotz.com/
     maxResponseTime: 5000
-    
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "34_xIoTz_UCAP_India_U360_Unishield"
     url: https://unishield.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "35_UCAP_India_U360_UnishieldCx"
     url: https://unishieldcx.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "36_UCAP_India_U360_Indevia"
     url: https://indeviaucap.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 # IRB is down 
 #  - name: "37_UCAP_India_U360_IRB"
 #    url: https://irb.xiotz.com/
@@ -140,7 +277,11 @@ sites:
   - name: "41_UCAP_Tanzania_FlashNet"
     url: https://flashnet.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 
 
 # xIoTz ECLOUDS
@@ -152,86 +293,171 @@ sites:
   - name: "ecloud-ict.xiotz.com"
     url: https://ecloud-ict.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 	
   - name: "ecloud-india-dovetail.xiotz.com"
     url: https://ecloud-india-dovetail.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 	
   - name: "ecloud-india-himedia.xiotz.com"
     url: https://ecloud-india-himedia.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 	
   - name: "ecloud-india-ho-minione.xiotz.com"
     url: https://ecloud-india-ho-minione.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "ecloud-india-ho-serverroone.xiotz.com"
     url: https://ecloud-india-ho-serverroone.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "ecloud-india-ho-serverroprod.xiotz.com"
     url: https://ecloud-india-ho-serverroprod.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "ecloud-india-ho-serverrothree.xiotz.com"
     url: https://ecloud-india-ho-serverrothree.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "ecloud-india-ho-serverrotwo.xiotz.com"
     url: https://ecloud-india-ho-serverrotwo.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
  # UCAP milan connectivity is working fine, Need to scan for Ecloud port and check if we can login 
  # !!! Ecloud infomration needs to be manually copied and stored in GIT
   - name: "ecloud-india-milan.xiotz.com"
     url: https://ecloud-india-milan.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
   - name: "ecloud-india-rd-alphard.xiotz.com"
     url: https://ecloud-india-rd-alphard.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+
   - name: "ecloud-india-rd-betard.xiotz.com"
     url: https://ecloud-india-rd-betard.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 	
   - name: "ecloud-india-rd-deltard.xiotz.com"
     url: https://ecloud-india-rd-deltard.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "ecloud-india-rd-gamard.xiotz.com"
     url: https://ecloud-india-rd-gamard.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "ecloud-india-rd-sigmard.xiotz.com"
     url: https://ecloud-india-rd-sigmard.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "ecloud-india-rd-thetard.xiotz.com"
     url: https://ecloud-india-rd-thetard.xiotz.com/
     maxResponseTime: 5000
-	
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "ecloud-rd-india-zetard.xiotz.com"
     url: https://ecloud-rd-india-zetard.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "ecloud-uae-alomeira.xiotz.com"
     url: https://ecloud-uae-alomeira.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "ecloud-uae-alpha7.xiotz.com"
     url: https://ecloud-uae-alpha7.xiotz.com/
     maxResponseTime: 5000
-	
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
   - name: "ecloud-uae-bell.xiotz.com"
     url: https://ecloud-uae-bell.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
 # Ecloud CICON
 #  - name: "ecloud-uae-cicon.xiotz.com"
 #    url: https://ecloud-uae-cicon.xiotz.com/
@@ -239,7 +465,12 @@ sites:
   - name: "ecloud-uae-geminiuae.xiotz.com"
     url: https://ecloud-uae-geminiuae.xiotz.com/
     maxResponseTime: 5000
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+      
 # NEed to Revisit @Rohit
   - name: "ecloud-uae-medseven.xiotz.com"
     url: https://ecloud-uae-medseven.xiotz.com/
