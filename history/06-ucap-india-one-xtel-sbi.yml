@@ -1,7 +1,7 @@
 url: https://spsu.onexsecure.com/
-status: down
+status: degraded
 code: 403
-responseTime: 129
-lastUpdated: 2025-07-29T23:20:48.078Z
+responseTime: 5054
+lastUpdated: 2025-07-30T09:57:36.202Z
 startTime: 2025-05-22T06:47:00.875Z
 generator: Upptime <https://github.com/upptime/upptime>
