@@ -86,7 +86,6 @@ sites:
     url: https://tdac-endpoint.xiotz.com/
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
-    __dangerous__disable_verify_peer: true
     expectedStatusCodes:
       - 200
       - 201
