@@ -1,7 +1,7 @@
 url: https://cdmlogistics.xiotz.com/
-status: down
+status: degraded
 code: 403
-responseTime: 73
-lastUpdated: 2025-08-06T23:23:23.609Z
+responseTime: 5097
+lastUpdated: 2025-08-07T11:38:50.405Z
 startTime: 2025-05-22T06:47:23.869Z
 generator: Upptime <https://github.com/upptime/upptime>
