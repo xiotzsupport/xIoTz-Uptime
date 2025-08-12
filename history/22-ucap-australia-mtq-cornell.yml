@@ -1,7 +1,7 @@
 url: https://mtq.xiotz.com/
-status: down
+status: degraded
 code: 403
-responseTime: 74
-lastUpdated: 2025-08-11T23:20:44.659Z
+responseTime: 5072
+lastUpdated: 2025-08-12T17:35:54.920Z
 startTime: 2025-05-22T06:47:22.071Z
 generator: Upptime <https://github.com/upptime/upptime>
