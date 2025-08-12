@@ -1,7 +1,7 @@
 url: https://dc.onexsecure.com/
-status: down
+status: degraded
 code: 403
-responseTime: 50
-lastUpdated: 2025-08-11T23:19:10.329Z
+responseTime: 5260
+lastUpdated: 2025-08-12T07:31:47.399Z
 startTime: 2025-05-22T06:47:06.960Z
 generator: Upptime <https://github.com/upptime/upptime>
