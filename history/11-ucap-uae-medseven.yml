@@ -1,7 +1,7 @@
 url: https://medseven-endpoint.xiotz.com/
-status: down
-code: 0
-responseTime: 0
-lastUpdated: 2025-08-20T23:19:34.762Z
+status: up
+code: 200
+responseTime: 1252
+lastUpdated: 2025-08-21T22:33:38.210Z
 startTime: 2025-05-22T07:54:35.541Z
 generator: Upptime <https://github.com/upptime/upptime>
