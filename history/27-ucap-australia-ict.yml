@@ -1,7 +1,7 @@
 url: https://ict.xiotz.com/
-status: down
+status: degraded
 code: 403
-responseTime: 480
-lastUpdated: 2025-08-20T23:21:12.529Z
+responseTime: 8256
+lastUpdated: 2025-08-21T14:02:04.497Z
 startTime: 2025-05-22T06:47:27.974Z
 generator: Upptime <https://github.com/upptime/upptime>
