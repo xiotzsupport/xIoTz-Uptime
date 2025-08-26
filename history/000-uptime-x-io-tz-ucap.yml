@@ -1,7 +1,7 @@
 url: https://status-ucap.xiotz.com/
-status: down
+status: degraded
 code: 403
-responseTime: 381
-lastUpdated: 2025-08-25T23:18:05.087Z
+responseTime: 5087
+lastUpdated: 2025-08-26T23:17:23.422Z
 startTime: 2025-07-24T08:34:46.027Z
 generator: Upptime <https://github.com/upptime/upptime>
