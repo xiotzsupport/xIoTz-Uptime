@@ -94,7 +94,7 @@ sites:
 
       
   - name: "06_UCAP_India_OneXtel_SBI"
-    url: https://spsu.onexsecure.com/
+    url: https://sbionextel-endpoint.xiotz.com/
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -104,7 +104,7 @@ sites:
       - 302
       
   - name: "07_UCAP_India_OneXtel_OP"
-    url: https://op.onexsecure.com/
+    url: https://onextel-endpoint.xiotz.com/
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -114,7 +114,7 @@ sites:
       - 302
       
   - name: "08_UCAP_India_OneXtel_NSE"
-    url: https://nse.onexsecure.com/
+    url: https://onextelnse-endpoint.xiotz.com/
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -123,7 +123,7 @@ sites:
       - 301
       - 302
   - name: "09_UCAP_India_OneXtel_DC"
-    url: https://dc.onexsecure.com/
+    url: https://onextelserver-endpoint.xiotz.com/
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -133,7 +133,7 @@ sites:
       - 302
       
   - name: "10_UCAP_India_OneXtel_WP"
-    url: https://wop.onexsecure.com/
+    url: https://waonextel-endpoint.xiotz.com/
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
