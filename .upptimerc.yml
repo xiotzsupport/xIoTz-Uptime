@@ -339,7 +339,7 @@ sites:
 	
   - name: "ecloud-india-dovetail.xiotz.com"
     #url: https://ecloud-india-dovetail.xiotz.com/ old 
-	url: https://ecloud-india-dovetail.xiotz.com/#v1:0:18:4:::::::
+	url: https://ecloud-india-dovetail.xiotz.com/
 
     maxResponseTime: 5000
     expectedStatusCodes:
