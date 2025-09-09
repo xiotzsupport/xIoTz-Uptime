@@ -351,7 +351,7 @@ sites:
       - 308
 
   - name: "ecloud-india-himedia.xiotz.com"
-    url: "https://ecloud-india-himedia.xiotz.com/"
+    url: https://ecloud-india-himedia.xiotz.com/
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -364,7 +364,7 @@ sites:
       - 308
    
   - name: "ecloud-india-ho-minione.xiotz.com"
-    url: "https://ecloud-india-ho-minione.xiotz.com/#v1:0:18:4:::::::"
+    url: https://ecloud-india-ho-minione.xiotz.com/
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
