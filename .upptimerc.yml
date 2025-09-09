@@ -337,44 +337,8 @@ sites:
       - 301
       - 302
 
-  - name: "ecloud-india-dovetail.xiotz.com"
-    url: https://ecloud-india-dovetail.xiotz.com/
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-      - 201
-      - 301
-      - 302
-      - 204
-      - 303
-      - 307
-      - 308
 
-  - name: "ecloud-india-himedia.xiotz.com"
-    url: https://ecloud-india-himedia.xiotz.com/
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-      - 201
-      - 301
-      - 302
-      - 204
-      - 303
-      - 307
-      - 308
-   
-  - name: "ecloud-india-ho-minione.xiotz.com"
-    url: https://ecloud-india-ho-minione.xiotz.com/
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-      - 201
-      - 301
-      - 302
-      - 204
-      - 303
-      - 307
-      - 308
+
   - name: "ecloud-india-ho-serverroone.xiotz.com"
     url: https://ecloud-india-ho-serverroone.xiotz.com/
     maxResponseTime: 5000
