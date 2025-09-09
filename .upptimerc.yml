@@ -338,7 +338,6 @@ sites:
       - 302
 	
   - name: "ecloud-india-dovetail.xiotz.com"
-    #url: https://ecloud-india-dovetail.xiotz.com/ old 
 	url: https://ecloud-india-dovetail.xiotz.com/
 
     maxResponseTime: 5000
