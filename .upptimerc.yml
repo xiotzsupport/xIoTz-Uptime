@@ -349,7 +349,7 @@ sites:
       - 302
 	  
   - name: "ecloud-india-himedia.xiotz.com"
-    url: https://ecloud-india-himedia.xiotz.com/
+    url: https://ecloud-india-himedia.xiotz.com/#v1:0:18:4:::::::
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -359,7 +359,7 @@ sites:
 
    
   - name: "ecloud-india-ho-minione.xiotz.com"
-    url: https://ecloud-india-ho-minione.xiotz.com/
+    url: "https://ecloud-india-ho-minione.xiotz.com/#v1:0:18:4:::::::"
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
