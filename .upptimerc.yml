@@ -348,6 +348,9 @@ sites:
       - 201
       - 301
       - 302
+      - 204
+      - 307
+      - 303
   - name: "ecloud-india-ho-serverroprod.xiotz.com"
     url: https://ecloud-india-ho-serverroprod.xiotz.com/
     maxResponseTime: 5000
@@ -356,6 +359,10 @@ sites:
       - 201
       - 301
       - 302
+      - 204
+      - 307
+      - 303
+
   - name: "ecloud-india-ho-serverrothree.xiotz.com"
     url: https://ecloud-india-ho-serverrothree.xiotz.com/
     maxResponseTime: 5000
@@ -364,6 +371,10 @@ sites:
       - 201
       - 301
       - 302
+      - 204
+      - 307
+      - 303
+	  
   - name: "ecloud-india-ho-serverrotwo.xiotz.com"
     url: https://ecloud-india-ho-serverrotwo.xiotz.com/
     maxResponseTime: 5000
@@ -372,6 +383,10 @@ sites:
       - 201
       - 301
       - 302
+      - 204
+      - 307
+      - 303
+
  # UCAP milan connectivity is working fine, Need to scan for Ecloud port and check if we can login 
  # !!! Ecloud infomration needs to be manually copied and stored in GIT
   - name: "ecloud-india-milan.xiotz.com"
@@ -382,6 +397,10 @@ sites:
       - 201
       - 301
       - 302
+      - 204
+      - 307
+      - 303
+
   - name: "ecloud-india-rd-alphard.xiotz.com"
     url: https://ecloud-india-rd-alphard.xiotz.com/
     maxResponseTime: 5000
@@ -390,6 +409,9 @@ sites:
       - 201
       - 301
       - 302
+      - 204
+      - 307
+      - 303
 
 
   - name: "ecloud-india-rd-betard.xiotz.com"
@@ -400,6 +422,11 @@ sites:
       - 201
       - 301
       - 302
+      - 204
+      - 307
+      - 303
+	  
+
 	
   - name: "ecloud-india-rd-deltard.xiotz.com"
     url: https://ecloud-india-rd-deltard.xiotz.com/
@@ -409,7 +436,11 @@ sites:
       - 201
       - 301
       - 302
-      
+      - 204
+      - 307
+      - 303
+	  
+   
   - name: "ecloud-india-rd-gamard.xiotz.com"
     url: https://ecloud-india-rd-gamard.xiotz.com/
     maxResponseTime: 5000
@@ -418,7 +449,12 @@ sites:
       - 201
       - 301
       - 302
-      
+      - 204
+      - 307
+      - 303
+	  
+
+
   - name: "ecloud-india-rd-sigmard.xiotz.com"
     url: https://ecloud-india-rd-sigmard.xiotz.com/
     maxResponseTime: 5000
@@ -427,6 +463,10 @@ sites:
       - 201
       - 301
       - 302
+      - 204
+      - 307
+      - 303
+	  
       
   - name: "ecloud-india-rd-thetard.xiotz.com"
     url: https://ecloud-india-rd-thetard.xiotz.com/
@@ -436,7 +476,11 @@ sites:
       - 201
       - 301
       - 302
-      
+      - 204
+      - 307
+      - 303
+	  
+   
   - name: "ecloud-rd-india-zetard.xiotz.com"
     url: https://ecloud-rd-india-zetard.xiotz.com/
     maxResponseTime: 5000
