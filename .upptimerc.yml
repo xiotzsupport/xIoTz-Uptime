@@ -339,7 +339,6 @@ sites:
 	
   - name: "ecloud-india-dovetail.xiotz.com"
 	url: https://ecloud-india-dovetail.xiotz.com/
-
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
