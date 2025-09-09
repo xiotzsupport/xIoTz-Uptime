@@ -329,15 +329,16 @@ sites:
 #    url: https://ecloud-lynas.xiotz.com/
 	
   - name: "ecloud-ict.xiotz.com"
-    url: https://ecloud-ict.xiotz.com/app/login?
+    url: https://ecloud-ict.xiotz.com/
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
       - 201
       - 301
       - 302
-
-
+	  - 204
+	  - 307
+	  - 303
 
   - name: "ecloud-india-ho-serverroone.xiotz.com"
     url: https://ecloud-india-ho-serverroone.xiotz.com/
