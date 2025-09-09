@@ -329,7 +329,7 @@ sites:
 #    url: https://ecloud-lynas.xiotz.com/
 	
   - name: "ecloud-ict.xiotz.com"
-    url: https://ecloud-ict.xiotz.com/
+    url: "https://ecloud-india-dovetail.xiotz.com/#v1:0:18:4:::::::"
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
