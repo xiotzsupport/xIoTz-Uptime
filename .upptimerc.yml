@@ -341,8 +341,8 @@ sites:
     url: https://ecloud-india-dovetail.xiotz.com/
     maxResponseTime: 5000
     expectedStatusCodes:
-	  - 200
-      - 201
+      - 200
+	  - 201
 	  - 204
       - 301
       - 302
@@ -355,7 +355,7 @@ sites:
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
-      - 201
+	  - 201
 	  - 204
       - 301
       - 302
