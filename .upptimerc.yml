@@ -327,18 +327,19 @@ sites:
 # Looks like removeed 
 #  - name: "ecloud-lynas.xiotz.com"
 #    url: https://ecloud-lynas.xiotz.com/
-	
+
   - name: "ecloud-ict.xiotz.com"
     url: "https://ecloud-india-dovetail.xiotz.com/#v1:0:18:4:::::::"
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
       - 201
+      - 204
       - 301
       - 302
-      - 204
-      - 307
       - 303
+      - 307
+
 
   - name: "ecloud-india-ho-serverroone.xiotz.com"
     url: https://ecloud-india-ho-serverroone.xiotz.com/
