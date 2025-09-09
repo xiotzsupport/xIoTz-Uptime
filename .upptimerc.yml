@@ -63,7 +63,7 @@ sites:
       - 302
       
   - name: "02_UCAP_India_CyberAudit"
-    url: https://cyberaudit-endpoint.xiotz.com/
+    url: https://cyberaudit-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -73,7 +73,7 @@ sites:
       - 302
       
   - name: "04_UCAP_India_Jesons"
-    url: https://jesons-endpoint.xiotz.com/
+    url: https://jesons-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -94,7 +94,7 @@ sites:
 
       
   - name: "06_UCAP_India_OneXtel_SBI"
-    url: https://sbionextel-endpoint.xiotz.com/
+    url: https://sbionextel-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -104,7 +104,7 @@ sites:
       - 302
       
   - name: "07_UCAP_India_OneXtel_OP"
-    url: https://onextel-endpoint.xiotz.com/
+    url: https://onextel-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -114,7 +114,7 @@ sites:
       - 302
       
   - name: "08_UCAP_India_OneXtel_NSE"
-    url: https://onextelnse-endpoint.xiotz.com/
+    url: https://onextelnse-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -123,7 +123,7 @@ sites:
       - 301
       - 302
   - name: "09_UCAP_India_OneXtel_DC"
-    url: https://onextelserver-endpoint.xiotz.com/
+    url: https://onextelserver-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -133,7 +133,7 @@ sites:
       - 302
       
   - name: "10_UCAP_India_OneXtel_WP"
-    url: https://waonextel-endpoint.xiotz.com/
+    url: https://waonextel-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -142,7 +142,7 @@ sites:
       - 301
       - 302
   - name: "11_UCAP_UAE_Medseven"
-    url: https://medseven-endpoint.xiotz.com/
+    url: https://medseven-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -151,7 +151,7 @@ sites:
       - 301
       - 302
   - name: "12_UCAP_UAE_Cicon"
-    url: https://cicon-endpoint.xiotz.com/
+    url: https://cicon-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -161,7 +161,7 @@ sites:
       - 302
       
   - name: "13_UCAP_UAE_ALOmeria"
-    url: https://alomeria-endpoint.xiotz.com/
+    url: https://alomeria-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -170,7 +170,7 @@ sites:
       - 301
       - 302
   - name: "14_UCAP_UAE_AlphaSeven"
-    url: https://alphaseven-endpoint.xiotz.com/
+    url: https://alphaseven-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -180,7 +180,7 @@ sites:
       - 302
       
   - name: "15_UCAP_UAE_Gemini"
-    url: https://geminiuae-endpoint.xiotz.com/
+    url: https://geminiuae-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -189,7 +189,7 @@ sites:
       - 301
       - 302
   - name: "16_UCAP_UAE_Bell"
-    url: https://bell-endpoint.xiotz.com/
+    url: https://bell-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -199,7 +199,7 @@ sites:
       - 302
       
   - name: "21_UCAP_Australia_CornellDieselSystems"
-    url: https://cornell.xiotz.com/
+    url: https://cornell.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -208,7 +208,7 @@ sites:
       - 302
       
   - name: "22_UCAP_Australia_MTQ-Cornell"
-    url: https://mtq.xiotz.com/
+    url: https://mtq.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -217,7 +217,7 @@ sites:
       - 302
       
   - name: "23_UCAP_Australia_CDMLogistics"
-    url: https://cdmlogistics.xiotz.com/
+    url: https://cdmlogistics.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -226,7 +226,7 @@ sites:
       - 302
    #id: "WEB024"
   - name: "24_UCAP_Australia_PrimaryComms"
-    url: https://primarycomms.xiotz.com/
+    url: https://primarycomms.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -235,7 +235,7 @@ sites:
       - 302
       
   - name: "25_UCAP_Australia_NIA"
-    url: https://nia.xiotz.com/
+    url: https://nia.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -247,7 +247,7 @@ sites:
 #    url: https://thomaxxoc.xiotz.com/
 
   - name: "27_UCAP_Australia_ICT"
-    url: https://ict.xiotz.com/
+    url: https://ict.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -255,7 +255,7 @@ sites:
       - 301
       - 302
   - name: "31_UCAP_India_U360_Dovetail"
-    url: https://dovetail-endpoint.xiotz.com/
+    url: https://dovetail-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -264,7 +264,7 @@ sites:
       - 301
       - 302
   - name: "32_UCAP_India_U360_Himedia"
-    url: https://himedia-endpoint.xiotz.com/
+    url: https://himedia-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -273,7 +273,7 @@ sites:
       - 301
       - 302
   - name: "33_UCAP_India_U360_JLMorison"
-    url: https://jlmorison-endpoint.xiotz.com/
+    url: https://jlmorison-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -282,7 +282,7 @@ sites:
       - 301
       - 302
   - name: "34_xIoTz_UCAP_India_U360_Unishield"
-    url: https://unishield-endpoint.xiotz.com/
+    url: https://unishield-endpoint.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -290,7 +290,7 @@ sites:
       - 301
       - 302
   - name: "35_UCAP_India_U360_UnishieldCx"
-    url: https://unishieldcx.xiotz.com/
+    url: https://unishieldcx.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -299,7 +299,7 @@ sites:
       - 301
       - 302
   - name: "36_UCAP_India_U360_Indevia"
-    url: https://indeviaucap-endpoint.xiotz.com/
+    url: https://indeviaucap-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -312,7 +312,7 @@ sites:
 #    url: https://irb.xiotz.com/
 
   - name: "41_UCAP_Tanzania_FlashNet"
-    url: https://flashnet-endpoint.xiotz.com/
+    url: https://flashnet-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -329,7 +329,7 @@ sites:
 #    url: https://ecloud-lynas.xiotz.com/
 	
   - name: "ecloud-ict.xiotz.com"
-    url: https://ecloud-ict.xiotz.com/
+    url: https://ecloud-ict.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -338,7 +338,7 @@ sites:
       - 302
 	
   - name: "ecloud-india-dovetail.xiotz.com"
-    url: https://ecloud-india-dovetail.xiotz.com/
+    url: https://ecloud-india-dovetail.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -347,7 +347,7 @@ sites:
       - 302
 	  
   - name: "ecloud-india-himedia.xiotz.com"
-    url: https://ecloud-india-himedia.xiotz.com/
+    url: https://ecloud-india-himedia.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -357,7 +357,7 @@ sites:
 
    
   - name: "ecloud-india-ho-minione.xiotz.com"
-    url: https://ecloud-india-ho-minione.xiotz.com/
+    url: https://ecloud-india-ho-minione.xiotz.com/app/login?
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
