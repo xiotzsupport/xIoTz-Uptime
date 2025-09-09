@@ -345,7 +345,7 @@ sites:
       - 201
       - 301
       - 302
-	  
+
   - name: "ecloud-india-himedia.xiotz.com"
     url: "https://ecloud-india-himedia.xiotz.com/#v1:0:18:4:::::::"
     maxResponseTime: 5000
