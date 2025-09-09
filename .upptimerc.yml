@@ -83,7 +83,7 @@ sites:
       - 302
       
   - name: "05_UCAP_India_TDAC"
-    url: https://tdac-endpoint.xiotz.com/
+    url: https://tdac-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
