@@ -341,19 +341,27 @@ sites:
     url: https://ecloud-india-dovetail.xiotz.com/
     maxResponseTime: 5000
     expectedStatusCodes:
-      - 200
+	  - 200
       - 201
+	  - 204
       - 301
       - 302
+      - 303
+      - 307
+      - 308
 
   - name: "ecloud-india-himedia.xiotz.com"
-    url: "https://ecloud-india-himedia.xiotz.com/#v1:0:18:4:::::::"
+    url: "https://ecloud-india-himedia.xiotz.com/"
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
       - 201
+	  - 204
       - 301
       - 302
+      - 303
+      - 307
+      - 308
 
    
   - name: "ecloud-india-ho-minione.xiotz.com"
