@@ -35,7 +35,7 @@ sites:
 
 
   - name: "000_Uptime_xIoTzUCAP"
-    url: https://status-ucap.xiotz.com/ 
+    url: https://github.com/xiotzsupport/xIoTz-Uptime
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -44,7 +44,7 @@ sites:
       - 302
       
   - name: "000_Uptime_xIoTzCX"
-    url: https://status-cx.xiotz.com/
+    url: https://github.com/xiotzsupport/xIoTzcs-Uptime
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -53,7 +53,7 @@ sites:
       - 302
       
   - name: "01_UCAP_India_MilanLabs"
-    url: https://milanlabs-endpoint.xiotz.com/  
+    url: https://milanlabs-endpoint.xiotz.com/app/login? 
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
