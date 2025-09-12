@@ -374,8 +374,8 @@ sites:
       - 301
       - 302
 
-  - name: "43_UCAP_Africa_eagazop"
-    url: https://egazop-endpoint.xiotz.com/app/login?
+  - name: "43_UCAP_Africa_eagazdc"
+    url: https://egazdc-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
