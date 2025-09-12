@@ -141,6 +141,49 @@ sites:
       - 201
       - 301
       - 302
+
+  - name: "11_UCAP_India_ShellMRPL"
+    url: https://shellmrpl-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+  - name: "12_UCAP_India_ITI-Finance"
+    url: https://itifinance-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+  - name: "13_UCAP_India_FourDimensions"
+    url: https://fourdimensions-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+
+  - name: "14_UCAP_India_epsilon"
+    url: https://epsilon-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+   
   - name: "21_UCAP_UAE_Medseven"
     url: https://medseven-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
