@@ -141,7 +141,7 @@ sites:
       - 201
       - 301
       - 302
-  - name: "11_UCAP_UAE_Medseven"
+  - name: "21_UCAP_UAE_Medseven"
     url: https://medseven-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -150,7 +150,7 @@ sites:
       - 201
       - 301
       - 302
-  - name: "12_UCAP_UAE_Cicon"
+  - name: "22_UCAP_UAE_Cicon"
     url: https://cicon-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -160,7 +160,7 @@ sites:
       - 301
       - 302
       
-  - name: "13_UCAP_UAE_ALOmeria"
+  - name: "23_UCAP_UAE_ALOmeria"
     url: https://alomeria-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -169,7 +169,7 @@ sites:
       - 201
       - 301
       - 302
-  - name: "14_UCAP_UAE_AlphaSeven"
+  - name: "24_UCAP_UAE_AlphaSeven"
     url: https://alphaseven-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -179,7 +179,7 @@ sites:
       - 301
       - 302
       
-  - name: "15_UCAP_UAE_Gemini"
+  - name: "25_UCAP_UAE_Gemini"
     url: https://geminiuae-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -188,7 +188,7 @@ sites:
       - 201
       - 301
       - 302
-  - name: "16_UCAP_UAE_Bell"
+  - name: "26_UCAP_UAE_Bell"
     url: https://bell-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -321,6 +321,25 @@ sites:
       - 301
       - 302
 
+  - name: "42_UCAP_Africa_eagazop"
+    url: https://egazop-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+  - name: "43_UCAP_Africa_eagazop"
+    url: https://egazop-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
 
 # xIoTz ECLOUDS
 
