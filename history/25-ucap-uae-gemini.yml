@@ -1,7 +1,7 @@
 url: https://geminiuae-endpoint.xiotz.com/app/login?
-status: up
+status: degraded
 code: 200
-responseTime: 3135
-lastUpdated: 2025-09-14T22:21:54.336Z
+responseTime: 7996
+lastUpdated: 2025-09-14T23:39:53.427Z
 startTime: 2025-09-12T10:21:40.306Z
 generator: Upptime <https://github.com/upptime/upptime>
