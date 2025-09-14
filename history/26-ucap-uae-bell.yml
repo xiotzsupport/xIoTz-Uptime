@@ -1,7 +1,7 @@
 url: https://bell-endpoint.xiotz.com/app/login?
-status: down
-code: 403
-responseTime: 773
-lastUpdated: 2025-09-14T22:02:23.148Z
+status: up
+code: 200
+responseTime: 1011
+lastUpdated: 2025-09-14T22:21:57.595Z
 startTime: 2025-09-12T10:21:42.429Z
 generator: Upptime <https://github.com/upptime/upptime>
