@@ -1,7 +1,7 @@
 url: https://egazdc-endpoint.xiotz.com/app/login?
-status: down
-code: 403
-responseTime: 783
-lastUpdated: 2025-09-25T23:00:13.895Z
+status: up
+code: 200
+responseTime: 1562
+lastUpdated: 2025-09-25T23:19:10.737Z
 startTime: 2025-09-12T11:35:06.176Z
 generator: Upptime <https://github.com/upptime/upptime>
