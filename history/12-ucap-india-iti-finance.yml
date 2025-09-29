@@ -1,7 +1,7 @@
 url: https://itifinance-endpoint.xiotz.com/app/login?
-status: up
+status: degraded
 code: 200
-responseTime: 1350
-lastUpdated: 2025-09-28T23:16:35.570Z
+responseTime: 9103
+lastUpdated: 2025-09-29T11:20:09.759Z
 startTime: 2025-09-12T10:43:36.489Z
 generator: Upptime <https://github.com/upptime/upptime>
