@@ -1,7 +1,7 @@
 url: https://jlmorison-endpoint.xiotz.com/app/login?
-status: down
-code: 403
-responseTime: 818
-lastUpdated: 2025-10-01T20:30:14.869Z
+status: up
+code: 200
+responseTime: 1719
+lastUpdated: 2025-10-01T20:42:33.521Z
 startTime: 2025-05-22T06:47:33.629Z
 generator: Upptime <https://github.com/upptime/upptime>
