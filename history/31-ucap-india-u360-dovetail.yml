@@ -1,7 +1,7 @@
 url: https://dovetail-endpoint.xiotz.com/app/login?
-status: down
-code: 403
-responseTime: 1070
-lastUpdated: 2025-10-01T23:18:47.149Z
+status: up
+code: 200
+responseTime: 1458
+lastUpdated: 2025-10-02T05:43:26.859Z
 startTime: 2025-05-22T06:47:29.782Z
 generator: Upptime <https://github.com/upptime/upptime>
