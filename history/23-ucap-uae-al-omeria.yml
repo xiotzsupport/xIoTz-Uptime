@@ -1,7 +1,7 @@
 url: https://alomeria-endpoint.xiotz.com/app/login?
-status: down
-code: 403
-responseTime: 919
-lastUpdated: 2025-10-15T11:42:12.587Z
+status: up
+code: 200
+responseTime: 1870
+lastUpdated: 2025-10-15T11:50:42.210Z
 startTime: 2025-09-12T10:21:36.375Z
 generator: Upptime <https://github.com/upptime/upptime>
