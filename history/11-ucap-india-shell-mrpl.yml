@@ -1,7 +1,7 @@
 url: https://shellmrpl-endpoint.xiotz.com/app/login?
-status: down
-code: 403
-responseTime: 897
-lastUpdated: 2025-10-18T20:30:27.193Z
+status: up
+code: 200
+responseTime: 1168
+lastUpdated: 2025-10-18T20:41:03.557Z
 startTime: 2025-09-12T10:43:34.943Z
 generator: Upptime <https://github.com/upptime/upptime>
