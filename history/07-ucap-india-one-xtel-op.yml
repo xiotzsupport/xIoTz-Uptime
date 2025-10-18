@@ -1,7 +1,7 @@
 url: https://onextel-endpoint.xiotz.com/app/login?
-status: up
+status: degraded
 code: 200
-responseTime: 1386
-lastUpdated: 2025-10-17T23:16:52.549Z
+responseTime: 7715
+lastUpdated: 2025-10-18T04:37:42.638Z
 startTime: 2025-05-22T06:47:02.982Z
 generator: Upptime <https://github.com/upptime/upptime>
