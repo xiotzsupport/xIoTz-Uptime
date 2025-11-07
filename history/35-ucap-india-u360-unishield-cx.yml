@@ -1,7 +1,7 @@
 url: https://unishieldcx.xiotz.com/app/login?
-status: down
+status: degraded
 code: 403
-responseTime: 75
-lastUpdated: 2025-11-06T23:22:51.068Z
+responseTime: 5097
+lastUpdated: 2025-11-07T15:58:44.662Z
 startTime: 2025-05-22T06:47:37.360Z
 generator: Upptime <https://github.com/upptime/upptime>
