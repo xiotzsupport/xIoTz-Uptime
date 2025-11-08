@@ -1,7 +1,7 @@
 url: https://alphaseven-endpoint.xiotz.com/app/login?
-status: down
-code: 403
-responseTime: 1011
-lastUpdated: 2025-11-08T22:01:55.661Z
+status: up
+code: 200
+responseTime: 1721
+lastUpdated: 2025-11-08T22:23:20.922Z
 startTime: 2025-09-12T10:21:38.382Z
 generator: Upptime <https://github.com/upptime/upptime>
