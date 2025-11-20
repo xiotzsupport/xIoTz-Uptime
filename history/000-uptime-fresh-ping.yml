@@ -1,7 +1,7 @@
 url: https://statuspage.freshping.io/69684-xIoTzUCAP
-status: up
-code: 200
-responseTime: 1395
-lastUpdated: 2025-11-19T23:19:07.098Z
+status: down
+code: 503
+responseTime: 377
+lastUpdated: 2025-11-20T01:13:23.891Z
 startTime: 2025-07-24T08:34:43.817Z
 generator: Upptime <https://github.com/upptime/upptime>
