@@ -1,7 +1,7 @@
 url: https://fourdimensions-endpoint.xiotz.com/app/login?
-status: down
-code: 0
-responseTime: 0
-lastUpdated: 2025-11-22T06:15:07.558Z
+status: up
+code: 200
+responseTime: 1933
+lastUpdated: 2025-11-22T06:42:15.072Z
 startTime: 2025-09-12T10:44:08.625Z
 generator: Upptime <https://github.com/upptime/upptime>
