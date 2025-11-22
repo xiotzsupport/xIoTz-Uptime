@@ -1,7 +1,7 @@
 url: https://dovetail-endpoint.xiotz.com/app/login?
-status: degraded
+status: up
 code: 200
-responseTime: 21981
-lastUpdated: 2025-11-22T22:15:44.971Z
+responseTime: 1358
+lastUpdated: 2025-11-22T22:35:36.074Z
 startTime: 2025-05-22T06:47:29.782Z
 generator: Upptime <https://github.com/upptime/upptime>
