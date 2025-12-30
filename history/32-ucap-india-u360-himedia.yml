@@ -1,7 +1,7 @@
 url: https://himedia-endpoint.xiotz.com/app/login?
-status: up
-code: 200
-responseTime: 1133
-lastUpdated: 2025-12-29T23:23:53.333Z
+status: down
+code: 403
+responseTime: 816
+lastUpdated: 2025-12-30T11:22:17.384Z
 startTime: 2025-05-22T06:47:31.683Z
 generator: Upptime <https://github.com/upptime/upptime>
