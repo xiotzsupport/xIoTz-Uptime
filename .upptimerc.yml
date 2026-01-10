@@ -45,7 +45,7 @@ sites:
       - 301
       - 302
       
-  - name: "02_UCAP_India_CyberAudit"
+  - name: "02_UCAP_India_Internal_CyberAudit"
     url: https://cyberaudit-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -54,7 +54,54 @@ sites:
       - 201
       - 301
       - 302
-      
+
+
+  - name: "03_UCAP_India_Internal_Zenalyst"
+    url: https://zenalystai-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+
+  - name: "04_UCAP_India_Internal_XAR"
+    url: https://xar-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+
+  - name: "04_UCAP_India_Internal_XAR"
+    url: https://xar-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+
+  - name: "05_UCAP_India_Internal_UppgradeAI"
+    url: https://upgradeai-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+
+
+#alabeer
   - name: "06_UCAP_India_OneXtel_SBI"
     url: https://sbionextel-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
