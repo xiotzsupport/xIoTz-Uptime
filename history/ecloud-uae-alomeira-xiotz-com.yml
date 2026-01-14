@@ -1,7 +1,7 @@
 url: https://ecloud-uae-alomeira.xiotz.com/
-status: down
+status: degraded
 code: 403
-responseTime: 91
-lastUpdated: 2026-01-13T23:20:48.239Z
+responseTime: 11236
+lastUpdated: 2026-01-14T19:31:52.219Z
 startTime: 2025-05-21T00:30:04.865Z
 generator: Upptime <https://github.com/upptime/upptime>
