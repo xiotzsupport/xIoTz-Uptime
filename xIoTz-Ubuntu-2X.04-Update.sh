@@ -4,6 +4,13 @@
 
 set -euo pipefail
 
+# Must run as root
+if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
+  echo "❌ ERROR: This script must be run as root."
+  echo "ℹ️  Run: sudo $0"
+  exit 1
+fi
+
 # ----------------------------
 # Icons / UI
 # ----------------------------
@@ -182,7 +189,6 @@ echo
 echo "${CRON_ICON} [7] Installing cron job (every 6 hours) ..."
 CRON_LINE="0 */6 * * * $SELF_PATH >> $DIR/xIoTz-Update-\$(date +\\%d-\\%m-\\%y).log 2>&1"
 
-# Add/replace cron entry for this script
 ( crontab -l 2>/dev/null | grep -vF "$SELF_PATH" ; echo "$CRON_LINE" ) | crontab -
 
 echo "${OK_ICON} OK: Cron installed:"
