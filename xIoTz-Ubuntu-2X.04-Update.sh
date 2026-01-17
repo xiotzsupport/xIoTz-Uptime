@@ -2,6 +2,7 @@
 # xIoTz-Ubuntu-2X.04-Update.sh
 # Ubuntu 22.04 / 24.04 - Periodic patching check + logging + cron (every 6 hours)
 
+set -x
 set -euo pipefail
 
 # Must run as root
@@ -203,6 +204,8 @@ if [[ "$ok" -eq 1 ]]; then
 else
   echo "🚨 RESULT: ${BAD_ICON} NOT WORKING (one or more checks failed)"
 fi
+
+set +x
 
 echo "$LINE"
 echo "${INFO_ICON} Log saved to: $LOGFILE"
