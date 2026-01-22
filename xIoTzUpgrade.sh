@@ -88,14 +88,27 @@ else
 fi
 
 
-echo "🔹 COMMAND: xiotz -updateDASH"
+echo "🔹 COMMAND: xiotz -updateDASH-AI"
 if ask_proceed; then
   echo "🚀 Running..."
-  xiotz -updateDASH
+  xiotz -updateDASH-AI
   echo "✅ Completed"
 else
   echo "⏭ Skipped"
 fi
+
+updateAI
+
+
+echo "🔹 COMMAND: xiotz -updateAI"
+if ask_proceed; then
+  echo "🚀 Running..."
+  xiotz -updateAI
+  echo "✅ Completed"
+else
+  echo "⏭ Skipped"
+fi
+
 
 
 echo "🔹 COMMAND: xiotz -status"
