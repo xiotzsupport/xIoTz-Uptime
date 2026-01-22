@@ -1,0 +1,260 @@
+
+<!-- Windows security / cluster rule group -->
+<group name="windows,windows_security">
+  <rule id="100620" level="3">
+    <if_sid>60200</if_sid>
+
+    <!-- Fixed: use match to test the decoded log text for cluster process names -->
+    <!-- Matches lines like: "Process Name: C:\Windows\Cluster\rhs.exe" -->
+    <match>Process Name:\s*C:\\Windows\\Cluster\\(rhs\.exe|clussvc\.exe|resrcmon\.exe)</match>
+
+    <description>Benign Windows Cluster logon (rhs.exe, clussvc.exe, resrcmon.exe) – informational only</description>
+  </rule>
+
+  <rule id="100500" level="12">
+    <if_group>windows</if_group>
+    <field name="win.system.providerName">xIoTz-AD-TTP-Simulator</field>
+    <description>xIoTz simulator: ${win.eventdata.Data}</description>
+    <group>windows,custom,xiotz,xIoTz-TTP</group>
+  </rule>
+</group>
+
+<!-- Exceptions for Windows events -->
+<group name="local,windows,exceptions">
+
+  <!--
+    Rule A: Ignore EventID 4719 when the Security ID shows Local System (S-1-5-18).
+    Matches the raw event text (full_log) for the "Security ID:   S-1-5-18" string.
+  -->
+  <rule id="100600" level="3" overwrite="yes">
+    <if_sid>18107</if_sid>
+    <field name="win.system.eventID">4719</field>
+    <match>Security ID:\s+S-1-5-18</match>
+    <description>Ignore 4719 changes performed by LocalSystem / machine account (S-1-5-18).</description>
+  </rule>
+
+  <!--
+    Rule B: Ignore EventID 4719 when the Account Name appears to be a machine account (ends with $).
+    This searches the event message for a line like "Account Name:    HOSTNAME$"
+  -->
+  <rule id="100601" level="3" overwrite="yes">
+    <field name="win.system.eventID">4719</field>
+    <match>Account Name:\s+\S+\$$</match>
+    <description>Ignore 4719 events where Account Name looks like a machine account (ends with $).</description>
+  </rule>
+
+</group>
+
+<!-- Generic local rules (journald, metricbeat) -->
+<group name="local">
+  <rule id="100900" level="3">
+    <field name="location">journald</field>
+    <description>Deprioritize logs coming from journald (lower severity)</description>
+    <options>no_full_log</options>
+  </rule>
+
+  <!-- Extra: match metricbeat agent forwarding journald entries -->
+  <rule id="100901" level="3">
+    <field name="predecoder.program_name">metricbeat</field>
+    <field name="location">journald</field>
+    <description>Deprioritize metricbeat -> journald forwarded logs</description>
+  </rule>
+</group>
+
+<!-- Windows-specific local tuning -->
+<group name="windows_local">
+
+  <!-- Ignore Event ID 4719 (Audit policy change) by SYSTEM or machine accounts -->
+  <rule id="160110" level="3">
+    <if_sid>60116</if_sid>
+    <match>S-1-5-18|Account Name:\s+\w+\$</match>
+    <description>Ignore Windows audit policy change by SYSTEM or machine accounts ($)</description>
+  </rule>
+
+  <!-- Lower severity to level 3 for service logons initiated by Local System (Logon Type 5, S-1-5-18) -->
+  <rule id="160200" level="3">
+    <description>Lower severity for Event 4624 / service logon (Logon Type 5) initiated by Local System (S-1-5-18)</description>
+
+    <!-- Match Windows Security provider to avoid accidental matches in other logs -->
+    <field name="data.win.system.providerName">Microsoft-Windows-Security-Auditing</field>
+
+    <!-- Content-based match ensures we only match service logons from SYSTEM -->
+    <match>Logon Type:\s*5</match>
+    <match>Security ID:\s*S-1-5-18</match>
+  </rule>
+
+  <!-- Deprioritize all events where the Subject Security ID is Local System (S-1-5-18) -->
+  <rule id="160300" level="3">
+    <match>Security ID:\s*S-1-5-18</match>
+    <description>Lower severity for actions performed by Local System (S-1-5-18)</description>
+  </rule>
+
+  <rule id="160301" level="3">
+    <if_sid>60101</if_sid> <!-- example: 4720 mapping in your ruleset -->
+    <field name="data.win.system.providerName">Microsoft-Windows-Security-Auditing</field>
+    <match>Security ID:\s*S-1-5-18</match>
+    <description>Lower severity for SYSTEM-created accounts (Event 4720)</description>
+  </rule>
+
+</group>
+
+
+<group name="local,ignore">
+
+  <rule id="100001" level="0">
+    <field name="agent.id">000</field>
+    <description>Ignore all alerts and logs from xIoTz UCAP Server host cyberaudit</description>
+  </rule>
+
+</group>
+
+
+<group name="custom_manager">
+  
+  <rule id="100201" level="0" overwrite="yes">
+    <field name="agent.id">000</field>
+    <options>no_full_log</options>
+    <description>Application Compatibility Database launched</description>
+  </rule>
+  
+  <rule id="100202" level="0" overwrite="yes">
+    <field name="agent.id">000</field>
+    <description>Application Compatibility Database launched</description>
+  </rule>
+
+</group>
+
+
+
+
+
+<!-- Windows AD security / cluster rule group -->
+
+
+<group name="windows,">
+  <rule id="100100" level="15">
+    <if_sid>18107</if_sid> <!-- optional correlation to built-in event -->
+    <field name="win.system.eventID">5136</field>
+    <description>AD object modified (Directory Service Changes) - 5136</description>
+  </rule>
+
+  <rule id="100101" level="15">
+    <field name="win.system.eventID">5137</field>
+    <description>AD object created - 5137</description>
+  </rule>
+
+  <rule id="100102" level="15">
+    <field name="win.system.eventID">4738</field>
+    <description>User account changed - 4738</description>
+  </rule>
+
+  <rule id="100103" level="8">
+    <field name="win.system.eventID">4688</field>
+    <description>Process creation - 4688</description>
+  </rule>
+
+  <rule id="100104" level="12">
+    <field name="win.system.eventID">4104</field>
+    <description>PowerShell Script Block executed - 4104</description>
+  </rule>
+
+  <rule id="100651" level="3">
+  <if_sid>92651</if_sid>
+  <description>Ignore successful remote logons (4624)</description>
+  <options>no_full_log</options>
+</rule>
+
+</group>
+
+<!-- Ignore UCAP SOAR netsh active response logs -->
+<group name="local,active_response,ignore">
+
+  <!-- Ignore Wazuh self-restart -->
+  <rule id="170001" level="3" overwrite="yes">
+    <field name="location">active-response/active-responses.log</field>
+    <match>Active response:\s*restart-wazuh\.exe\s*-\s*add</match>
+    <description>Ignore Wazuh self restart active response event</description>
+  </rule>
+
+  <!-- Ignore UCAP SOAR netsh delete action -->
+  <rule id="170002" level="3" overwrite="yes">
+    <field name="location">active-response/active-responses.log</field>
+    <match>UCAP SOAR:\s*active-response/bin/netsh\.exe\s*-\s*delete</match>
+    <description>Ignore UCAP SOAR netsh delete active response event</description>
+  </rule>
+
+  
+<rule id="170003" level="0" overwrite="yes">
+  <if_sid>WINDOWS_EVENT_ID</if_sid>
+  <field name="data.win.eventdata.image">
+    C:\\Program Files \(x86\)\\ossec-agent\\active-response\\bin\\.*
+  </field>
+  <description>Ignore Wazuh active-response binaries</description>
+</rule>
+
+
+<rule id="170004" level="0" overwrite="yes">
+  <if_group>sysmon_eid11_detections</if_group>
+  <regex>
+    (?i)C:\\Program Files \(x86\)\\ossec-agent\\
+  </regex>
+  <description>
+    HARD suppression of Sysmon EID 11 for ossec-agent path
+  </description>
+</rule>
+
+  
+</group>
+
+
+
+<group name="office365,azuread,local">
+
+  <rule id="170005" level="11">
+    <if_matched_sid>91539</if_matched_sid>
+    <field name="data.office365.UserKey">Not Available</field>
+    <description>
+      Office 365 Azure AD event where UserKey is Not Available (severity lowered)
+    </description>
+    <options>no_full_log</options>
+  </rule>
+
+</group>
+
+<group name="windows,windows_security,local_account_changes,">
+  <rule id="170006" level="3">
+    <decoded_as>windows_eventchannel</decoded_as>
+    <field name="data.win.system.channel">Security</field>
+    <field name="data.win.eventdata.subjectUserSid">S-1-5-18</field>
+
+
+    <description>Deprioritize local account/group changes when done by SYSTEM (S-1-5-18)</description>
+  </rule>
+</group>
+
+
+<group name="windows,windows_security,local_account_changes,">
+  <rule id="170008" level="3">
+    <decoded_as>windows_eventchannel</decoded_as>
+    <field name="data.win.system.channel">Security</field>
+    <field name="data.win.eventdata.subjectLogonId">0x3e7</field>
+
+    <!-- Local user/group management events -->
+    <field name="data.win.system.eventID">4720|4722|4723|4724|4725|4726|4735|4732|4733|4734|4738</field>
+    
+    <description>Ignore Security events generated by SYSTEM logon session (0x3e7)</description>
+  </rule>
+</group>
+
+
+<group name="office365,ignore,">
+  <rule id="170009" level="0">
+    <field name="data.office365.UserId">app@sharepoint</field>
+    <description>Ignore Office365 events generated by app@sharepoint</description>
+  </rule>
+</group>
+
+
+
+
+
