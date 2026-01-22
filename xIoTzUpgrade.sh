@@ -108,14 +108,6 @@ else
 fi
 
 
-echo "🔹 COMMAND: xiotz -updateAIReports"
-if ask_proceed; then
-  echo "🚀 Running..."
-  xiotz -updateAIReports
-  echo "✅ Completed"
-else
-  echo "⏭ Skipped"
-fi
 
 echo "🔹 COMMAND: xiotz -status"
 if ask_proceed; then
