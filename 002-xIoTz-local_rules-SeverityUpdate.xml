@@ -256,5 +256,24 @@
 
 
 
+<group name="windows,wef,critical_process,">
+
+  <!-- Ignore all process creation by default -->
+  <rule id="170010" level="0">
+    <if_group>windows</if_group>
+    <match>A process was created</match>
+    <description>Ignore normal process creation events</description>
+  </rule>
+
+  <!-- Alert only suspicious process execution -->
+  <rule id="170011" level="10">
+    <if_sid>110010</if_sid>
+    <regex>\\(powershell|pwsh|cmd|wscript|cscript|mshta|rundll32|regsvr32|certutil|bitsadmin|wmic|psexec|schtasks)\.exe</regex>
+    <description>CRITICAL: Suspicious process created</description>
+  </rule>
+
+</group>
+
+
 
 
