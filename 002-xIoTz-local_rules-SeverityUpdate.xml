@@ -195,14 +195,11 @@
 
 <rule id="170004" level="0" overwrite="yes">
   <if_group>sysmon_eid11_detections</if_group>
-  <regex>
-    (?i)C:\\Program Files \(x86\)\\ossec-agent\\
-  </regex>
-  <description>
-    HARD suppression of Sysmon EID 11 for ossec-agent path
-  </description>
-</rule>
 
+  <field name="win.eventdata.TargetFilename">(?i)^C:\\Program Files \(x86\)\\ossec-agent\\</field>
+
+  <description>HARD suppression of Sysmon EID 11 for ossec-agent path</description>
+</rule>
   
 </group>
 
