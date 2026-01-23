@@ -265,12 +265,13 @@
     <description>Ignore normal process creation events</description>
   </rule>
 
-  <!-- Alert only on suspicious process names -->
+  <!-- Alert only on suspicious tools (match anywhere in the event text) -->
   <rule id="170011" level="10">
     <if_sid>170010</if_sid>
-    <field name="win.eventdata.NewProcessName">(?i)\\(powershell|pwsh|cmd|wscript|cscript|mshta|rundll32|regsvr32|certutil|bitsadmin|wmic|psexec|schtasks)\.exe$</field>
+    <regex>(?i)(powershell|pwsh|cmd|wscript|cscript|mshta|rundll32|regsvr32|certutil|bitsadmin|wmic|psexec|schtasks)\.exe</regex>
     <description>CRITICAL: Suspicious process created</description>
   </rule>
 
 </group>
+
 
