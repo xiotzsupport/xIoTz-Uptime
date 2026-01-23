@@ -258,14 +258,12 @@
 
 <group name="windows,wef,process_filter,">
 
-  <!-- Ignore all process creation by default -->
   <rule id="170010" level="0">
     <if_group>windows</if_group>
     <match>A process was created</match>
     <description>Ignore normal process creation events</description>
   </rule>
 
-  <!-- Alert only on suspicious tools (match anywhere in the event text) -->
   <rule id="170011" level="10">
     <if_sid>170010</if_sid>
     <regex>(?i)(powershell|pwsh|cmd|wscript|cscript|mshta|rundll32|regsvr32|certutil|bitsadmin|wmic|psexec|schtasks)\.exe</regex>
@@ -273,5 +271,4 @@
   </rule>
 
 </group>
-
 
