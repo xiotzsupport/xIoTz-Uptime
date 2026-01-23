@@ -255,424 +255,81 @@
 </group>
 
 
+
 <group name="windows,wef,process_filter,">
 
+  <!-- Ignore all process creation by default -->
   <rule id="170010" level="0">
     <if_group>windows</if_group>
     <match>A process was created</match>
     <description>Ignore normal process creation events</description>
   </rule>
 
-  <rule id="170011" level="10">
-    <if_sid>170010</if_sid>
-    <match>powershell.exe</match>
-    <description>CRITICAL: powershell executed</description>
-  </rule>
+  <!-- Suspicious / critical processes -->
+  <rule id="170011" level="10"><if_sid>170010</if_sid><match>powershell.exe</match><description>CRITICAL: powershell executed</description></rule>
+  <rule id="170012" level="10"><if_sid>170010</if_sid><match>pwsh.exe</match><description>CRITICAL: pwsh executed</description></rule>
+  <rule id="170013" level="10"><if_sid>170010</if_sid><match>cmd.exe</match><description>CRITICAL: cmd executed</description></rule>
+  <rule id="170014" level="10"><if_sid>170010</if_sid><match>wscript.exe</match><description>CRITICAL: wscript executed</description></rule>
+  <rule id="170015" level="10"><if_sid>170010</if_sid><match>cscript.exe</match><description>CRITICAL: cscript executed</description></rule>
+  <rule id="170016" level="10"><if_sid>170010</if_sid><match>mshta.exe</match><description>CRITICAL: mshta executed</description></rule>
+  <rule id="170017" level="10"><if_sid>170010</if_sid><match>rundll32.exe</match><description>CRITICAL: rundll32 executed</description></rule>
+  <rule id="170018" level="10"><if_sid>170010</if_sid><match>regsvr32.exe</match><description>CRITICAL: regsvr32 executed</description></rule>
+  <rule id="170019" level="10"><if_sid>170010</if_sid><match>certutil.exe</match><description>CRITICAL: certutil executed</description></rule>
+  <rule id="170020" level="10"><if_sid>170010</if_sid><match>bitsadmin.exe</match><description>CRITICAL: bitsadmin executed</description></rule>
+  <rule id="170021" level="10"><if_sid>170010</if_sid><match>wmic.exe</match><description>CRITICAL: wmic executed</description></rule>
+  <rule id="170022" level="10"><if_sid>170010</if_sid><match>schtasks.exe</match><description>CRITICAL: schtasks executed</description></rule>
 
-  <rule id="170012" level="10">
-    <if_sid>170010</if_sid>
-    <match>pwsh.exe</match>
-    <description>CRITICAL: pwsh executed</description>
-  </rule>
-
-  <rule id="170013" level="10">
-    <if_sid>170010</if_sid>
-    <match>cmd.exe</match>
-    <description>CRITICAL: cmd executed</description>
-  </rule>
-
-  <rule id="170014" level="10">
-    <if_sid>170010</if_sid>
-    <match>wscript.exe</match>
-    <description>CRITICAL: wscript executed</description>
-  </rule>
-
-  <rule id="170015" level="10">
-    <if_sid>170010</if_sid>
-    <match>cscript.exe</match>
-    <description>CRITICAL: cscript executed</description>
-  </rule>
-
-  <rule id="170016" level="10">
-    <if_sid>170010</if_sid>
-    <match>mshta.exe</match>
-    <description>CRITICAL: mshta executed</description>
-  </rule>
-
-  <rule id="170017" level="10">
-    <if_sid>170010</if_sid>
-    <match>rundll32.exe</match>
-    <description>CRITICAL: rundll32 executed</description>
-  </rule>
-
-  <rule id="170018" level="10">
-    <if_sid>170010</if_sid>
-    <match>regsvr32.exe</match>
-    <description>CRITICAL: regsvr32 executed</description>
-  </rule>
-
-  <rule id="170019" level="10">
-    <if_sid>170010</if_sid>
-    <match>certutil.exe</match>
-    <description>CRITICAL: certutil executed</description>
-  </rule>
-
-  <rule id="170020" level="10">
-    <if_sid>170010</if_sid>
-    <match>bitsadmin.exe</match>
-    <description>CRITICAL: bitsadmin executed</description>
-  </rule>
-
-  <rule id="170021" level="10">
-    <if_sid>170010</if_sid>
-    <match>wmic.exe</match>
-    <description>CRITICAL: wmic executed</description>
-  </rule>
-
-  <rule id="170022" level="10">
-    <if_sid>170010</if_sid>
-    <match>schtasks.exe</match>
-    <description>CRITICAL: schtasks executed</description>
-  </rule>
+  <rule id="170023" level="10"><if_sid>170010</if_sid><match>whoami.exe</match><description>CRITICAL: whoami executed</description></rule>
+  <rule id="170024" level="10"><if_sid>170010</if_sid><match>net.exe</match><description>CRITICAL: net executed</description></rule>
+  <rule id="170025" level="10"><if_sid>170010</if_sid><match>net1.exe</match><description>CRITICAL: net1 executed</description></rule>
+  <rule id="170026" level="10"><if_sid>170010</if_sid><match>nltest.exe</match><description>CRITICAL: nltest executed</description></rule>
+  <rule id="170027" level="10"><if_sid>170010</if_sid><match>dsquery.exe</match><description>CRITICAL: dsquery executed</description></rule>
+  <rule id="170028" level="10"><if_sid>170010</if_sid><match>dsget.exe</match><description>CRITICAL: dsget executed</description></rule>
+  <rule id="170029" level="10"><if_sid>170010</if_sid><match>quser.exe</match><description>CRITICAL: quser executed</description></rule>
+  <rule id="170030" level="10"><if_sid>170010</if_sid><match>query.exe</match><description>CRITICAL: query executed</description></rule>
+  <rule id="170031" level="10"><if_sid>170010</if_sid><match>tasklist.exe</match><description>CRITICAL: tasklist executed</description></rule>
+  <rule id="170032" level="10"><if_sid>170010</if_sid><match>taskkill.exe</match><description>CRITICAL: taskkill executed</description></rule>
+  <rule id="170033" level="10"><if_sid>170010</if_sid><match>sc.exe</match><description>CRITICAL: sc executed</description></rule>
+  <rule id="170034" level="10"><if_sid>170010</if_sid><match>reg.exe</match><description>CRITICAL: reg executed</description></rule>
+  <rule id="170035" level="10"><if_sid>170010</if_sid><match>vssadmin.exe</match><description>CRITICAL: vssadmin executed</description></rule>
+  <rule id="170036" level="10"><if_sid>170010</if_sid><match>wbadmin.exe</match><description>CRITICAL: wbadmin executed</description></rule>
+  <rule id="170037" level="10"><if_sid>170010</if_sid><match>bcdedit.exe</match><description>CRITICAL: bcdedit executed</description></rule>
+  <rule id="170038" level="10"><if_sid>170010</if_sid><match>wevtutil.exe</match><description>CRITICAL: wevtutil executed</description></rule>
+  <rule id="170039" level="10"><if_sid>170010</if_sid><match>auditpol.exe</match><description>CRITICAL: auditpol executed</description></rule>
+  <rule id="170040" level="10"><if_sid>170010</if_sid><match>icacls.exe</match><description>CRITICAL: icacls executed</description></rule>
+  <rule id="170041" level="10"><if_sid>170010</if_sid><match>takeown.exe</match><description>CRITICAL: takeown executed</description></rule>
+  <rule id="170042" level="10"><if_sid>170010</if_sid><match>attrib.exe</match><description>CRITICAL: attrib executed</description></rule>
+  <rule id="170043" level="10"><if_sid>170010</if_sid><match>cipher.exe</match><description>CRITICAL: cipher executed</description></rule>
+  <rule id="170044" level="10"><if_sid>170010</if_sid><match>fsutil.exe</match><description>CRITICAL: fsutil executed</description></rule>
+  <rule id="170045" level="10"><if_sid>170010</if_sid><match>findstr.exe</match><description>CRITICAL: findstr executed</description></rule>
+  <rule id="170046" level="10"><if_sid>170010</if_sid><match>curl.exe</match><description>CRITICAL: curl executed</description></rule>
+  <rule id="170047" level="10"><if_sid>170010</if_sid><match>wget.exe</match><description>CRITICAL: wget executed</description></rule>
+  <rule id="170048" level="10"><if_sid>170010</if_sid><match>certreq.exe</match><description>CRITICAL: certreq executed</description></rule>
+  <rule id="170049" level="10"><if_sid>170010</if_sid><match>certmgr.exe</match><description>CRITICAL: certmgr executed</description></rule>
+  <rule id="170050" level="10"><if_sid>170010</if_sid><match>control.exe</match><description>CRITICAL: control executed</description></rule>
+  <rule id="170051" level="10"><if_sid>170010</if_sid><match>mstsc.exe</match><description>CRITICAL: mstsc executed</description></rule>
+  <rule id="170052" level="10"><if_sid>170010</if_sid><match>runas.exe</match><description>CRITICAL: runas executed</description></rule>
+  <rule id="170053" level="10"><if_sid>170010</if_sid><match>shutdown.exe</match><description>CRITICAL: shutdown executed</description></rule>
+  <rule id="170054" level="10"><if_sid>170010</if_sid><match>gpupdate.exe</match><description>CRITICAL: gpupdate executed</description></rule>
+  <rule id="170055" level="10"><if_sid>170010</if_sid><match>gpresult.exe</match><description>CRITICAL: gpresult executed</description></rule>
+  <rule id="170056" level="10"><if_sid>170010</if_sid><match>secedit.exe</match><description>CRITICAL: secedit executed</description></rule>
+  <rule id="170057" level="10"><if_sid>170010</if_sid><match>powershell_ise.exe</match><description>CRITICAL: powershell_ise executed</description></rule>
+  <rule id="170058" level="10"><if_sid>170010</if_sid><match>python.exe</match><description>CRITICAL: python executed</description></rule>
+  <rule id="170059" level="10"><if_sid>170010</if_sid><match>rclone.exe</match><description>CRITICAL: rclone executed</description></rule>
+  <rule id="170060" level="10"><if_sid>170010</if_sid><match>7z.exe</match><description>CRITICAL: 7z executed</description></rule>
+  <rule id="170061" level="10"><if_sid>170010</if_sid><match>winrar.exe</match><description>CRITICAL: winrar executed</description></rule>
+  <rule id="170062" level="10"><if_sid>170010</if_sid><match>rar.exe</match><description>CRITICAL: rar executed</description></rule>
+  <rule id="170063" level="10"><if_sid>170010</if_sid><match>procdump.exe</match><description>CRITICAL: procdump executed</description></rule>
+  <rule id="170064" level="10"><if_sid>170010</if_sid><match>mimikatz.exe</match><description>CRITICAL: mimikatz executed</description></rule>
+  <rule id="170065" level="10"><if_sid>170010</if_sid><match>at.exe</match><description>CRITICAL: at executed</description></rule>
+  <rule id="170066" level="10"><if_sid>170010</if_sid><match>netsh.exe</match><description>CRITICAL: netsh executed</description></rule>
+  <rule id="170067" level="10"><if_sid>170010</if_sid><match>route.exe</match><description>CRITICAL: route executed</description></rule>
+  <rule id="170068" level="10"><if_sid>170010</if_sid><match>ipconfig.exe</match><description>CRITICAL: ipconfig executed</description></rule>
+  <rule id="170069" level="10"><if_sid>170010</if_sid><match>nslookup.exe</match><description>CRITICAL: nslookup executed</description></rule>
+  <rule id="170070" level="10"><if_sid>170010</if_sid><match>ping.exe</match><description>CRITICAL: ping executed</description></rule>
+  <rule id="170071" level="10"><if_sid>170010</if_sid><match>tracert.exe</match><description>CRITICAL: tracert executed</description></rule>
+  <rule id="170072" level="10"><if_sid>170010</if_sid><match>arp.exe</match><description>CRITICAL: arp executed</description></rule>
+  <rule id="170073" level="10"><if_sid>170010</if_sid><match>netstat.exe</match><description>CRITICAL: netstat executed</description></rule>
+  <rule id="170074" level="10"><if_sid>170010</if_sid><match>systeminfo.exe</match><description>CRITICAL: systeminfo executed</description></rule>
 
 </group>
-
-
-  <!-- Living-off-the-land binaries (LOLBins) / common attacker tools -->
-  <rule id="170023" level="10">
-    <if_sid>170010</if_sid>
-    <match>whoami.exe</match>
-    <description>CRITICAL: whoami executed</description>
-  </rule>
-
-  <rule id="170024" level="10">
-    <if_sid>170010</if_sid>
-    <match>net.exe</match>
-    <description>CRITICAL: net executed</description>
-  </rule>
-
-  <rule id="170025" level="10">
-    <if_sid>170010</if_sid>
-    <match>net1.exe</match>
-    <description>CRITICAL: net1 executed</description>
-  </rule>
-
-  <rule id="170026" level="10">
-    <if_sid>170010</if_sid>
-    <match>nltest.exe</match>
-    <description>CRITICAL: nltest executed</description>
-  </rule>
-
-  <rule id="170027" level="10">
-    <if_sid>170010</if_sid>
-    <match>dsquery.exe</match>
-    <description>CRITICAL: dsquery executed</description>
-  </rule>
-
-  <rule id="170028" level="10">
-    <if_sid>170010</if_sid>
-    <match>dsget.exe</match>
-    <description>CRITICAL: dsget executed</description>
-  </rule>
-
-  <rule id="170029" level="10">
-    <if_sid>170010</if_sid>
-    <match>quser.exe</match>
-    <description>CRITICAL: quser executed</description>
-  </rule>
-
-  <rule id="170030" level="10">
-    <if_sid>170010</if_sid>
-    <match>query.exe</match>
-    <description>CRITICAL: query executed</description>
-  </rule>
-
-  <rule id="170031" level="10">
-    <if_sid>170010</if_sid>
-    <match>tasklist.exe</match>
-    <description>CRITICAL: tasklist executed</description>
-  </rule>
-
-  <rule id="170032" level="10">
-    <if_sid>170010</if_sid>
-    <match>taskkill.exe</match>
-    <description>CRITICAL: taskkill executed</description>
-  </rule>
-
-  <rule id="170033" level="10">
-    <if_sid>170010</if_sid>
-    <match>sc.exe</match>
-    <description>CRITICAL: sc executed</description>
-  </rule>
-
-  <rule id="170034" level="10">
-    <if_sid>170010</if_sid>
-    <match>reg.exe</match>
-    <description>CRITICAL: reg executed</description>
-  </rule>
-
-  <rule id="170035" level="10">
-    <if_sid>170010</if_sid>
-    <match>vssadmin.exe</match>
-    <description>CRITICAL: vssadmin executed</description>
-  </rule>
-
-  <rule id="170036" level="10">
-    <if_sid>170010</if_sid>
-    <match>wbadmin.exe</match>
-    <description>CRITICAL: wbadmin executed</description>
-  </rule>
-
-  <rule id="170037" level="10">
-    <if_sid>170010</if_sid>
-    <match>bcdedit.exe</match>
-    <description>CRITICAL: bcdedit executed</description>
-  </rule>
-
-  <rule id="170038" level="10">
-    <if_sid>170010</if_sid>
-    <match>wevtutil.exe</match>
-    <description>CRITICAL: wevtutil executed</description>
-  </rule>
-
-  <rule id="170039" level="10">
-    <if_sid>170010</if_sid>
-    <match>auditpol.exe</match>
-    <description>CRITICAL: auditpol executed</description>
-  </rule>
-
-  <rule id="170040" level="10">
-    <if_sid>170010</if_sid>
-    <match>icacls.exe</match>
-    <description>CRITICAL: icacls executed</description>
-  </rule>
-
-  <rule id="170041" level="10">
-    <if_sid>170010</if_sid>
-    <match>takeown.exe</match>
-    <description>CRITICAL: takeown executed</description>
-  </rule>
-
-  <rule id="170042" level="10">
-    <if_sid>170010</if_sid>
-    <match>attrib.exe</match>
-    <description>CRITICAL: attrib executed</description>
-  </rule>
-
-  <rule id="170043" level="10">
-    <if_sid>170010</if_sid>
-    <match>cipher.exe</match>
-    <description>CRITICAL: cipher executed</description>
-  </rule>
-
-  <rule id="170044" level="10">
-    <if_sid>170010</if_sid>
-    <match>fsutil.exe</match>
-    <description>CRITICAL: fsutil executed</description>
-  </rule>
-
-  <rule id="170045" level="10">
-    <if_sid>170010</if_sid>
-    <match>findstr.exe</match>
-    <description>CRITICAL: findstr executed</description>
-  </rule>
-
-  <rule id="170046" level="10">
-    <if_sid>170010</if_sid>
-    <match>curl.exe</match>
-    <description>CRITICAL: curl executed</description>
-  </rule>
-
-  <rule id="170047" level="10">
-    <if_sid>170010</if_sid>
-    <match>wget.exe</match>
-    <description>CRITICAL: wget executed</description>
-  </rule>
-
-  <rule id="170048" level="10">
-    <if_sid>170010</if_sid>
-    <match>certreq.exe</match>
-    <description>CRITICAL: certreq executed</description>
-  </rule>
-
-  <rule id="170049" level="10">
-    <if_sid>170010</if_sid>
-    <match>certmgr.exe</match>
-    <description>CRITICAL: certmgr executed</description>
-  </rule>
-
-  <rule id="170050" level="10">
-    <if_sid>170010</if_sid>
-    <match>wmiprvse.exe</match>
-    <description>CRITICAL: wmiprvse executed</description>
-  </rule>
-
-  <rule id="170051" level="10">
-    <if_sid>170010</if_sid>
-    <match>rundll32.exe</match>
-    <description>CRITICAL: rundll32 executed</description>
-  </rule>
-
-  <rule id="170052" level="10">
-    <if_sid>170010</if_sid>
-    <match>control.exe</match>
-    <description>CRITICAL: control executed</description>
-  </rule>
-
-  <rule id="170053" level="10">
-    <if_sid>170010</if_sid>
-    <match>mstsc.exe</match>
-    <description>CRITICAL: mstsc (RDP client) executed</description>
-  </rule>
-
-  <rule id="170054" level="10">
-    <if_sid>170010</if_sid>
-    <match>runas.exe</match>
-    <description>CRITICAL: runas executed</description>
-  </rule>
-
-  <rule id="170055" level="10">
-    <if_sid>170010</if_sid>
-    <match>logoff.exe</match>
-    <description>CRITICAL: logoff executed</description>
-  </rule>
-
-  <rule id="170056" level="10">
-    <if_sid>170010</if_sid>
-    <match>shutdown.exe</match>
-    <description>CRITICAL: shutdown executed</description>
-  </rule>
-
-  <rule id="170057" level="10">
-    <if_sid>170010</if_sid>
-    <match>gpupdate.exe</match>
-    <description>CRITICAL: gpupdate executed</description>
-  </rule>
-
-  <rule id="170058" level="10">
-    <if_sid>170010</if_sid>
-    <match>gpresult.exe</match>
-    <description>CRITICAL: gpresult executed</description>
-  </rule>
-
-  <rule id="170059" level="10">
-    <if_sid>170010</if_sid>
-    <match>secedit.exe</match>
-    <description>CRITICAL: secedit executed</description>
-  </rule>
-
-  <rule id="170060" level="10">
-    <if_sid>170010</if_sid>
-    <match>powershell_ise.exe</match>
-    <description>CRITICAL: powershell_ise executed</description>
-  </rule>
-
-  <rule id="170061" level="10">
-    <if_sid>170010</if_sid>
-    <match>python.exe</match>
-    <description>CRITICAL: python executed</description>
-  </rule>
-
-  <rule id="170062" level="10">
-    <if_sid>170010</if_sid>
-    <match>rclone.exe</match>
-    <description>CRITICAL: rclone executed</description>
-  </rule>
-
-  <rule id="170063" level="10">
-    <if_sid>170010</if_sid>
-    <match>7z.exe</match>
-    <description>CRITICAL: 7z executed</description>
-  </rule>
-
-  <rule id="170064" level="10">
-    <if_sid>170010</if_sid>
-    <match>winrar.exe</match>
-    <description>CRITICAL: winrar executed</description>
-  </rule>
-
-  <rule id="170065" level="10">
-    <if_sid>170010</if_sid>
-    <match>rar.exe</match>
-    <description>CRITICAL: rar executed</description>
-  </rule>
-
-  <rule id="170066" level="10">
-    <if_sid>170010</if_sid>
-    <match>procdump.exe</match>
-    <description>CRITICAL: procdump executed</description>
-  </rule>
-
-  <rule id="170067" level="10">
-    <if_sid>170010</if_sid>
-    <match>mimikatz.exe</match>
-    <description>CRITICAL: mimikatz executed</description>
-  </rule>
-
-  <rule id="170068" level="10">
-    <if_sid>170010</if_sid>
-    <match>psexec.exe</match>
-    <description>CRITICAL: psexec executed</description>
-  </rule>
-
-  <rule id="170069" level="10">
-    <if_sid>170010</if_sid>
-    <match>at.exe</match>
-    <description>CRITICAL: at executed</description>
-  </rule>
-
-  <rule id="170070" level="10">
-    <if_sid>170010</if_sid>
-    <match>netsh.exe</match>
-    <description>CRITICAL: netsh executed</description>
-  </rule>
-
-  <rule id="170071" level="10">
-    <if_sid>170010</if_sid>
-    <match>route.exe</match>
-    <description>CRITICAL: route executed</description>
-  </rule>
-
-  <rule id="170072" level="10">
-    <if_sid>170010</if_sid>
-    <match>ipconfig.exe</match>
-    <description>CRITICAL: ipconfig executed</description>
-  </rule>
-
-  <rule id="170073" level="10">
-    <if_sid>170010</if_sid>
-    <match>nslookup.exe</match>
-    <description>CRITICAL: nslookup executed</description>
-  </rule>
-
-  <rule id="170074" level="10">
-    <if_sid>170010</if_sid>
-    <match>ping.exe</match>
-    <description>CRITICAL: ping executed</description>
-  </rule>
-
-  <rule id="170075" level="10">
-    <if_sid>170010</if_sid>
-    <match>tracert.exe</match>
-    <description>CRITICAL: tracert executed</description>
-  </rule>
-
-  <rule id="170076" level="10">
-    <if_sid>170010</if_sid>
-    <match>arp.exe</match>
-    <description>CRITICAL: arp executed</description>
-  </rule>
-
-  <rule id="170077" level="10">
-    <if_sid>170010</if_sid>
-    <match>netstat.exe</match>
-    <description>CRITICAL: netstat executed</description>
-  </rule>
-
-  <rule id="170078" level="10">
-    <if_sid>170010</if_sid>
-    <match>systeminfo.exe</match>
-    <description>CRITICAL: systeminfo executed</description>
-  </rule>
-
-
