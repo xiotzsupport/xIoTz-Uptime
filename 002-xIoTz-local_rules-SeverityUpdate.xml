@@ -256,7 +256,7 @@
 
 
 
-<group name="windows,wef,critical_process,">
+<group name="windows,wef,process_filter,">
 
   <!-- Ignore all process creation by default -->
   <rule id="170010" level="0">
@@ -265,15 +265,12 @@
     <description>Ignore normal process creation events</description>
   </rule>
 
-  <!-- Alert only suspicious process execution -->
+  <!-- Alert only on suspicious process names -->
   <rule id="170011" level="10">
-    <if_sid>110010</if_sid>
-    <regex>\\(powershell|pwsh|cmd|wscript|cscript|mshta|rundll32|regsvr32|certutil|bitsadmin|wmic|psexec|schtasks)\.exe</regex>
+    <if_sid>170010</if_sid>
+    <field name="win.eventdata.NewProcessName">(?i)\\(powershell|pwsh|cmd|wscript|cscript|mshta|rundll32|regsvr32|certutil|bitsadmin|wmic|psexec|schtasks)\.exe$</field>
     <description>CRITICAL: Suspicious process created</description>
   </rule>
 
 </group>
-
-
-
 
