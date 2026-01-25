@@ -11,7 +11,7 @@
 
 <!-- Windows security / cluster rule group -->
 <group name="windows,windows_security">
-  <rule id="100620" level="3">
+  <rule id="110620" level="3">
     <if_sid>60200</if_sid>
 
     <!-- Fixed: use match to test the decoded log text for cluster process names -->
@@ -21,7 +21,7 @@
     <description>Benign Windows Cluster logon (rhs.exe, clussvc.exe, resrcmon.exe) – informational only</description>
   </rule>
 
-  <rule id="100500" level="12">
+  <rule id="110500" level="12">
     <if_group>windows</if_group>
     <field name="win.system.providerName">xIoTz-AD-TTP-Simulator</field>
     <description>xIoTz simulator: ${win.eventdata.Data}</description>
@@ -36,7 +36,7 @@
     Rule A: Ignore EventID 4719 when the Security ID shows Local System (S-1-5-18).
     Matches the raw event text (full_log) for the "Security ID:   S-1-5-18" string.
   -->
-  <rule id="100600" level="3" overwrite="yes">
+  <rule id="110600" level="3" overwrite="yes">
     <if_sid>18107</if_sid>
     <field name="win.system.eventID">4719</field>
     <match>Security ID:\s+S-1-5-18</match>
@@ -47,7 +47,7 @@
     Rule B: Ignore EventID 4719 when the Account Name appears to be a machine account (ends with $).
     This searches the event message for a line like "Account Name:    HOSTNAME$"
   -->
-  <rule id="100601" level="3" overwrite="yes">
+  <rule id="110601" level="3" overwrite="yes">
     <field name="win.system.eventID">4719</field>
     <match>Account Name:\s+\S+\$$</match>
     <description>Ignore 4719 events where Account Name looks like a machine account (ends with $).</description>
@@ -57,14 +57,14 @@
 
 <!-- Generic local rules (journald, metricbeat) -->
 <group name="local">
-  <rule id="100900" level="3">
+  <rule id="110900" level="3">
     <field name="location">journald</field>
     <description>Deprioritize logs coming from journald (lower severity)</description>
     <options>no_full_log</options>
   </rule>
 
   <!-- Extra: match metricbeat agent forwarding journald entries -->
-  <rule id="100901" level="3">
+  <rule id="110901" level="3">
     <field name="predecoder.program_name">metricbeat</field>
     <field name="location">journald</field>
     <description>Deprioritize metricbeat -> journald forwarded logs</description>
