@@ -2,14 +2,32 @@
 
 ask_proceed() {
   echo
-  read -rp "👉 Press ENTER to proceed | type 'skip' to skip | type 'no' to stop: " ans
+  echo "👉 Press ENTER or 'y' to proceed | type 'skip' to skip | type 'no' to stop (auto-continue in 5s):"
+
+  # Read with 5s timeout
+  read -rt 5 ans
+
+  # If timeout (no input)
+  if [ $? -ne 0 ]; then
+    echo "⏳ Timeout reached. Proceeding automatically..."
+    return 0
+  fi
 
   case "$ans" in
-    "" ) return 0 ;;
-    skip|SKIP ) return 1 ;;
-    no|NO ) echo "🛑 Stopped by user."; exit 0 ;;
-    * ) echo "⚠️ Invalid input. Press ENTER / type skip / type no"
-        ask_proceed ;;
+    ""|y|Y )
+      return 0
+      ;;
+    skip|SKIP )
+      return 1
+      ;;
+    no|NO )
+      echo "🛑 Stopped by user."
+      exit 0
+      ;;
+    * )
+      echo "⚠️ Invalid input. Waiting again..."
+      ask_proceed
+      ;;
   esac
 }
 
@@ -19,11 +37,15 @@ echo "============================================================"
 
 run_cmd() {
   local cmd="$1"
+  echo
   echo "🔹 COMMAND: $cmd"
+
   if ask_proceed; then
     echo "🚀 Running..."
     eval "$cmd"
     echo "✅ Completed"
+    echo "⏱ Sleeping 5 seconds..."
+    sleep 5
   else
     echo "⏭ Skipped"
   fi
