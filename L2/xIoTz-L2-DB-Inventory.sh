@@ -1,16 +1,10 @@
 #!/bin/bash
 
-# ================================
-# Source Xiotz Environment Files
-# ================================
 source /etc/xiotz/variables/variables.txt
 source /etc/xiotz/variables/credentials.txt
 
 echo -e "\n"
 
-# ================================
-# Header
-# ================================
 echo "🗂️  ========================================"
 echo "📊  Xiotz Index Prefix Inventory (With Size)"
 echo "⏱️  Generated: $(date)"
@@ -21,30 +15,25 @@ echo "🔐 Authenticating as: $coreAdminUser"
 echo "📥 Fetching index list with sizes..."
 sleep 1
 
-# ================================
-# Fetch + Aggregate
-# ================================
 INDEX_PREFIX_REPORT=$(curl -s -u "$coreAdminUser:$coreAdminPass" \
-  "https://127.0.0.1:$dbPort/_cat/indices?h=index,store.size&bytes=gb" \
+  "https://127.0.0.1:$dbPort/_cat/indices?h=index,store.size&bytes=b" \
   --insecure | \
   sed 's/-[0-9].*$//' | \
   awk '
   {
     prefix=$1
-    size=$2
+    size_bytes=$2 + 0   # force numeric
     count[prefix]++
-    total_size[prefix]+=size
+    total_bytes[prefix]+=size_bytes
   }
   END {
     for (p in count) {
-      printf "📁  %-20s → %3d indices → %.2f GB\n", p"*", count[p], total_size[p]
+      gb = total_bytes[p] / (1024*1024*1024)
+      printf "%d|📁  %-45s → %3d indices → %.2f GB\n", count[p], p"*", count[p], gb
     }
-  }' | sort -t'→' -k2 -nr
+  }' | sort -t'|' -k1 -nr | cut -d'|' -f2-
 )
 
-# ================================
-# Display on Screen
-# ================================
 echo -e "\n📦 Index Prefix Summary:"
 echo "----------------------------------------"
 echo "$INDEX_PREFIX_REPORT"
