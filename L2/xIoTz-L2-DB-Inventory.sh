@@ -1,42 +1,89 @@
 #!/bin/bash
 
+# ==================================================
+# Xiotz L2 – OpenSearch Index Prefix Inventory
+# With Size Aggregation + Totals (GB Only)
+# ==================================================
+
+# ================================
+# Source Xiotz Environment Files
+# ================================
 source /etc/xiotz/variables/variables.txt
 source /etc/xiotz/variables/credentials.txt
 
-echo -e "\n"
+OPENSEARCH_URL="https://127.0.0.1:$dbPort"
 
+echo
 echo "🗂️  ========================================"
-echo "📊  Xiotz Index Prefix Inventory (With Size)"
+echo "📊  Xiotz Index Prefix Inventory (GB Only)"
 echo "⏱️  Generated: $(date)"
-echo "🗂️  ========================================\n"
-
-echo "🔌 Connecting to OpenSearch at https://127.0.0.1:$dbPort ..."
+echo "🗂️  ========================================"
+echo
+echo "🔌 Connecting to OpenSearch at $OPENSEARCH_URL ..."
 echo "🔐 Authenticating as: $coreAdminUser"
 echo "📥 Fetching index list with sizes..."
-sleep 1
+echo
 
-INDEX_PREFIX_REPORT=$(curl -s -u "$coreAdminUser:$coreAdminPass" \
-  "https://127.0.0.1:$dbPort/_cat/indices?h=index,store.size&bytes=b" \
-  --insecure | \
-  sed 's/-[0-9].*$//' | \
-  awk '
-  {
-    prefix=$1
-    size_bytes=$2 + 0   # force numeric
-    count[prefix]++
-    total_bytes[prefix]+=size_bytes
+RAW_OUTPUT=$(curl -s -u "$coreAdminUser:$coreAdminPass" \
+  "$OPENSEARCH_URL/_cat/indices?h=index,store.size" \
+  --insecure)
+
+REPORT_AND_TOTALS=$(echo "$RAW_OUTPUT" | awk '
+function to_bytes(v) {
+  if (v ~ /kb$/) return substr(v,1,length(v)-2) * 1024
+  if (v ~ /mb$/) return substr(v,1,length(v)-2) * 1024 * 1024
+  if (v ~ /gb$/) return substr(v,1,length(v)-2) * 1024 * 1024 * 1024
+  if (v ~ /b$/)  return substr(v,1,length(v)-1)
+  return 0
+}
+
+NF >= 2 {
+  name = $1
+  size = to_bytes($2)
+
+  # Strip rolling date suffixes only
+  sub(/-[0-9]{4}\.[0-9]{2}.*/, "", name)
+
+  count[name]++
+  total[name] += size
+
+  grand_count++
+  grand_total += size
+}
+
+END {
+  for (n in count) {
+    gb = total[n] / (1024*1024*1024)
+    printf "📁  %-50s → %3d indices → %.2f GB\n", n"*", count[n], gb
   }
-  END {
-    for (p in count) {
-      gb = total_bytes[p] / (1024*1024*1024)
-      printf "%d|📁  %-45s → %3d indices → %.2f GB\n", count[p], p"*", count[p], gb
-    }
-  }' | sort -t'|' -k1 -nr | cut -d'|' -f2-
-)
 
-echo -e "\n📦 Index Prefix Summary:"
+  printf "__TOTALS__|%d|%.2f\n", grand_count, grand_total / (1024*1024*1024)
+}')
+
+# ================================
+# Separate Totals from Report
+# ================================
+TOTAL_LINE=$(echo "$REPORT_AND_TOTALS" | grep '^__TOTALS__')
+CLEAN_REPORT=$(echo "$REPORT_AND_TOTALS" | grep -v '^__TOTALS__')
+
+TOTAL_INDEX_COUNT=$(echo "$TOTAL_LINE" | cut -d'|' -f2)
+TOTAL_SIZE_GB=$(echo "$TOTAL_LINE" | cut -d'|' -f3)
+
+# ================================
+# Sort Report (by index count desc)
+# ================================
+SORTED_REPORT=$(echo "$CLEAN_REPORT" | sort -k4 -nr)
+
+# ================================
+# Output
+# ================================
+echo
+echo "📦 Index Prefix Summary:"
 echo "----------------------------------------"
-echo "$INDEX_PREFIX_REPORT"
+echo "$SORTED_REPORT"
+echo "----------------------------------------"
+echo "🔢 Total Indices : $TOTAL_INDEX_COUNT"
+echo "💾 Total Size    : $TOTAL_SIZE_GB GB"
 echo "----------------------------------------"
 echo "✅ Report completed successfully."
-echo -e "\n"
+echo
