@@ -5,7 +5,7 @@
 # Pattern: inventory-*-2025
 # ==================================================
 
-set -euo pipefail
+#set -euo pipefail
 
 # ================================
 # Load Xiotz Variables
