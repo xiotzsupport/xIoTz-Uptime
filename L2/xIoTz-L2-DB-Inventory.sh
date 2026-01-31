@@ -87,3 +87,17 @@ echo "💾 Total Size    : $TOTAL_SIZE_GB GB"
 echo "----------------------------------------"
 echo "✅ Report completed successfully."
 echo
+
+#!/bin/bash
+
+FILE="/etc/xiotz/scripts/health-check.sh"
+EXPECTED="250"
+
+VALUE=$(grep -E '^elasticIndicesLimit=' "$FILE" \
+        | cut -d= -f2 | tr -d '"')
+
+if [[ "$VALUE" == "$EXPECTED" ]]; then
+  echo "✅ index update successful"
+else
+  echo "❌ fail (found: ${VALUE:-not set})"
+fi
