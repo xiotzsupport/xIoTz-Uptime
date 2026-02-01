@@ -1,7 +1,7 @@
 url: https://jlmorison-endpoint.xiotz.com/app/login?
-status: degraded
+status: up
 code: 200
-responseTime: 5969
-lastUpdated: 2026-02-01T21:28:04.922Z
+responseTime: 1285
+lastUpdated: 2026-02-01T21:46:29.299Z
 startTime: 2025-05-22T06:47:33.629Z
 generator: Upptime <https://github.com/upptime/upptime>
