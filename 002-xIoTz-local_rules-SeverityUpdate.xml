@@ -237,10 +237,15 @@
     <decoded_as>windows_eventchannel</decoded_as>
     <field name="data.win.system.channel">Security</field>
     <field name="data.win.eventdata.subjectUserSid">S-1-5-18</field>
-
-
     <description>Deprioritize local account/group changes when done by SYSTEM (S-1-5-18)</description>
   </rule>
+
+
+  <rule id="170007" level="0">
+  <field name="data.win.eventdata.subjectUserSid">S-1-5-18</field>
+  <description>Suppress SYSTEM noise </description>
+ </rule>
+
 </group>
 
 
