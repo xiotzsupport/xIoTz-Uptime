@@ -1,7 +1,7 @@
 url: https://ecloud-india-rd-deltard.xiotz.com/
-status: down
+status: degraded
 code: 403
-responseTime: 90
-lastUpdated: 2026-02-02T23:31:44.849Z
+responseTime: 10080
+lastUpdated: 2026-02-03T19:11:37.101Z
 startTime: 2025-05-21T00:26:57.741Z
 generator: Upptime <https://github.com/upptime/upptime>
