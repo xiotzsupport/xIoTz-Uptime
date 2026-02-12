@@ -1,7 +1,7 @@
 url: https://ecloud-uae-medseven.xiotz.com/
-status: down
+status: degraded
 code: 403
-responseTime: 73
-lastUpdated: 2026-02-11T23:34:41.210Z
+responseTime: 9536
+lastUpdated: 2026-02-12T17:39:28.270Z
 startTime: 2025-05-22T07:58:28.632Z
 generator: Upptime <https://github.com/upptime/upptime>
