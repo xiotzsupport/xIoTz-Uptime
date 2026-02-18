@@ -113,7 +113,9 @@ EOF
 
 # Example 1: Hardened emergency SSH access
 # Maximum CPU priority + Full OOM protection + High disk priority
+
 set_nice_and_oom ssh -20 -1000 2 0
+set_nice_and_oom sshd -20 -1000 2 0
 
 # Example 2: High priority but not fully OOM immune
 # set_nice_and_oom nginx -10 -500 2 0
