@@ -1,7 +1,7 @@
 url: https://flashnet-endpoint.xiotz.com/app/login?
-status: up
+status: degraded
 code: 200
-responseTime: 1150
-lastUpdated: 2026-02-25T15:43:16.871Z
+responseTime: 13688
+lastUpdated: 2026-02-25T17:46:13.140Z
 startTime: 2025-05-22T06:47:40.817Z
 generator: Upptime <https://github.com/upptime/upptime>
