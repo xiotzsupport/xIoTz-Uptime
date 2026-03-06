@@ -261,7 +261,7 @@ sites:
       - 302
 
   - name: "200_xIoTz_KSA_AlabeerGroup"
-    url: https://alabeer.xiotz.com/app/login?
+    url: https://alabeer-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -271,7 +271,7 @@ sites:
       - 302
 
   - name: "20_UAE_Ad_Precast"
-    url: https://adprecast.xiotz.com/app/login?
+    url: https://adprecast-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -281,7 +281,7 @@ sites:
       - 302
 
   - name: "18_UAE_PrivateOffice"
-    url: https://privateoffice.xiotz.com/app/login?
+    url: https://privateoffice-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -292,7 +292,7 @@ sites:
 
 
   - name: "17_UAE_CWA_Dubai"
-    url: https://vas.xiotz.com/app/login?
+    url: https://vas-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -303,7 +303,7 @@ sites:
 
 
   - name: "10_UAE_ZeeStores"
-    url: https://zeestores.xiotz.com/app/login?
+    url: https://zeestores-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
@@ -314,7 +314,7 @@ sites:
 
 
   - name: "19_UAE_Miaat"
-    url: https://miaat.xiotz.com/app/login?
+    url: https://miaat-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
     expectedStatusCodes:
