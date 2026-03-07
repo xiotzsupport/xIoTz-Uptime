@@ -35,7 +35,7 @@ sites:
       - 301
       - 302
       
-  - name: "01_UCAP_India_MilanLabs"
+  - name: "0012_UCAP_India_MilanLabs"
     url: https://milanlabs-endpoint.xiotz.com/app/login? 
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -45,7 +45,7 @@ sites:
       - 301
       - 302
       
-  - name: "02_UCAP_India_Internal_CyberAudit"
+  - name: "9901_UCAP_India_Internal_CyberAudit"
     url: https://cyberaudit-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -56,7 +56,7 @@ sites:
       - 302
 
 
-  - name: "03_UCAP_India_Internal_Zenalyst"
+  - name: "9902_UCAP_India_Internal_Zenalyst"
     url: https://zenalystai-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -67,7 +67,7 @@ sites:
       - 302
 
 
-  - name: "04_UCAP_India_Internal_XAR"
+  - name: "9903_UCAP_India_Internal_XAR"
     url: https://xar-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -78,18 +78,7 @@ sites:
       - 302
 
 
-  - name: "04_UCAP_India_Internal_XAR"
-    url: https://xar-endpoint.xiotz.com/app/login?
-    __dangerous__disable_verify_peer: true
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-      - 201
-      - 301
-      - 302
-
-
-  - name: "05_UCAP_India_Internal_UppgradeAI"
+  - name: "9904_UCAP_India_Internal_UpgradeAI"
     url: https://upgradeai-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -101,18 +90,9 @@ sites:
 
 
 
-#alabeer
-  - name: "06_UCAP_India_OneXtel_SBI"
-    url: https://sbionextel-endpoint.xiotz.com/app/login?
-    __dangerous__disable_verify_peer: true
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-      - 201
-      - 301
-      - 302
-      
-  - name: "07_UCAP_India_OneXtel_OP"
+#onextel
+
+  - name: "0001_UCAP_India_OneXtel_OP"
     url: https://onextel-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -122,7 +102,7 @@ sites:
       - 301
       - 302
       
-  - name: "08_UCAP_India_OneXtel_NSE"
+  - name: "0002_UCAP_India_OneXtel_NSE"
     url: https://onextelnse-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -131,7 +111,8 @@ sites:
       - 201
       - 301
       - 302
-  - name: "09_UCAP_India_OneXtel_DC"
+
+  - name: "0003_UCAP_India_OneXtel_DC"
     url: https://onextelserver-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -140,8 +121,19 @@ sites:
       - 201
       - 301
       - 302
+
+  - name: "0004_UCAP_India_OneXtel_SBI"
+    url: https://sbionextel-endpoint.xiotz.com/app/login?
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+          
       
-  - name: "10_UCAP_India_OneXtel_WP"
+  - name: "0006_UCAP_India_OneXtel_WP"
     url: https://waonextel-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -151,7 +143,7 @@ sites:
       - 301
       - 302
 
-  - name: "12_UCAP_India_ITI-Finance"
+  - name: "0007_UCAP_India_ITI-Finance"
     url: https://itifinance-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -161,7 +153,7 @@ sites:
       - 301
       - 302
 
-  - name: "13_UCAP_India_FourDimensions"
+  - name: "0008_UCAP_India_FourDimensions"
     url: https://fourdimensions-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -171,7 +163,7 @@ sites:
       - 301
       - 302
    
-  - name: "21_UCAP_UAE_Medseven"
+  - name: "1002_UCAP_UAE_Medseven"
     url: https://medseven-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -181,17 +173,8 @@ sites:
       - 301
       - 302
 	  
-  - name: "22_UCAP_UAE_Cicon"
-    url: https://cicon-endpoint.xiotz.com/app/login?
-    __dangerous__disable_verify_peer: true
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-      - 201
-      - 301
-      - 302
-      
-  - name: "23_UCAP_UAE_ALOmeria"
+        
+  - name: "1004_UCAP_UAE_ALOmeria"
     url: https://alomeria-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -201,7 +184,7 @@ sites:
       - 301
       - 302
 	  
-  - name: "24_UCAP_UAE_AlphaSeven"
+  - name: "1005_UCAP_UAE_AlphaSeven"
     url: https://alphaseven-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -211,7 +194,7 @@ sites:
       - 301
       - 302
       
-  - name: "31_UCAP_India_U360_Dovetail"
+  - name: "0009_UCAP_India_U360_Dovetail"
     url: https://dovetail-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -221,7 +204,7 @@ sites:
       - 301
       - 302
 	  
-  - name: "32_UCAP_India_U360_Himedia"
+  - name: "0010_UCAP_India_U360_Himedia"
     url: https://himedia-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -231,7 +214,7 @@ sites:
       - 301
       - 302
 	  
-  - name: "33_UCAP_India_U360_JLMorison"
+  - name: "0011_UCAP_India_U360_JLMorison"
     url: https://jlmorison-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -240,17 +223,8 @@ sites:
       - 201
       - 301
       - 302
-	  
-  - name: "34_xIoTz_UCAP_India_U360_Unishield"
-    url: https://unishield-endpoint.xiotz.com/app/login?
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-      - 201
-      - 301
-      - 302
-	  
-  - name: "41_UCAP_Tanzania_FlashNet"
+	    
+  - name: "3001_UCAP_Tanzania_FlashNet"
     url: https://flashnet-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -260,7 +234,7 @@ sites:
       - 301
       - 302
 
-  - name: "200_xIoTz_KSA_AlabeerGroup"
+  - name: "2001_xIoTz_KSA_AlabeerGroup"
     url: https://alabeer-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -270,7 +244,7 @@ sites:
       - 301
       - 302
 
-  - name: "20_UAE_Ad_Precast"
+  - name: "1008_UAE_Ad_Precast"
     url: https://adprecast-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -280,7 +254,7 @@ sites:
       - 301
       - 302
 
-  - name: "18_UAE_PrivateOffice"
+  - name: "1006_UAE_PrivateOffice"
     url: https://privateoffice-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -290,19 +264,7 @@ sites:
       - 301
       - 302
 
-
-  - name: "17_UAE_CWA_Dubai"
-    url: https://vas-endpoint.xiotz.com/app/login?
-    __dangerous__disable_verify_peer: true
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-      - 201
-      - 301
-      - 302
-
-
-  - name: "10_UAE_ZeeStores"
+  - name: "1001_UAE_ZeeStores"
     url: https://zeestores-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
@@ -313,7 +275,7 @@ sites:
       - 302
 
 
-  - name: "19_UAE_Miaat"
+  - name: "1007_UAE_Miaat"
     url: https://miaat-endpoint.xiotz.com/app/login?
     __dangerous__disable_verify_peer: true
     maxResponseTime: 5000
