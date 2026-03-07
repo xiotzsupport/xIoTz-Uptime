@@ -183,11 +183,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/milanlabs-endpoint.xiotz.com.ico",
     "slug": "0012-ucap-india-milan-labs",
     "status": "down",
-    "uptime": "1.16%",
-    "uptimeDay": "1.16%",
-    "uptimeWeek": "1.16%",
-    "uptimeMonth": "1.16%",
-    "uptimeYear": "1.16%",
+    "uptime": "0.89%",
+    "uptimeDay": "0.89%",
+    "uptimeWeek": "0.89%",
+    "uptimeMonth": "0.89%",
+    "uptimeYear": "0.89%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
@@ -203,11 +203,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/cyberaudit-endpoint.xiotz.com.ico",
     "slug": "9901-ucap-india-internal-cyber-audit",
     "status": "down",
-    "uptime": "0.76%",
-    "uptimeDay": "0.76%",
-    "uptimeWeek": "0.76%",
-    "uptimeMonth": "0.76%",
-    "uptimeYear": "0.76%",
+    "uptime": "0.58%",
+    "uptimeDay": "0.58%",
+    "uptimeWeek": "0.58%",
+    "uptimeMonth": "0.58%",
+    "uptimeYear": "0.58%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
@@ -223,11 +223,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/zenalystai-endpoint.xiotz.com.ico",
     "slug": "9902-ucap-india-internal-zenalyst",
     "status": "down",
-    "uptime": "1.35%",
-    "uptimeDay": "1.35%",
-    "uptimeWeek": "1.35%",
-    "uptimeMonth": "1.35%",
-    "uptimeYear": "1.35%",
+    "uptime": "0.23%",
+    "uptimeDay": "0.23%",
+    "uptimeWeek": "0.23%",
+    "uptimeMonth": "0.23%",
+    "uptimeYear": "0.23%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
@@ -243,18 +243,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/xar-endpoint.xiotz.com.ico",
     "slug": "9903-ucap-india-internal-xar",
     "status": "down",
-    "uptime": "0.95%",
-    "uptimeDay": "0.95%",
-    "uptimeWeek": "0.95%",
-    "uptimeMonth": "0.95%",
-    "uptimeYear": "0.95%",
+    "uptime": "0.96%",
+    "uptimeDay": "0.96%",
+    "uptimeWeek": "0.96%",
+    "uptimeMonth": "0.96%",
+    "uptimeYear": "0.96%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -263,18 +263,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/upgradeai-endpoint.xiotz.com.ico",
     "slug": "9904-ucap-india-internal-upgrade-ai",
     "status": "down",
-    "uptime": "1.71%",
-    "uptimeDay": "1.71%",
-    "uptimeWeek": "1.71%",
-    "uptimeMonth": "1.71%",
-    "uptimeYear": "1.71%",
+    "uptime": "0.71%",
+    "uptimeDay": "0.71%",
+    "uptimeWeek": "0.71%",
+    "uptimeMonth": "0.71%",
+    "uptimeYear": "0.71%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -301,18 +301,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/onextelnse-endpoint.xiotz.com.ico",
     "slug": "0002-ucap-india-one-xtel-nse",
     "status": "down",
-    "uptime": "1.14%",
-    "uptimeDay": "1.14%",
-    "uptimeWeek": "1.14%",
-    "uptimeMonth": "1.14%",
-    "uptimeYear": "1.14%",
+    "uptime": "0.48%",
+    "uptimeDay": "0.48%",
+    "uptimeWeek": "0.48%",
+    "uptimeMonth": "0.48%",
+    "uptimeYear": "0.48%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -321,18 +321,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/onextelserver-endpoint.xiotz.com.ico",
     "slug": "0003-ucap-india-one-xtel-dc",
     "status": "down",
-    "uptime": "1.64%",
-    "uptimeDay": "1.64%",
-    "uptimeWeek": "1.64%",
-    "uptimeMonth": "1.64%",
-    "uptimeYear": "1.64%",
+    "uptime": "0.83%",
+    "uptimeDay": "0.83%",
+    "uptimeWeek": "0.83%",
+    "uptimeMonth": "0.83%",
+    "uptimeYear": "0.83%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -352,7 +352,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -361,18 +361,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/waonextel-endpoint.xiotz.com.ico",
     "slug": "0006-ucap-india-one-xtel-wp",
     "status": "down",
-    "uptime": "2.27%",
-    "uptimeDay": "2.27%",
-    "uptimeWeek": "2.27%",
-    "uptimeMonth": "2.27%",
-    "uptimeYear": "2.27%",
+    "uptime": "1.13%",
+    "uptimeDay": "1.13%",
+    "uptimeWeek": "1.13%",
+    "uptimeMonth": "1.13%",
+    "uptimeYear": "1.13%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -381,18 +381,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/itifinance-endpoint.xiotz.com.ico",
     "slug": "0007-ucap-india-iti-finance",
     "status": "down",
-    "uptime": "0.66%",
-    "uptimeDay": "0.66%",
-    "uptimeWeek": "0.66%",
-    "uptimeMonth": "0.66%",
-    "uptimeYear": "0.66%",
+    "uptime": "0.80%",
+    "uptimeDay": "0.80%",
+    "uptimeWeek": "0.80%",
+    "uptimeMonth": "0.80%",
+    "uptimeYear": "0.80%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -401,18 +401,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/fourdimensions-endpoint.xiotz.com.ico",
     "slug": "0008-ucap-india-four-dimensions",
     "status": "down",
-    "uptime": "1.43%",
-    "uptimeDay": "1.43%",
-    "uptimeWeek": "1.43%",
-    "uptimeMonth": "1.43%",
-    "uptimeYear": "1.43%",
+    "uptime": "1.29%",
+    "uptimeDay": "1.29%",
+    "uptimeWeek": "1.29%",
+    "uptimeMonth": "1.29%",
+    "uptimeYear": "1.29%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -439,18 +439,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/alomeria-endpoint.xiotz.com.ico",
     "slug": "1004-ucap-uae-al-omeria",
     "status": "down",
-    "uptime": "1.24%",
-    "uptimeDay": "1.24%",
-    "uptimeWeek": "1.24%",
-    "uptimeMonth": "1.24%",
-    "uptimeYear": "1.24%",
+    "uptime": "0.99%",
+    "uptimeDay": "0.99%",
+    "uptimeWeek": "0.99%",
+    "uptimeMonth": "0.99%",
+    "uptimeYear": "0.99%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -459,18 +459,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/alphaseven-endpoint.xiotz.com.ico",
     "slug": "1005-ucap-uae-alpha-seven",
     "status": "down",
-    "uptime": "2.33%",
-    "uptimeDay": "2.33%",
-    "uptimeWeek": "2.33%",
-    "uptimeMonth": "2.33%",
-    "uptimeYear": "2.33%",
+    "uptime": "1.74%",
+    "uptimeDay": "1.74%",
+    "uptimeWeek": "1.74%",
+    "uptimeMonth": "1.74%",
+    "uptimeYear": "1.74%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -479,18 +479,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/dovetail-endpoint.xiotz.com.ico",
     "slug": "0009-ucap-india-u360-dovetail",
     "status": "down",
-    "uptime": "1.76%",
-    "uptimeDay": "1.76%",
-    "uptimeWeek": "1.76%",
-    "uptimeMonth": "1.76%",
-    "uptimeYear": "1.76%",
+    "uptime": "0.32%",
+    "uptimeDay": "0.32%",
+    "uptimeWeek": "0.32%",
+    "uptimeMonth": "0.32%",
+    "uptimeYear": "0.32%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -499,18 +499,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/himedia-endpoint.xiotz.com.ico",
     "slug": "0010-ucap-india-u360-himedia",
     "status": "down",
-    "uptime": "1.12%",
-    "uptimeDay": "1.12%",
-    "uptimeWeek": "1.12%",
-    "uptimeMonth": "1.12%",
-    "uptimeYear": "1.12%",
+    "uptime": "0.94%",
+    "uptimeDay": "0.94%",
+    "uptimeWeek": "0.94%",
+    "uptimeMonth": "0.94%",
+    "uptimeYear": "0.94%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -519,18 +519,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/jlmorison-endpoint.xiotz.com.ico",
     "slug": "0011-ucap-india-u360-jl-morison",
     "status": "down",
-    "uptime": "1.85%",
-    "uptimeDay": "1.85%",
-    "uptimeWeek": "1.85%",
-    "uptimeMonth": "1.85%",
-    "uptimeYear": "1.85%",
+    "uptime": "1.41%",
+    "uptimeDay": "1.41%",
+    "uptimeWeek": "1.41%",
+    "uptimeMonth": "1.41%",
+    "uptimeYear": "1.41%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -557,18 +557,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/alabeer-endpoint.xiotz.com.ico",
     "slug": "2001-x-io-tz-ksa-alabeer-group",
     "status": "down",
-    "uptime": "1.31%",
-    "uptimeDay": "1.31%",
-    "uptimeWeek": "1.31%",
-    "uptimeMonth": "1.31%",
-    "uptimeYear": "1.31%",
+    "uptime": "1.15%",
+    "uptimeDay": "1.15%",
+    "uptimeWeek": "1.15%",
+    "uptimeMonth": "1.15%",
+    "uptimeYear": "1.15%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 1
+      "2026-03-07": 2
     }
   },
   {
@@ -595,18 +595,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/privateoffice-endpoint.xiotz.com.ico",
     "slug": "1006-uae-private-office",
     "status": "down",
-    "uptime": "58.02%",
-    "uptimeDay": "58.02%",
-    "uptimeWeek": "58.02%",
-    "uptimeMonth": "58.02%",
-    "uptimeYear": "58.02%",
+    "uptime": "33.85%",
+    "uptimeDay": "33.85%",
+    "uptimeWeek": "33.85%",
+    "uptimeMonth": "33.85%",
+    "uptimeYear": "33.85%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 0
+      "2026-03-07": 1
     }
   },
   {
@@ -615,18 +615,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/zeestores-endpoint.xiotz.com.ico",
     "slug": "1001-uae-zee-stores",
     "status": "down",
-    "uptime": "5.90%",
-    "uptimeDay": "5.90%",
-    "uptimeWeek": "5.90%",
-    "uptimeMonth": "5.90%",
-    "uptimeYear": "5.90%",
+    "uptime": "2.95%",
+    "uptimeDay": "2.95%",
+    "uptimeWeek": "2.95%",
+    "uptimeMonth": "2.95%",
+    "uptimeYear": "2.95%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 0
+      "2026-03-07": 1
     }
   },
   {
@@ -635,18 +635,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/miaat-endpoint.xiotz.com.ico",
     "slug": "1007-uae-miaat",
     "status": "down",
-    "uptime": "5.08%",
-    "uptimeDay": "5.08%",
-    "uptimeWeek": "5.08%",
-    "uptimeMonth": "5.08%",
-    "uptimeYear": "5.08%",
+    "uptime": "0.80%",
+    "uptimeDay": "0.80%",
+    "uptimeWeek": "0.80%",
+    "uptimeMonth": "0.80%",
+    "uptimeYear": "0.80%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-03-07": 0
+      "2026-03-07": 1
     }
   },
   {
@@ -656,7 +656,7 @@
     "slug": "ecloud-ict-xiotz-com",
     "status": "down",
     "uptime": "45.42%",
-    "uptimeDay": "0.11%",
+    "uptimeDay": "0.15%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "45.42%",
@@ -779,7 +779,7 @@
     "slug": "ecloud-india-ho-serverroone-xiotz-com",
     "status": "down",
     "uptime": "66.04%",
-    "uptimeDay": "0.11%",
+    "uptimeDay": "0.15%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "66.04%",
@@ -1021,7 +1021,7 @@
     "slug": "ecloud-india-ho-serverrothree-xiotz-com",
     "status": "down",
     "uptime": "68.68%",
-    "uptimeDay": "0.11%",
+    "uptimeDay": "0.16%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "68.68%",
@@ -1149,7 +1149,7 @@
     "slug": "ecloud-india-ho-serverrotwo-xiotz-com",
     "status": "down",
     "uptime": "50.56%",
-    "uptimeDay": "0.12%",
+    "uptimeDay": "0.16%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "50.56%",
@@ -1324,7 +1324,7 @@
     "slug": "ecloud-india-milan-xiotz-com",
     "status": "down",
     "uptime": "62.91%",
-    "uptimeDay": "0.12%",
+    "uptimeDay": "0.16%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "62.91%",
@@ -1475,7 +1475,7 @@
     "slug": "ecloud-india-rd-alphard-xiotz-com",
     "status": "down",
     "uptime": "48.32%",
-    "uptimeDay": "0.12%",
+    "uptimeDay": "0.16%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "48.32%",
@@ -1652,7 +1652,7 @@
     "slug": "ecloud-india-rd-betard-xiotz-com",
     "status": "down",
     "uptime": "72.42%",
-    "uptimeDay": "0.12%",
+    "uptimeDay": "0.16%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "72.42%",
@@ -1759,7 +1759,7 @@
     "slug": "ecloud-india-rd-deltard-xiotz-com",
     "status": "down",
     "uptime": "38.56%",
-    "uptimeDay": "0.13%",
+    "uptimeDay": "0.17%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "38.56%",
@@ -1965,7 +1965,7 @@
     "slug": "ecloud-india-rd-sigmard-xiotz-com",
     "status": "down",
     "uptime": "43.80%",
-    "uptimeDay": "0.13%",
+    "uptimeDay": "0.16%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "43.80%",
@@ -2156,7 +2156,7 @@
     "slug": "ecloud-uae-alomeira-xiotz-com",
     "status": "down",
     "uptime": "63.02%",
-    "uptimeDay": "0.13%",
+    "uptimeDay": "0.17%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "63.02%",
@@ -2290,7 +2290,7 @@
     "slug": "ecloud-uae-alpha7-xiotz-com",
     "status": "down",
     "uptime": "46.15%",
-    "uptimeDay": "0.13%",
+    "uptimeDay": "0.17%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "46.15%",
@@ -2472,7 +2472,7 @@
     "slug": "ecloud-uae-medseven-xiotz-com",
     "status": "down",
     "uptime": "38.79%",
-    "uptimeDay": "0.13%",
+    "uptimeDay": "0.17%",
     "uptimeWeek": "0.02%",
     "uptimeMonth": "7.96%",
     "uptimeYear": "38.79%",
