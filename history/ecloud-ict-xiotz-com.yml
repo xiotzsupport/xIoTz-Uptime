@@ -1,7 +1,7 @@
 url: https://ecloud-india-dovetail.xiotz.com/
-status: down
+status: degraded
 code: 403
-responseTime: 56
-lastUpdated: 2026-04-01T23:37:33.282Z
+responseTime: 21358
+lastUpdated: 2026-04-02T14:46:17.937Z
 startTime: 2025-09-09T22:06:42.682Z
 generator: Upptime <https://github.com/upptime/upptime>
