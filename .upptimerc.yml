@@ -432,6 +432,67 @@ sites:
       - 201
       - 301
       - 302
+
+	    - name: "2001_xIoTz_KSA_AlabeerGroup"
+    url: https://alabeer.xiotz.com/
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+  - name: "1001_UAE_ZeeStores"
+    url: https://zeestores-endpoint.xiotz.com/
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+  - name: "1008_UAE_Ad_Precast"
+    url: https://adprecast-endpoint.xiotz.com/
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+
+  - name: "0008_India_FourDimensions"
+    url: https://fourdimensions-endpoint.xiotz.com/
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+  - name: "1002_UAE_Medseven"
+    url: https://medseven-endpoint.xiotz.com/
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+  - name: "1005_UAE_AlphaSeven"
+    url: https://alphaseven-endpoint.xiotz.com/
+    __dangerous__disable_verify_peer: true
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
       
 # Ecloud CICON
 #  - name: "ecloud-uae-cicon.xiotz.com"
