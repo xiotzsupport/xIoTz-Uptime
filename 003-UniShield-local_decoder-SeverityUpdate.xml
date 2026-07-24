@@ -1,0 +1,594 @@
+<!-- Local Decoders -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+<!--
+  - Allowed static fields:
+  - location   - where the log came from (only on FTS)
+  - srcuser    - extracts the source username
+  - dstuser    - extracts the destination (target) username
+  - user       - an alias to dstuser (only one of the two can be used)
+  - srcip      - source ip
+  - dstip      - dst ip
+  - srcport    - source port
+  - dstport    - destination port
+  - protocol   - protocol
+  - id         - event id
+  - url        - url of the event
+  - action     - event action (deny, drop, accept, etc)
+  - status     - event status (success, failure, etc)
+  - extra_data - Any extra data
+-->
+<!--
+  Custom SonicWall Decoder - Extracts additional fields
+  Works with fixed 0295-sonicwall_decoders.xml
+-->
+
+<decoder name="sonicwall-extra">
+  <parent>sonicwall</parent>
+  <regex type="pcre2">\busr="([^"]+)"|\bsess="([^"]+)"|\bn=(\d+)\b|\bnote="([^"]+)"|\bdur=(\d+)\b|\bm=(\d+)\b|\bc=(\d+)\b</regex>
+  <order>srcuser, session, event_id, note, duration, msg_id, category</order>
+</decoder>
+
+<!--
+  Custom SonicWall Decoders
+  File: /var/ossec/etc/decoders/local_decoder.xml
+  Purpose: Extra fields jo default decoder extract nahi karta
+-->
+
+<!-- Parent decoder for all Sophos firewall logs -->
+<!--
+  Custom Sophos Firewall Decoders
+  FINAL TESTED VERSION - All decoders working
+  Based on Wazuh decoder documentation
+-->
+
+<!-- ============ SOPHOS FIREWALL DECODERS ============ -->
+
+<!-- Parent decoder for all Sophos firewall logs -->
+<decoder name="sophos-firewall">
+  <prematch>id=firewall\s+sn=\S+</prematch>
+</decoder>
+
+
+<!--Test 1: Admin Login Fail-->
+<!--text-->
+<!--<129> id=firewall sn=18C2413ABA8F time="2026-04-17 05:35:55 UTC" fw=114.143.20.34 pri=1 c=32 m=30 msg="Administrator login denied due to bad credentials" sess="Web" dur=0 n=21 usr="lock" src=192.168.109.34::X25 dst=192.168.254.2:443:X25 proto=tcp/https note="User: lock"-->
+
+<!-- Test 1: Admin Login Fail (m=30) -->
+<decoder name="sophos-failed-admin-login">
+  <parent>sophos-firewall</parent>
+  <prematch>m=30</prematch>
+  <regex>usr="(\S+)" src=(\S+)::</regex>
+  <order>srcuser, srcip</order>
+</decoder>
+
+
+<!--Test 2: User Login Fail-->
+<!--text-->
+<!--<132> id=firewall sn=18C2413ABA8F time="2026-04-17 05:41:59 UTC" fw=114.143.20.34 pri=4 c=16 m=33 msg="User login denied due to bad credentials" sess="Web" dur=0 n=8 usr="HIMEDIA" src=192.168.109.34::X25 dst=192.168.254.2:443:X25 proto=tcp/https note="User: HIMEDIA"-->
+	<!--srcip: '192.168.109.34'-->
+	<!--srcuser: 'HIMEDIA'-->
+
+<!-- Test 2: User Login Fail (m=33) -->
+<decoder name="sophos-failed-login">
+  <parent>sophos-firewall</parent>
+  <prematch>m=33</prematch>
+  <regex>usr="(\S+)" src=(\S+)::</regex>
+  <order>srcuser, srcip</order>
+</decoder>
+
+<!--Test 3: User Created-->
+<!--text-->
+<!--<134> id=firewall sn=18C2413ABA8F time="2026-04-17 05:50:05 UTC" fw=114.143.20.34 pri=6 c=16 m=1333 msg="User Test is created" n=1 usr="lock"-->
+<!-- Test 3 & 5: User Created (m=1333) & User Deleted (m=1335) -->
+<!--<decoder name="sophos-user-mgmt">-->
+<!--  <parent>sophos-firewall</parent>-->
+<!--  <prematch>m=1333</prematch>-->
+<!--  <regex>msg="(\w+) (.+) is (\w+)"</regex>-->
+<!--  <order>action, target_user, status</order>-->
+<!--</decoder>-->
+
+<!--Test 3: User Created-->
+<!--text-->
+<!--<134> id=firewall sn=18C2413ABA8F time="2026-04-17 05:50:05 UTC" fw=114.143.20.34 pri=6 c=16 m=1333 msg="User Test is created" n=1 usr="lock"-->
+<decoder name="sophos-user-mgmt">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1333</prematch>
+  <regex>msg="(\w+) (\w+) (\w+) (\w+)"</regex>
+  <order>action, object, is, status</order>
+</decoder>
+
+<!--Test 4: User Edited-->
+<!--text-->
+<!--<134> id=firewall sn=18C2413ABA8F time="2026-04-17 06:34:42 UTC" fw=114.143.20.34 pri=6 c=16 m=1334 msg="User test is edited" n=366 usr="lock"-->
+
+<!-- Test 4: User Edited (m=1334) -->
+<decoder name="sophos-user-edited">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1334</prematch>
+  <regex>msg="(\w+) (\w+) (\w+) (\w+)"</regex>
+  <order>action, object, is, status</order>
+</decoder>
+
+<!--Test 5: User Deleted-->
+<!--text-->
+<!--<134> id=firewall sn=18C2413ABA8F time="2026-04-17 06:00:07 UTC" fw=114.143.20.34 pri=6 c=16 m=1335 msg="User Test is deleted" n=1 usr="lock"-->
+<decoder name="sophos-user-delete">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1335</prematch>
+  <regex>msg="(\w+) (\w+) (\w+) (\w+)"</regex>
+  <order>action, object, is, status</order>
+</decoder>
+
+<!--Test 6: User Added to Group-->
+<!--text-->
+<!--<134> id=firewall sn=18C2413ABA8F time="2026-04-17 05:57:26 UTC" fw=114.143.20.34 pri=6 c=16 m=14334 msg="User \"Test\" is added into Group \"Guest Administrators\"" n=364 usr="lock"-->
+<!-- Test 6: User Added to Group (m=1334) -->
+<!-- Test 6: User Added to Group (m=1334) -->
+<!--<decoder name="sophos-user-group">-->
+<!--  <parent>sophos-firewall</parent>-->
+<!--  <prematch type="pcre2">n=364</prematch>-->
+  <!--<prematch type="pcre2">m=14334</prematch>-->
+  <!--<regex type="pcre2">msg="([^"]+)"</regex>-->
+<!--  <regex type="pcre2" offset="after_parent">msg="((?:\\\"|[^"])*)"</regex>-->
+<!--  <order>target_user</order>-->
+
+<!--</decoder>-->
+
+<decoder name="sophos-user-group">
+  <parent>sophos-firewall</parent>
+  <regex type="pcre2">m=1334.*msg="((?:[\\"]|[^"])*)"</regex>
+  <order>target_user</order>
+</decoder>
+
+
+<!-- Test 7: Security Policy Modified (m=441) -->
+<decoder name="sophos-policy-mod">
+  <parent>sophos-firewall</parent>
+  <prematch>m=441</prematch>
+  <regex>msg="(\w+) (\w+) (\w+)"</regex>
+  <order>action, object, status</order>
+</decoder>
+
+<!-- Test 8: Configuration Change (m=1382) -->
+<decoder name="sophos-config-success">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1382</prematch>
+  <regex>msg="Configuration succeeded: (\w+) '(\w+) (\w+)'</regex>
+  <order>config_action, config_object_type, config_object_name</order>
+</decoder>
+
+
+
+<!--new start sonicwalldata-->
+
+<decoder name="sophos-fields">
+  <parent>sophos-firewall</parent>
+  <regex offset="after_parent">pri=(\S+)</regex>
+  <order>status</order>
+</decoder>
+
+<decoder name="sophos-fields">
+  <parent>sophos-firewall</parent>
+  <regex offset="after_regex">\smsg="([^"]+)"</regex>
+  <order>action</order>
+</decoder>
+
+<decoder name="sophos-fields">
+  <parent>sophos-firewall</parent>
+  <regex offset="after_regex">src=(\d+\.\d+\.\d+\.\d+):(\d+):\S*</regex>
+  <order>srcip, srcport</order>
+</decoder>
+
+<decoder name="sophos-fields">
+  <parent>sophos-firewall</parent>
+  <regex offset="after_regex">dst=(\d+\.\d+\.\d+\.\d+):(\d+):\S*</regex>
+  <order>dstip, dstport</order>
+</decoder>
+
+<decoder name="sophos-fields">
+  <parent>sophos-firewall</parent>
+  <regex offset="after_regex">src=(\d+\.\d+\.\d+\.\d+)::|src=(\d+\.\d+\.\d+\.\d+)\s</regex>
+  <order>srcip</order>
+</decoder>
+
+<decoder name="sophos-fields">
+  <parent>sophos-firewall</parent>
+  <regex offset="after_regex">dst=(\d+\.\d+\.\d+\.\d+)::|dst=(\d+\.\d+\.\d+\.\d+)\s</regex>
+  <order>dstip</order>
+</decoder>
+
+<decoder name="sophos-fields">
+  <parent>sophos-firewall</parent>
+  <regex offset="after_regex">proto=(\S+)</regex>
+  <order>protocol</order>
+</decoder>
+
+<decoder name="sophos-fields">
+  <parent>sophos-firewall</parent>
+  <regex>app=(\S+)\s+appName="([^"]+)".+dstname=(\S+).+Category="([^"]+)"</regex>
+  <order>app, appName, dstname, Category</order>
+</decoder>
+
+<decoder name="sophos-software_downloads">
+  <parent>sophos-firewall</parent>
+  <regex>id=(\S+)\s+sn=(\S+)\s+time="(\d+-\d\d-\d\d\s\d\d:\d\d:\d\d)\s(\S+)"\s+fw=(\S+)\s+pri=(\S+)\s+c=(\S+)\s+m=(\S+)\s+msg="([^"]+)"\s+app=(\S+)\s+appName="([^"]+)"\s+n=(\S+)\s+src=(\S+)\s+dst=(\S+)\s+srcMac=(\S+)\s+dstMac=(\S+)\s+proto=(\S+)\s+dstname=(\S+)\s+arg=(\S+)\s+code=(\S+)\s+Category="([^"]+)"</regex>
+  <order>id,sn,time,timezone,fw,pri,c,m,msg,app,appName,n,src,dst,srcMac,dstMac,proto,dstname,arg,code,Category</order>
+</decoder>
+
+
+
+
+<!--new end sonicwall -->
+
+
+
+
+
+<!--testing code -->
+
+<!-- ============================================ -->
+<!-- NEW: Traffic Logs (m=97) -->
+<!-- ============================================ -->
+<decoder name="sophos-web-traffic">
+  <parent>sophos-firewall</parent>
+  <prematch>m=97</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+\s+dstname=(\S+)\s+Category="([^"]+)"</regex>
+  <order>srcip, dstip, dstname, category</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: Connection Opened (m=98) -->
+<!-- ============================================ -->
+<decoder name="sophos-connection-opened">
+  <parent>sophos-firewall</parent>
+  <prematch>m=98</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+\s+proto=(\S+)</regex>
+  <order>srcip, dstip, protocol</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: Connection Closed (m=537) -->
+<!-- ============================================ -->
+<decoder name="sophos-connection-closed">
+  <parent>sophos-firewall</parent>
+  <prematch>m=537</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+\s+proto=(\S+)</regex>
+  <order>srcip, dstip, protocol</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: TCP Dropped (m=36) -->
+<!-- ============================================ -->
+<!--<132> id=firewall sn=18C2413ABA8F time="2026-04-30 08:21:48 UTC" fw=114.143.20.34 pri=5 c=64 m=36 msg="TCP packet dropped" n=46506788 src=79.124.62.230:54014:X22 dst=114.143.20.41:49666:X22 proto=tcp/49666 note="Packet dropped" fw_action="drop"-->
+<decoder name="sophos-tcp-dropped">
+  <parent>sophos-firewall</parent>
+  <prematch>fw_action=drop</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+\s+proto=(\S+)</regex>
+  <order>srcip, dstip, protocol</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: UDP Dropped (m=37) -->
+<!-- ============================================ -->
+
+<decoder name="sophos-udp-dropped">
+  <parent>sophos-firewall</parent>
+  <prematch>m=37</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+\s+proto=(\S+)</regex>
+  <order>srcip, dstip, protocol</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: ICMP Dropped (m=38) -->
+<!-- ============================================ -->
+<decoder name="sophos-icmp-dropped">
+  <parent>sophos-firewall</parent>
+  <prematch>m=38</prematch>
+  <regex>src=(\S+)</regex>
+  <order>srcip</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: Web Request Dropped (m=524) -->
+<!-- ============================================ -->
+<decoder name="sophos-web-dropped">
+  <parent>sophos-firewall</parent>
+  <prematch>m=524</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+\s+proto=(\S+)</regex>
+  <order>srcip, dstip, protocol</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: TCP Handshake Violation (m=760) -->
+<!-- ============================================ -->
+<decoder name="sophos-handshake-violation">
+  <parent>sophos-firewall</parent>
+  <prematch>m=760</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+</regex>
+  <order>srcip, dstip</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: VPN INVALID_ID_INFO (m=483) -->
+<!-- ============================================ -->
+<decoder name="sophos-vpn-invalid-id">
+  <parent>sophos-firewall</parent>
+  <prematch>m=483</prematch>
+  <regex>src=(\S+):500\s+dst=(\S+):500</regex>
+  <order>srcip, dstip</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: VPN Proposal Mismatch (m=88) -->
+<!-- ============================================ -->
+<decoder name="sophos-vpn-proposal-mismatch">
+  <parent>sophos-firewall</parent>
+  <prematch>m=88</prematch>
+  <regex>src=(\S+):500\s+dst=(\S+):500\s+proto=(\S+)\s+note="([^"]+)"</regex>
+  <order>srcip, dstip, protocol, note</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: VPN Network Mismatch (m=1189) -->
+<!-- ============================================ -->
+<decoder name="sophos-vpn-network-mismatch">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1189</prematch>
+  <regex>src=(\S+):500\s+dst=(\S+):500\s+proto=(\S+)\s+note="([^"]+)"</regex>
+  <order>srcip, dstip, protocol, note</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: IKE Phase 2 Start (m=346) -->
+<!-- ============================================ -->
+<decoder name="sophos-ike-phase2">
+  <parent>sophos-firewall</parent>
+  <prematch>m=346</prematch>
+  <regex>src=(\S+):500\s+dst=(\S+):500\s+note="([^"]+)"</regex>
+  <order>srcip, dstip, note</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: ICMP from LAN Dropped (m=175) -->
+<!-- ============================================ -->
+<decoder name="sophos-icmp-lan-dropped">
+  <parent>sophos-firewall</parent>
+  <prematch>m=175</prematch>
+  <regex>src=(\S+)::\S+\s+dst=(\S+)</regex>
+  <order>srcip, dstip</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: NAT Mapping (m=1197) -->
+<!-- ============================================ -->
+<decoder name="sophos-nat-mapping">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1197</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+\s+proto=(\S+)</regex>
+  <order>srcip, dstip, protocol</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: DNS Allowed (m=602) -->
+<!-- ============================================ -->
+<decoder name="sophos-dns-allowed">
+  <parent>sophos-firewall</parent>
+  <prematch>m=602</prematch>
+  <regex>src=(\S+):53:\S+\s+dst=(\S+):\d+:\S+</regex>
+  <order>srcip, dstip</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: ICMP Allowed (m=597,598) -->
+<!-- ============================================ -->
+<decoder name="sophos-icmp-allowed">
+  <parent>sophos-firewall</parent>
+  <prematch>m=59[78]</prematch>
+  <regex>src=(\S+)::\S+\s+dst=(\S+)::\S+</regex>
+  <order>srcip, dstip</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: Packet Allowed (m=1235) -->
+<!-- ============================================ -->
+<decoder name="sophos-packet-allowed">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1235</prematch>
+  <regex>src=(\S+):\d+:\S+\s+dst=(\S+):\d+:\S+\s+proto=(\S+)</regex>
+  <order>srcip, dstip, protocol</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: Interface Statistics (m=805) -->
+<!-- ============================================ -->
+<decoder name="sophos-interface-stats">
+  <parent>sophos-firewall</parent>
+  <prematch>m=805</prematch>
+  <regex>if=(\S+)\s+ucastRx=(\d+)\s+bcastRx=(\d+)\s+bytesRx=(\d+)\s+ucastTx=(\d+)\s+bcastTx=(\d+)\s+bytesTx=(\d+)</regex>
+  <order>interface, ucastRx, bcastRx, bytesRx, ucastTx, bcastTx, bytesTx</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: IKEv2 DPD (m=1324,1327) -->
+<!-- ============================================ -->
+<decoder name="sophos-ikev2-dpd">
+  <parent>sophos-firewall</parent>
+  <prematch>m=132[47]</prematch>
+  <regex>src=(\S+):4500\s+dst=(\S+):4500\s+proto=(\S+)\s+note="([^"]+)"</regex>
+  <order>srcip, dstip, protocol, note</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: DNS Resolve Success (m=1480) -->
+<!-- ============================================ -->
+<decoder name="sophos-dns-resolve">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1480</prematch>
+  <regex>note="([^"]+)"</regex>
+  <order>note</order>
+</decoder>
+
+<!-- ============================================ -->
+<!-- NEW: IPv6 Dropped (m=1233) -->
+<!-- ============================================ -->
+<decoder name="sophos-ipv6-dropped">
+  <parent>sophos-firewall</parent>
+  <prematch>m=1233</prematch>
+  <regex>src=:(\d+):\S+\s+dstV6=(\S+)\s+dst=:(\d+)\s+proto=(\S+)</regex>
+  <order>srcport, dstipv6, dstport, protocol</order>
+</decoder>
+
+<!--end testing code -->
+
+
+
+<!--taffic-->
+
+
+<!--taffice-->
+
+
+
+
+
+
+<!--
+  Custom SonicWall Decoder - Extracts additional fields\=
+  Works with fixed 0295-sonicwall_decoders.xml
+-->
+
+
+<!-- Base decoder to identify and extract the common Sophos header -->
+<!--<decoder name="sophos-firewall">-->
+<!--  <prematch>id=firewall\s+sn=\S+</prematch>-->
+<!--</decoder>-->
+<!--<decoder name="sophos-user-mgmt">-->
+<!--  <parent>sophos-firewall</parent>-->
+<!--  <prematch>m=133[3-5]</prematch>-->
+<!--  <regex>msg="(\w+) (\S+) is (\w+)"</regex>-->
+<!--  <order>action, target_user, status</order>-->
+<!--</decoder>-->
+<!--<decoder name="sophos-user-group">-->
+<!--  <parent>sophos-firewall</parent>-->
+<!--  <prematch>is added into Group</prematch>-->
+<!--  <regex>msg="User "(\S+)" is added into Group "(\S+)"</regex>-->
+<!--  <order>target_user, group_name</order>-->
+<!--</decoder>-->
+<!--<decoder name="sophos-failed-login">-->
+<!--  <parent>sophos-firewall</parent>-->
+<!--  <prematch>m=33</prematch>-->
+<!--  <regex>usr="(\S+)" src=(\S+)::</regex>-->
+<!--  <order>srcuser, srcip</order>-->
+<!--</decoder>-->
+<!--<decoder name="sophos-failed-admin-login">-->
+<!--  <parent>sophos-firewall</parent>-->
+<!--  <prematch>m=30</prematch>-->
+<!--  <regex>usr="(\S+)" src=(\S+)::</regex>-->
+<!--  <order>srcuser, srcip</order>-->
+<!--</decoder>-->
+<!--<decoder name="sophos-policy-mod">-->
+<!--  <parent>sophos-firewall</parent>-->
+<!--  <prematch>m=441</prematch>-->
+<!--  <regex>msg="(\w+) (\w+) (\w+)"</regex>-->
+<!--  <order>action, object, status</order>-->
+<!--</decoder>-->
+<!--<decoder name="sophos-config-success">-->
+<!--  <parent>sophos-firewall</parent>-->
+<!--  <prematch>m=1382</prematch>-->
+<!--  <regex>msg="Configuration succeeded: (\w+) '(\w+) (\w+)'</regex>-->
+<!--  <order>config_action, config_object_type, config_object_name</order>-->
+<!--</decoder>-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Custom SonicWall Decoders
+  File: /var/ossec/etc/decoders/local_decoder.xml
+  Purpose: Extra fields jo default decoder extract nahi karta
+-->
+
+
+
+
+
+
+
+
+<decoder name="local_decoder_example">
+    <program_name>local_decoder_example</program_name>
+</decoder>
+
+
+<decoder name="Wazuh_Ransomware">
+  <prematch>Wazuh_Ransomware_Protection:</prematch>
+</decoder>
+
+<decoder name="Wazuh_Ransomware_child">
+  <parent>Wazuh_Ransomware</parent>
+  <regex type="pcre2">Wazuh_Ransomware_Protection: (.*)</regex>
+  <order>rollback_status</order>
+</decoder>
+
+<decoder name="json">
+  <prematch>^{\s*"</prematch>
+</decoder>
+
+<decoder name="json_child">
+  <parent>json</parent>
+  <regex type="pcre2">"src_ip":"([^"]+)"</regex>
+  <order>srcip</order>
+</decoder>
+
+<decoder name="json_child">
+  <parent>json</parent>
+  <plugin_decoder>JSON_Decoder</plugin_decoder>
+</decoder>
+<!-- YARA Decoder -->
+<decoder name="yara_decoder">
+    <prematch>xIoTz-yara:</prematch>
+</decoder>
+
+<decoder name="yara_decoder1">
+    <parent>yara_decoder</parent>
+    <regex>xIoTz-yara: (\S+) - Scan result: (\S+) (\S+)</regex>
+    <order>log_type, yara_rule, yara_scanned_file</order>
+</decoder>
+<!-- YARA Decoder END -->
+
+<!-- Active Reponse -->
+<decoder name="active_response_parent">
+    <prematch>Active Response:</prematch>
+</decoder>
+
+<!-- Put New custom Decoders Below -->
+<decoder name="account_block">
+    <parent>active_response_parent</parent>
+    <regex>Active Response: (\S+) account has been disabled\.</regex>
+    <order>username</order>
+</decoder>
+<decoder name="usb_device_disable">
+    <parent>active_response_parent</parent>
+    <regex>Active Response: Device ID - (.+?), Device Name - (.+?), Hostname - (.+?), Device has been successfully disabled\.</regex>
+    <order>device_id,device_name,pcname</order>
+</decoder>
+<decoder name="proc_kill1">
+    <prematch>xIoTz-EDR Block:</prematch>
+</decoder>
+<decoder name="proc_kill">
+    <parent>proc_kill1</parent>
+    <regex>xIoTz-EDR Block: (\S+) has been killed due to software policy\.</regex>
+    <order>process</order>
+</decoder>
+<!-- Active Reponse END -->
