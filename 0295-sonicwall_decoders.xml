@@ -1,0 +1,67 @@
+<!--
+  -  Copyright (C) 2015, Wazuh Inc.
+-->
+
+<!--
+  SonicWall decoders:
+  Fixed XML escape issues and regex patterns
+-->
+
+<decoder name="sonicwall">
+  <plugin_decoder>SonicWall_Decoder</plugin_decoder>
+  <prematch>^&lt;\d+&gt;\s*id=\w+\s+sn=\w+\s+time=".+"\s+fw=\S+|^\s*id=\w+\s+sn=\w+\s+time=".+"\s+fw=\S+</prematch>
+</decoder>
+
+<decoder name="sonicwall-fields">
+  <parent>sonicwall</parent>
+  <regex offset="after_parent">pri=(\S+)</regex>
+  <order>status</order>
+</decoder>
+
+<decoder name="sonicwall-fields">
+  <parent>sonicwall</parent>
+  <regex offset="after_regex">\smsg="([^"]+)"</regex>
+  <order>action</order>
+</decoder>
+
+<decoder name="sonicwall-fields">
+  <parent>sonicwall</parent>
+  <regex offset="after_regex">src=(\d+\.\d+\.\d+\.\d+):(\d+):\S*</regex>
+  <order>srcip, srcport</order>
+</decoder>
+
+<decoder name="sonicwall-fields">
+  <parent>sonicwall</parent>
+  <regex offset="after_regex">dst=(\d+\.\d+\.\d+\.\d+):(\d+):\S*</regex>
+  <order>dstip, dstport</order>
+</decoder>
+
+<decoder name="sonicwall-fields">
+  <parent>sonicwall</parent>
+  <regex offset="after_regex">src=(\d+\.\d+\.\d+\.\d+)::|src=(\d+\.\d+\.\d+\.\d+)\s</regex>
+  <order>srcip</order>
+</decoder>
+
+<decoder name="sonicwall-fields">
+  <parent>sonicwall</parent>
+  <regex offset="after_regex">dst=(\d+\.\d+\.\d+\.\d+)::|dst=(\d+\.\d+\.\d+\.\d+)\s</regex>
+  <order>dstip</order>
+</decoder>
+
+<decoder name="sonicwall-fields">
+  <parent>sonicwall</parent>
+  <regex offset="after_regex">proto=(\S+)</regex>
+  <order>protocol</order>
+</decoder>
+
+<decoder name="sonicwall-fields">
+  <parent>sonicwall</parent>
+  <regex>app=(\S+)\s+appName="([^"]+)".+dstname=(\S+).+Category="([^"]+)"</regex>
+  <order>app, appName, dstname, Category</order>
+</decoder>
+
+<decoder name="sonicwall-software_downloads">
+  <parent>sonicwall</parent>
+  <regex>id=(\S+)\s+sn=(\S+)\s+time="(\d+-\d\d-\d\d\s\d\d:\d\d:\d\d)\s(\S+)"\s+fw=(\S+)\s+pri=(\S+)\s+c=(\S+)\s+m=(\S+)\s+msg="([^"]+)"\s+app=(\S+)\s+appName="([^"]+)"\s+n=(\S+)\s+src=(\S+)\s+dst=(\S+)\s+srcMac=(\S+)\s+dstMac=(\S+)\s+proto=(\S+)\s+dstname=(\S+)\s+arg=(\S+)\s+code=(\S+)\s+Category="([^"]+)"</regex>
+  <order>id,sn,time,timezone,fw,pri,c,m,msg,app,appName,n,src,dst,srcMac,dstMac,proto,dstname,arg,code,Category</order>
+</decoder>
