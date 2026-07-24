@@ -1,0 +1,774 @@
+<!-- Local rules -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+
+<group name="windows,windows_security,authentication_failed,bruteforce,">
+
+
+   <rule id="60233" level="12" frequency="5" timeframe="300">
+    <if_matched_sid>60122</if_matched_sid>
+    <same_field>win.eventdata.targetUserName</same_field>
+    <field name="win.eventdata.logonType">^2$|^8$|^10$|^11$|^7$</field>
+    <description>Multiple Logon Failure - User $(win.eventdata.targetUserName) 5 Time failed attempts (Brute Force Attack)</description>
+    <options>no_full_log</options>
+    <group>UEBA,authentication_failures,pci_dss_10.2.4,pci_dss_10.2.5,pci_dss_11.4,gpg13_7.1,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AC.7,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1110.001</id>
+      <id>T1110.003</id>
+    </mitre>
+  </rule>
+  
+    <rule id="60115" level="14" overwrite="yes">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^644$|^4740$</field>
+    <description>User account locked out</description>
+    <options>no_full_log</options>
+    <group>UEBA,authentication_failures,pci_dss_8.1.6,pci_dss_11.4,gpg13_7.5,gdpr_IV_35.7.d,hipaa_164.312.a.1,nist_800_53_AC.7,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+    <mitre>
+      <id>T1531</id>
+    </mitre>
+  </rule>
+  
+    <rule id="60234" level="12" frequency="5" timeframe="300">
+    <if_matched_sid>60122</if_matched_sid>
+    <same_field>win.eventdata.targetUserName</same_field>
+    <field name="win.eventdata.logonType">^3$|^4$|^5$</field>
+    <description>Multiple Logon Failure  - User $(win.eventdata.targetUserName) 5 Time failed attempts (Brute Force Attack)</description>
+    <options>no_full_log</options>
+    <group>UEBA,authentication_failures,pci_dss_10.2.4,pci_dss_10.2.5,pci_dss_11.4,gpg13_7.1,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AC.7,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1110.001</id>
+      <id>T1110.003</id>
+    </mitre>
+  </rule>
+   <rule id="91809" level="8" overwrite="yes">
+    <if_sid>91802</if_sid>
+    <field name="win.eventdata.scriptBlockText" type="pcre2">(?i)C:\\Program Files\\Citrix\\ConfigSync\\ConfigSync\.ps1</field>
+    <options>no_full_log</options>
+    <description>Citrix ConfigSync Base64 - False Positive. Script from trusted vendor path.</description>
+  </rule>
+    <!-- FP Suppression: Account Changes by ANONYMOUS LOGON (Automated AD Cycle) -->
+
+  <rule id="60109" level="8" overwrite="yes">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4720$|^4722$</field>
+    <field name="win.eventdata.subjectUserName">^ANONYMOUS LOGON$</field>
+    <options>no_full_log</options>
+    <description>User account created/enabled by ANONYMOUS LOGON - Automated AD cycle (FP)</description>
+  </rule>
+
+  <rule id="60110" level="8" overwrite="yes">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4738$|^4781$</field>
+    <field name="win.eventdata.subjectUserName">^ANONYMOUS LOGON$</field>
+    <options>no_full_log</options>
+    <description>User account changed by ANONYMOUS LOGON - Automated AD cycle (FP)</description>
+  </rule>
+
+  <rule id="60111" level="8" overwrite="yes">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4725$|^4726$</field>
+    <field name="win.eventdata.subjectUserName">^ANONYMOUS LOGON$</field>
+    <options>no_full_log</options>
+    <description>User account disabled/deleted by ANONYMOUS LOGON - Automated AD cycle (FP)</description>
+  </rule>
+
+  <rule id="60121" level="8" overwrite="yes">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4741$|^4742$|^4743$</field>
+    <field name="win.eventdata.subjectUserName">^ANONYMOUS LOGON$</field>
+    <options>no_full_log</options>
+    <description>Computer account created/changed/deleted by ANONYMOUS LOGON - Automated AD cycle (FP)</description>
+  </rule>
+  
+</group>
+
+
+
+
+
+<group name="windows,UEBA,">
+  <!-- Overwrite Rule 61071: MS SQL Logon Failure - Level 14 to Level 5 -->
+  <rule id="61071" level="5" overwrite="yes">
+    <description>MS SQL server logon failure (Overwritten to Level 5)</description>
+    <group>windows,windows_application,UEBA,authentication_failed</group>
+  </rule>
+</group>
+
+<group name="syslog,errors,">
+  <rule id="1002" level="3" overwrite="yes">
+    <description>Firewall traffic event - Level 3</description>
+    <group>syslog,errors,UEBA</group>
+  </rule>
+</group>
+
+
+
+<group name="local,soc_overrides,">
+  <rule id="60200" level="5" overwrite="yes">
+    <if_sid>60106</if_sid>
+    <field name="win.system.eventID">^4624$</field>
+    <field name="win.eventdata.logonType">^8$</field>
+    <description>IIS NetworkCleartext Logon Success (OVERWRITTEN: Level 5)</description>
+    <options>no_full_log</options>
+    <group>UEBA,pci_dss_10.2.5,gpg13_7.1,gpg13_7.2,gdpr_IV_32.2,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AC.9,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+</group>
+
+<!-- ============================================================ -->
+<!-- PENDING USE CASES -->
+<!-- ============================================================ -->
+<group name="sophos-firewall-traffic,">
+
+  <!-- Rule 100130: Denied Traffic - Same IP blocked multiple times -->
+  <rule id="100130" level="12" frequency="10" timeframe="120" ignore="60">
+    <if_matched_sid>100108,100109,100110,100114,100115,100116</if_matched_sid>
+    <same_source_ip />
+    <description>SonicWall Firewall: Multiple dropped packets from same source $(srcip) - Possible attack/scan</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 100131: Port Scan Detected by Firewall -->
+  <rule id="100131" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=82</match>
+    <description>SonicWall Firewall: Port scan detected - $(srcip)</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 100132: Port Scan - Multiple ports from same IP -->
+  <rule id="100132" level="12" frequency="15" timeframe="10" ignore="60">
+    <if_matched_sid>100108,100109</if_matched_sid>
+    <same_source_ip />
+    <description>SonicWall Firewall: Possible port scan - $(srcip) hit multiple ports</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+  </rule>
+
+</group>
+<!-- ============ SOPHOS FIREWALL LOCAL RULES ============ -->
+<group name="sophos-firewall">
+
+
+  <!-- Rule 1: Admin Login Failed -->
+  <rule id="900001" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=30</match>
+    <description>SonicWall Firewall: Admin login failed - $(srcuser) from $(srcip)</description>
+  </rule>
+
+  <!-- Rule 2: User Login Failed -->
+  <rule id="100002" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=33</match>
+    <description>SonicWall Firewall: User login failed - $(srcuser) from $(srcip)</description>
+  </rule>
+
+  <!-- Rule 3: User Created -->
+  <rule id="100003" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=1333</match>
+    <description>SonicWall Firewall: User $(object) was $(status)</description>
+  </rule>
+
+  <!-- Rule 4: User Edited -->
+  <rule id="100004" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=1334</match>
+    <description>SonicWall Firewall: User $(object) was $(status)</description>
+  </rule>
+
+  <!-- Rule 5: User Deleted -->
+  <rule id="100005" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=1335</match>
+    <description>SonicWall Firewall: User $(object) was $(status)</description>
+  </rule>
+
+  <!-- Rule 6: User Added to Group -->
+  <rule id="100006" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=14334</match>
+    <description>SonicWall Firewall: User group change - $(target_user)</description>
+  </rule>
+
+  <!-- Rule 7: Security Policy Modified -->
+  <rule id="100007" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=441</match>
+    <description>SonicWall Firewall: Policy $(object) $(status)</description>
+  </rule>
+
+  <!-- Rule 8: Configuration Change Successful -->
+  <rule id="100008" level="12">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=1382</match>
+    <description>SonicWall Firewall: Config changed.</description>
+  </rule>
+</group>
+<!--new code testing code-->
+
+
+<!--end new testing code-->
+
+
+
+
+
+
+<!-- ============================================================ -->
+<!-- NORMAL TRAFFIC - LEVEL 5 -->
+<!-- ============================================================ -->
+<group name="sophos-firewall-normal">
+
+  <!-- Rule 100120: Web Traffic (m=97) -->
+  <rule id="100120" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=97</match>
+    <description>SonicWall Firewall: Web traffic - $(srcip) → $(dstname) [$(category)]</description>
+  </rule>
+
+  <!-- Rule 100121: Connection Opened (m=98) -->
+  <rule id="100121" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=98</match>
+    <description>SonicWall Firewall: Connection opened - $(srcip) to $(dstip)</description>
+  </rule>
+
+  <!-- Rule 100122: Connection Closed (m=537) -->
+  <rule id="100122" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=537</match>
+    <description>SonicWall Firewall: Connection closed - $(srcip) to $(dstip)</description>
+  </rule>
+
+  <!-- Rule 100123: NAT Mapping (m=1197) -->
+  <rule id="100123" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=1197</match>
+    <description>SonicWall Firewall: NAT Mapping - $(srcip) to $(dstip)</description>
+  </rule>
+
+  <!-- Rule 100124: DNS Allowed (m=602) -->
+  <rule id="100124" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=602</match>
+    <description>SonicWall Firewall: DNS allowed - $(srcip) to $(dstip)</description>
+  </rule>
+
+  <!-- Rule 100125: ICMP Allowed (m=597,598) -->
+  <rule id="100125" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=59[78]</match>
+    <description>SonicWall Firewall: ICMP allowed - $(srcip) to $(dstip)</description>
+  </rule>
+
+  <!-- Rule 100126: Packet Allowed (m=1235) -->
+  <rule id="100126" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=1235</match>
+    <description>SonicWall Firewall: Packet allowed - $(srcip) to $(dstip)</description>
+  </rule>
+
+  <!-- Rule 100127: DNS Resolve Success (m=1480) -->
+  <rule id="100127" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=1480</match>
+    <description>SonicWall Firewall: DNS resolve - $(note)</description>
+  </rule>
+
+  <!-- Rule 100128: Interface Statistics (m=805) -->
+  <rule id="100128" level="5">
+    <decoded_as>sophos-firewall</decoded_as>
+    <match>m=805</match>
+    <description>SonicWall Firewall: Interface stats - $(interface)</description>
+  </rule>
+
+</group>
+
+<!-- ============================================================ -->
+<!-- ORIGINAL SONICWALL RULES (4800-4851) -->
+<!-- ============================================================ -->
+<group name="sonicwall">
+
+  <rule id="4800" level="0">
+    <decoded_as>sophos-firewall</decoded_as>
+    <description>SonicWall messages grouped.</description>
+  </rule>
+
+  <rule id="4801" level="8">
+    <if_sid>4800</if_sid>
+    <status>^1</status>
+    <description>SonicWall critical message.</description>
+    <group>gpg13_3.2,gdpr_IV_35.7.d,</group>
+  </rule>
+
+  <rule id="4802" level="8">
+    <if_sid>4800</if_sid>
+    <status>^2</status>
+    <description>SonicWall critical message.</description>
+    <group>gpg13_3.2,gdpr_IV_35.7.d,</group>
+  </rule>
+
+  <rule id="4803" level="4">
+    <if_sid>4800</if_sid>
+    <status>^3</status>
+    <description>SonicWall error message.</description>
+    <group>gpg13_3.5,</group>
+  </rule>
+
+  <rule id="4804" level="3">
+    <if_sid>4800</if_sid>
+    <status>^4</status>
+    <description>SonicWall warning message.</description>
+  </rule>
+
+  <rule id="4805" level="0">
+    <if_sid>4800</if_sid>
+    <status>^5</status>
+    <description>SonicWall notice message.</description>
+  </rule>
+
+  <rule id="4806" level="0">
+    <if_sid>4800</if_sid>
+    <status>^6</status>
+    <description>SonicWall informational message.</description>
+  </rule>
+
+  <rule id="4807" level="0">
+    <if_sid>4800</if_sid>
+    <status>^7</status>
+    <description>SonicWall debug message.</description>
+  </rule>
+
+  <rule id="4810" level="3">
+    <if_sid>4806</if_sid>
+    <id>^236$</id>
+    <description>SonicWall: Firewall administrator login.</description>
+    <mitre>
+      <id>T1078</id>
+    </mitre>
+    <group>authentication_success,pci_dss_10.2.5,gpg13_3.6,gdpr_IV_32.2,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+  <rule id="4811" level="9">
+    <if_sid>4801</if_sid>
+    <id>^30$|^32$</id>
+    <description>SonicWall: Firewall authentication failure.</description>
+    <group>authentication_failed,pci_dss_10.2.4,pci_dss_10.2.5,gpg13_3.6,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+  <rule id="4850" level="10" frequency="8" timeframe="120" ignore="60">
+    <if_matched_sid>4804</if_matched_sid>
+    <description>SonicWall: Multiple firewall warning messages.</description>
+    <group>service_availability,pci_dss_10.6.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.6,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+  <rule id="4851" level="10" frequency="8" timeframe="120" ignore="60">
+    <if_matched_sid>4803</if_matched_sid>
+    <description>SonicWall: Multiple firewall error messages.</description>
+    <mitre>
+      <id>T1499</id>
+    </mitre>
+    <group>service_availability,pci_dss_10.6.1,gpg13_3.5,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.6,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+</group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+
+
+<group name="sophos,">
+  <rule id="100200" level="3">
+    <decoded_as>sophos-user-mgmt</decoded_as>
+    <description>Sophos FW User Management Event</description>
+  </rule>
+  
+  <rule id="100210" level="5">
+    <decoded_as>sophos-user-group</decoded_as>
+    <description>Sophos FW Group Change</description>
+  </rule>
+  
+  <rule id="100220" level="8">
+    <decoded_as>sophos-failed-login</decoded_as>
+    <description>Sophos FW Failed Login</description>
+  </rule>
+  
+  <rule id="100221" level="8">
+    <decoded_as>sophos-failed-admin-login</decoded_as>
+    <description>Sophos FW Admin Failed Login</description>
+  </rule>
+  
+  <rule id="100230" level="8">
+    <decoded_as>sophos-policy-mod</decoded_as>
+    <description>Sophos FW Policy Modified</description>
+  </rule>
+  
+  <rule id="100240" level="3">
+    <decoded_as>sophos-config-success</decoded_as>
+    <description>Sophos FW Config Changed</description>
+  </rule>
+</group>
+
+<group name="local,rule_60204_suppression,">
+
+  <!-- Suppress Rule 60204 for ALL computer account ($) failures -->
+  <rule id="100223" level="5" overwrite="yes">
+    <if_matched_sid>60105</if_matched_sid>
+    <same_source_ip />
+    <same_user />
+    <field name="win.eventdata.targetUserName">.*\$</field>
+    <description>Multiple Windows Logon Failures (Computer Account) - Severity Reduced to Level 5</description>
+    <group>windows,windows_security,UEBA,authentication_failures,</group>
+  </rule>
+
+</group>
+
+<group name="local,windows,windows_security,authentication_failed,">
+
+  <!-- Ignore Logon Type 3 + NTLM authentication failures -->
+  <rule id="100222" level="5">
+    <decoded_as>json</decoded_as>
+    <field name="win.system.eventID">^4625$</field>
+    <field name="win.eventdata.logonType">^3$</field>
+    <field name="win.eventdata.authenticationPackageName">^NTLM$</field>
+    <description>Network Logon failure (Event 4625, Type 3) with NTLM authentication - Alert Ignored</description>
+    <options>no_log</options>
+  </rule>
+
+</group>
+<group name="local,windows,windows_security,authentication_failed,">
+
+  <!-- Ignore Logon Type 3 + NTLM authentication failures -->
+  <rule id="100222" level="5">
+    <if_sid>60105</if_sid>
+    <field name="win.eventdata.logonType">^3$</field>
+    <field name="win.eventdata.authenticationPackageName">^NTLM$</field>
+    <description>Network Logon failure (Type 3) with NTLM authentication - Alert Ignored</description>
+    <options>no_log</options>
+  </rule>
+
+</group>
+<group name="local,windows,windows_security,authentication_failed,">
+
+  <!-- Ignore Logon Type 3 + NTLM authentication failures -->
+  <rule id="100222" level="5">
+    <if_sid>60122</if_sid>
+    <field name="win.system.eventID">^4625$</field>
+    <field name="win.eventdata.logonType">^3$</field>
+    <field name="win.eventdata.authenticationPackageName">^NTLM$</field>
+    <description>Network Logon failure (Event 4625, Type 3) with NTLM authentication - Alert Ignored</description>
+    <options>no_log</options>
+  </rule>
+
+</group>
+
+<group name="local,rdp_override_all,">
+
+  <!-- ================================================================ -->
+  <!-- ALL 21 Application Servers - RDP/NTLM Alerts Level 5             -->
+  <!-- ================================================================ -->
+
+  <!-- Override Rule 92653 (RDP Login - LogonType 10) -->
+  <rule id="92653" level="5" overwrite="yes">
+    <if_sid>92651</if_sid>
+    <field name="win.eventdata.logonType" type="pcre2">10</field>
+    <field name="win.eventdata.workstationName">^HQ-CT-APP01-01$|^HQ-CT-APP01-02$|^HQ-CT-APP01-03$|^HQ-CT-APP01-04$|^HQ-CT-APP01-05$|^HQ-CT-APP02-01$|^HQ-CT-APP02-02$|^HQ-CT-APP02-03$|^HQ-CT-APP02-04$|^HQ-CT-APP03-01$|^HQ-CT-APP03-02$|^HQ-CT-APP03-03$|^HQ-CT-APP03-04$|^HQ-CT-APP03-05$|^HQ-CT-APP03-06$|^HQ-CT-APP03-07$|^HQ-CT-APP03-08$|^HQ-CT-APP03-09$|^HQ-CT-APP03-10$|^HQ-CT-APP03-11$|^HQ-CT-APP03-12$</field>
+    <description>User: $(win.eventdata.subjectDomainName)\$(win.eventdata.targetUserName) logged using RDP from authorized App Server $(win.eventdata.workstationName). [Level Reduced to 5]</description>
+    <mitre>
+      <id>T1021.001</id>
+      <id>T1078.002</id>
+    </mitre>
+  </rule>
+
+  <!-- Override Rule 92657 (NTLM Auth - Possible RDP) -->
+  <rule id="92657" level="5" overwrite="yes">
+    <if_sid>92652</if_sid>
+    <field name="win.eventdata.workstationName" type="pcre2">.+</field>
+    <field name="win.eventdata.workstationName">^HQ-CT-APP01-01$|^HQ-CT-APP01-02$|^HQ-CT-APP01-03$|^HQ-CT-APP01-04$|^HQ-CT-APP01-05$|^HQ-CT-APP02-01$|^HQ-CT-APP02-02$|^HQ-CT-APP02-03$|^HQ-CT-APP02-04$|^HQ-CT-APP03-01$|^HQ-CT-APP03-02$|^HQ-CT-APP03-03$|^HQ-CT-APP03-04$|^HQ-CT-APP03-05$|^HQ-CT-APP03-06$|^HQ-CT-APP03-07$|^HQ-CT-APP03-08$|^HQ-CT-APP03-09$|^HQ-CT-APP03-10$|^HQ-CT-APP03-11$|^HQ-CT-APP03-12$</field>
+    <description>NTLM Auth from authorized App Server $(win.eventdata.workstationName) - User:$(win.eventdata.subjectDomainName)\$(win.eventdata.targetUserName). [Level Reduced to 5]</description>
+    <mitre>
+      <id>T1550.002</id>
+      <id>T1078.002</id>
+      <id>T1021.001</id>
+    </mitre>
+    <group>UEBA,authentication_success,</group>
+  </rule>
+
+</group>
+<group name="local,rdp_override_test,">
+
+  <!-- ================================================================ -->
+  <!-- TEST: Sirf HQ-CT-APP01-01 ke RDP alerts ko Level 5 karo          -->
+  <!-- ================================================================ -->
+
+  <!-- Override Rule 92653 (RDP Login - LogonType 10) -->
+  <rule id="92653" level="5" overwrite="yes">
+    <if_sid>92651</if_sid>
+    <field name="win.eventdata.logonType" type="pcre2">10</field>
+    <field name="win.eventdata.workstationName">^HQ-CT-APP01-01$</field>
+    <description>OVERRIDE: User: $(win.eventdata.subjectDomainName)\$(win.eventdata.targetUserName) logged using RDP from $(win.eventdata.workstationName). [Level Reduced to 5]</description>
+    <mitre>
+      <id>T1021.001</id>
+      <id>T1078.002</id>
+    </mitre>
+  </rule>
+
+  <!-- Override Rule 92657 (NTLM Auth - Possible RDP) -->
+  <rule id="92657" level="5" overwrite="yes">
+    <if_sid>92652</if_sid>
+    <field name="win.eventdata.workstationName" type="pcre2">.+</field>
+    <field name="win.eventdata.workstationName">^HQ-CT-APP01-01$</field>
+    <description> OVERRIDE: NTLM Auth from $(win.eventdata.workstationName) - User:$(win.eventdata.subjectDomainName)\$(win.eventdata.targetUserName). [Level Reduced to 5]</description>
+    <mitre>
+      <id>T1550.002</id>
+      <id>T1078.002</id>
+      <id>T1021.001</id>
+    </mitre>
+    <group>UEBA,authentication_success,</group>
+  </rule>
+
+</group>
+
+
+
+
+
+
+
+
+
+
+<!-- Example -->
+<group name="local,syslog,sshd,">
+
+  <!--
+  Dec 10 01:02:02 host sshd[1234]: Failed none for root from 1.1.1.1 port 1066 ssh2
+  -->
+
+  <rule id="100001" level="10">
+    <if_sid>5716</if_sid>
+    <match type="pcre2">\b(?!(10)|192\.168|172\.(2[0-9]|1[6-9]|3[0-1])|(25[6-9]|2[6-9][0-9]|[3-9][0-9][0-9]|99[1-9]))[0-9]{1,3}\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)</match>
+    <description>sshd: Authentication failed from a public IP address $(srcip).</description>
+    <group>au
+    thentication_failed,pci_dss_10.2.4,pci_dss_10.2.5,</group>
+  </rule>
+
+
+  <rule id="100002" level="10">
+    <field name="abuseipdb.abuse_confidence_score" type="pcre2" negate="yes">^0$</field>
+    <description>IP with $(abuseipdb.abuse_confidence_score)% confidence of abuse connected to your network.</description>
+    <group>authentication_failed,pci_dss_10.2.4,pci_dss_10.2.5,</group>
+  </rule>
+</group>
+
+
+<group name="pam,syslog,">
+  <rule id="120100" level="10" frequency="3" timeframe="120">
+    <if_matched_sid>5503</if_matched_sid>
+    <description>Possible password guess on $(dstuser): 3 failed logins in a short period of time</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+  </rule>
+</group>
+
+<!-- Virus Toatal Detection and file Removal -->
+<!-- Folders to be Checked by VirusTotal -->
+<group name="syscheck,pci_dss_11.5,nist_800_53_SI.7,">
+     Rules for Linux systems
+    <rule id="100200" level="7">
+        <if_sid>550</if_sid>
+        <field name="file">/tmp</field>
+        <description>File modified in /root directory.</description>
+    </rule>
+    <rule id="100201" level="7">
+        <if_sid>554</if_sid>
+        <field name="file">/tmp</field>
+        <description>File added to /root directory.</description>
+    </rule>
+</group>
+<!-- Folders to be Checked by VirusTotal END -->
+
+<group name="virustotal,">
+  <rule id="100092" level="12">
+    <if_sid>657</if_sid>
+    <match>Successfully removed threat</match>
+    <description>$(parameters.program) removed threat located at $(parameters.alert.data.virustotal.source.file)</description>
+  </rule>
+
+  <rule id="100093" level="12">
+    <if_sid>657</if_sid>
+    <match>Error removing threat</match>
+    <description>Error removing threat located at $(parameters.alert.data.virustotal.source.file)</description>
+  </rule>
+</group>
+<!-- Virus Total END -->
+
+<!-- Yara Detection Rules -->
+
+<!-- Folders To be Checked by YARA -->
+<group name="syscheck,">
+  <rule id="100300" level="7">
+    <if_sid>550</if_sid>
+    <field name="file">/tmp/yara/malware/</field>
+    <description>File modified in /tmp/yara/malware/ directory.</description>
+  </rule>
+  <rule id="100301" level="7">
+    <if_sid>554</if_sid>
+    <field name="file">/tmp/yara/malware/</field>
+    <description>File added to /tmp/yara/malware/ directory.</description>
+  </rule>
+  <rule id="100303" level="7">
+    <if_sid>550</if_sid>
+    <field name="file">C:\\Users\\xiotz\\Downloads</field>
+    <description>File modified in C:\Users\xiotz\Downloads directory.</description>
+  </rule>
+  <rule id="100304" level="7">
+    <if_sid>554</if_sid>
+    <field name="file">C:\\Users\\xiotz\\Downloads</field>
+    <description>File added to C:\Users\xiotz\Downloads  directory.</description>
+  </rule>
+</group>
+
+<!-- Folders to be Checked by yara END -->
+
+<group name="yara,">
+  <rule id="102000" level="0">
+    <decoded_as>yara_decoder</decoded_as>
+    <description>Yara grouping rule</description>
+  </rule>
+  <rule id="102001" level="12">
+    <if_sid>102000</if_sid>
+    <match>xIoTz-yara: INFO - Scan result: </match>
+    <description>File "$(yara_scanned_file)" is a positive match. Yara rule: $(yara_rule)</description>
+  </rule>
+</group>
+
+<!-- Yara Detection END -->
+
+<group name="custom_active_response_rules,">
+  <rule id="100500" level="12">
+    <if_sid>86600</if_sid>
+    <field name="event_type">^alert$</field>
+    <match>ET DOS Inbound GoldenEye DoS attack</match>
+    <description>GoldenEye DoS attack has been detected. </description>
+    <mitre>
+      <id>T1498</id>
+    </mitre>
+  </rule>
+
+  <rule id="100501" level="12">
+    <if_sid>86600</if_sid>
+    <field name="event_type">^alert$</field>
+    <match>ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine)</match>
+    <description>Nmap scripting engine detected. </description>
+    <mitre>
+      <id>T1595</id>
+    </mitre>
+  </rule>
+</group>
+
+
+<!-- USB Detection Rule -->
+<group name="windows-usb-detect">
+  <rule id="111000" level="7">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^6416$</field>
+    <match>USBSTOR\\Disk</match>
+    <options>no_full_log</options>
+    <description>Windows: A PNP device $(win.eventdata.deviceDescription) was connected to $(win.system.computer)</description>
+  </rule>
+
+  <rule id="111001" level="5">
+    <if_sid>111000</if_sid>
+    <options>no_full_log</options>
+    <description>Windows: Authorized PNP device $(win.eventdata.deviceDescription) was connected to $(win.system.computer).</description>
+  </rule>
+
+  <rule id="111002" level="8">
+    <if_sid>111000</if_sid>
+    <list field="win.eventdata.deviceId" lookup="not_match_key">etc/lists/usb-drives</list>
+    <options>no_full_log</options>
+    <description>Windows: Unauthorized PNP device $(win.eventdata.deviceDescription) was connected to $(win.system.computer).</description>
+  </rule>
+</group>
+<!-- USB Detection Rule END -->
+
+<!-- Active Response Rules -->
+<group name="custom_active_response_rules">
+  <!-- Parent Rule -->
+  <rule id="100700" level="3">
+    <decoded_as>active_response_parent</decoded_as>
+    <description>xIoTz Automated Response grouping rule</description>
+    <options>no_full_log</options>
+  </rule>
+
+  <!-- Account Disabled Rule -->
+  <rule id="100701" level="12">
+    <if_sid>100700</if_sid>
+    <match>account has been disabled.</match>
+    <description>"$(username)" account has been disabled by xIoTz Automated Response</description>
+  </rule>
+
+  <!-- USB Device Disabled Rule -->
+  <rule id="100703" level="12">
+    <if_sid>100700</if_sid>
+    <match>Active Response: Device</match>
+    <description>USB device has been successfully disabled by xIoTz Automated Response</description>
+  </rule>
+
+  <!-- Process Kill Block Rule by Software Policy -->
+  <rule id="100704" level="12">
+    <if_sid>100700</if_sid>
+    <match>The process was blocked as it is not allowed by the software policy</match>
+    <description>A process was terminated by xIoTz Automated Response due to a violation of the software policy.</description>
+  </rule>
+<!-- Process Kill Block Rule by Uncommon Port -->
+ <rule id="100705" level="12">
+    <if_sid>100700</if_sid>
+    <match>connection to an uncommon port</match>
+    <description>A process was terminated by xIoTz Automated Response due to a network connection to an uncommon port.</description>
+</rule>
+
+</group>
+<!-- Active Response Rules END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
