@@ -1,7 +1,7 @@
 url: https://medseven-endpoint.xiotz.com/app/login?
-status: degraded
+status: up
 code: 200
-responseTime: 27149
-lastUpdated: 2026-08-05T04:32:47.665Z
+responseTime: 1539
+lastUpdated: 2026-08-05T07:11:07.929Z
 startTime: 2026-03-07T18:42:05.568Z
 generator: Upptime <https://github.com/upptime/upptime>
