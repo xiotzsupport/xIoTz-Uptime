@@ -90,16 +90,6 @@
 
 
 
-
-
-<group name="windows,UEBA,">
-  <!-- Overwrite Rule 61071: MS SQL Logon Failure - Level 14 to Level 5 -->
-  <rule id="61071" level="5" overwrite="yes">
-    <description>MS SQL server logon failure (Overwritten to Level 5)</description>
-    <group>windows,windows_application,UEBA,authentication_failed</group>
-  </rule>
-</group>
-
 <group name="syslog,errors,">
   <rule id="1002" level="3" overwrite="yes">
     <description>Firewall traffic event - Level 3</description>
