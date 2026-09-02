@@ -88,17 +88,6 @@
   
 </group>
 
-
-
-<group name="syslog,errors,">
-  <rule id="1002" level="3" overwrite="yes">
-    <description>Firewall traffic event - Level 3</description>
-    <group>syslog,errors,UEBA</group>
-  </rule>
-</group>
-
-
-
 <group name="local,soc_overrides,">
   <rule id="60200" level="5" overwrite="yes">
     <if_sid>60106</if_sid>
