@@ -1,7 +1,7 @@
 url: https://cyberaudit-endpoint.xiotz.com/app/login?
-status: down
-code: 503
-responseTime: 769
-lastUpdated: 2026-09-16T01:08:33.846Z
+status: up
+code: 200
+responseTime: 1293
+lastUpdated: 2026-09-16T01:41:58.840Z
 startTime: 2026-03-07T18:41:36.206Z
 generator: Upptime <https://github.com/upptime/upptime>
