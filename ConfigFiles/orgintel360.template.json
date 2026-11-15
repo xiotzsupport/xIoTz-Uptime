@@ -1,0 +1,86 @@
+{
+  "index_patterns": [
+    "orgintel360-logs-*"
+  ],
+  "order": 100,
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "date_detection": false,
+    "dynamic_templates": [
+      {
+        "strings_as_keyword": {
+          "match_mapping_type": "string",
+          "mapping": {
+            "type": "keyword",
+            "ignore_above": 1024
+          }
+        }
+      }
+    ],
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },
+      "timestamp": {
+        "type": "date"
+      },
+      "level": {
+        "type": "keyword"
+      },
+      "event": {
+        "type": "keyword"
+      },
+      "app": {
+        "type": "keyword"
+      },
+      "env": {
+        "type": "keyword"
+      },
+      "module": {
+        "type": "keyword"
+      },
+      "requestId": {
+        "type": "keyword"
+      },
+      "traceId": {
+        "type": "keyword"
+      },
+      "message": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 1024
+          }
+        }
+      },
+      "host": {
+        "type": "object"
+      },
+      "agent": {
+        "type": "object"
+      },
+      "log": {
+        "type": "object"
+      },
+      "error": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "text"
+          },
+          "type": {
+            "type": "keyword"
+          },
+          "stack_trace": {
+            "type": "text",
+            "index": false
+          }
+        }
+      }
+    }
+  }
+}
