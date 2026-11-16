@@ -1,0 +1,52 @@
+# OrgIntel360 - Filebeat 9.x configuration
+#
+# Purpose:
+#   Collect ONLY runtime journal entries emitted by OrgIntel360.service.
+#   Deployment files, upgrade logs, and other filesystem logs are intentionally
+#   excluded.
+#
+# Install as:
+#   /etc/filebeat-orgintel360/filebeat.yml
+#
+# Run with the dedicated filebeat-OrgIntel360.service unit.
+
+filebeat.inputs:
+  - type: journald
+    id: orgintel360-runtime
+    enabled: true
+
+    # Match only the OrgIntel360 systemd service.
+    include_matches:
+      - _SYSTEMD_UNIT=OrgIntel360.service
+
+    # Start following new journal entries from the current end of the journal.
+    # This does not backfill historical journal entries.
+    seek: tail
+
+    # Preserve the original journal MESSAGE. The application emits JSON;
+    # Logstash parses the message into fields.
+    fields:
+      application: orgintel360
+      environment: production
+      log_source: journald
+      log_category: application
+
+    fields_under_root: true
+
+processors:
+  - add_host_metadata: ~
+
+# Send events to the dedicated OrgIntel360 Logstash Beats input.
+output.logstash:
+  hosts:
+    - "orgintel-endpoint.xiotz.com:22000"
+
+# Filebeat service logging.
+logging.level: info
+logging.to_files: true
+logging.to_stderr: true
+logging.files:
+  path: /var/log/filebeat-orgintel360
+  name: filebeat
+  keepfiles: 7
+  permissions: 0640
